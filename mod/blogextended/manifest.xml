@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin_manifest>
+	<field key="author" value="Diego Andrés Ramírez Aragón" />
+	<field key="version" value="1.3.1" />
+	<field key="description" value="Add extra features to the blog. Blog types, assign to group, extension points to the publish form" />
+	<field key="website" value="http://www.somosmas.org/" />
+	<field key="copyright" value="(C) Corporacion Somos más 2008" />
+	<field key="licence" value="GNU Public License version 2" />
+	<field key="elgg_version" value="2009021601" />
+</plugin_manifest>

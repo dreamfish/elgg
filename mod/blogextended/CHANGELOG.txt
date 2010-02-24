@@ -1,0 +1,22 @@
+Version 1.3.1
+	Added support for itemicon if it is available
+	Fixed issue with blog preview action
+
+Version 1.3
+	Compatibility with Elgg 1.5
+	
+Version 1.2
+	Let specify the extra types through a config file.
+	Let you specify if you want to overwrite the post icon when it is associated to a group.
+		
+Version 1.1
+	Fixed a bug that didn't pass the parameters to after and before views
+	
+Version 1.0
+	Initial Release
+	Features:
+      - Extend the edit blog view to support before and after description fields.
+      - Add support for blog types
+      - Add support for assign blog 'ownership' to a group (Read more after)
+      - Widget for show blog posts in the profile
+	

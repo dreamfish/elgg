@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin_manifest>
+	<field key="author" value="Joe Bogner and Astrid Lydia Johannsen" />
+	<field key="version" value="0.1b" />
+	<field key="description" value="Dreamfish Custom Elgg Theme" />
+	<field key="website" value="http://www.dreamfish.com/" />
+	<field key="copyright" value="CC by-nc-nd dreamfish.com 2010" />
+	<field key="licence" value="Creative Commons 3.0 License" />
+	<field key="elgg_version" value="2009031301" />
+</plugin_manifest>

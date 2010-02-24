@@ -1,0 +1,2 @@
+Version 1.3
+	Make it compatible with the new blog from Elgg 1.5
