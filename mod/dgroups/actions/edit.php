@@ -101,7 +101,6 @@
 		$filehandler->open("write");
 		$filehandler->write(get_uploaded_file('icon'));
 		$filehandler->close();
-		
 		$thumbtiny = get_resized_image_from_existing_file($filehandler->getFilenameOnFilestore(),25,25, true);
 		$thumbsmall = get_resized_image_from_existing_file($filehandler->getFilenameOnFilestore(),40,40, true);
 		$thumbmedium = get_resized_image_from_existing_file($filehandler->getFilenameOnFilestore(),100,100, true);

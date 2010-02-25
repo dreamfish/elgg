@@ -28,7 +28,7 @@
 	else{
 		switch($filter){
 			case "newest":
-			$objects = list_entities('group',"project", 0, $limit, false);
+			$objects = list_entities('group','project', 0, $limit, false);
 			break;
 			case "pop":
 			$objects = list_entities_by_relationship_count('member');
@@ -42,6 +42,7 @@
 		}
 	}
 	
+
 	//get a group count
 	$group_count = get_entities("group", "project", 0, "", 10, 0, true, 0, null);
 		

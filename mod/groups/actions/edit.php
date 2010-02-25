@@ -30,7 +30,7 @@
 	
 	$group = new ElggGroup($group_guid); // load if present, if not create a new group
 	$group->subtype = "project";
-	
+
 	if (($group_guid) && (!$group->canEdit()))
 	{
 		register_error(elgg_echo("groups:cantedit"));

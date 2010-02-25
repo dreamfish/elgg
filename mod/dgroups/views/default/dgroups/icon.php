@@ -16,7 +16,6 @@
 	$dgroup = $vars['entity'];
 	
 	if ($dgroup instanceof ElggGroup) {
-	
 	// Get size
 	if (!in_array($vars['size'],array('small','medium','large','tiny','master','topbar')))
 		$vars['size'] = "medium";
@@ -33,12 +32,34 @@
 	} else {
 		$icontime = "default";
 	}
+	$name = '';
 	
+	$imgurl = $vars['entity']->getIcon($vars['size']);
 	
+/*
+	$entity = $vars['entity'];
+	$type = $entity->type;
+	$viewtype = $params['viewtype'];
+	$size = $params['size'];
+	
+	if ($icontime = $entity->icontime) {
+		$icontime = "{$icontime}";
+	} else {
+		$icontime = "default";
+	}
+	
+	$filehandler = new ElggFile();
+	$filehandler->owner_guid = $entity->owner_guid;
+	$filehandler->setFilename("dgroups/" . $entity->guid . $size . ".jpg");
+	
+	if ($filehandler->exists()) {
+		$imgurl = $CONFIG->url . "pg/dgroupicon/{$entity->guid}/$size/$icontime.jpg";
+	}
+*/
 ?>
 
 <div class="dgroupicon">
-<a href="<?php echo $vars['entity']->getURL(); ?>" class="icon" ><img src="<?php echo $vars['entity']->getIcon($vars['size']); ?>" border="0" <?php echo $align; ?> title="<?php echo $name; ?>" <?php echo $vars['js']; ?> /></a>
+<a href="<?php echo $vars['entity']->getURL(); ?>" class="icon" ><img src="<?php echo $imgurl; ?>" border="0" <?php echo $align; ?> title="<?php echo $name; ?>" <?php echo $vars['js']; ?> /></a>
 </div>
 
 <?php

@@ -22,7 +22,7 @@ if($xpan == $ma[1] || ($xpa[0] != "" && $xpa[1] == "undefined" && !is_numeric($m
 
     var tinyMCE = tinymce._init();
 
-    setInterval( "saveDraftCKE(false)", 120000);
+    
 	function saveDraftCKE(preview) {
 		
                 var drafturl = "<?php echo $vars['url']; ?>mod/blog/savedraft.php";
@@ -98,7 +98,7 @@ else
 {
     $textval = $vars['value'];
 }
-
+$textval = $vars['value'];
 $rand = mt_rand();
 
 echo '<textarea name="'.$vars['internalname'].'">'.$textval.'</textarea>

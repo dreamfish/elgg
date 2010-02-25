@@ -49,6 +49,7 @@ ul.tabnav {
 ul.tabnav li {
 	display: inline;
 	position: relative;
+	z-index: 50000;
 }
 
 ul.tabnav li a {
@@ -110,7 +111,7 @@ overflow:hidden;
 }
 #wrapper_header { float: left; width: 600px; }
 #container_search { float: left; width: 280px; margin-top:30px; }
-
+#two_column_left_sidebar_maincontent { background-color: #f0f0f0; }
 </style>
 <div id="navigation" class="clearpush">
 <ul class="tabnav" id="topleftnav">

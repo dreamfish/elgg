@@ -78,7 +78,7 @@
 		
 		
 		// Now override icons
-		register_plugin_hook('entity:icon:url', 'dgroup', 'dgroups_dgroupicon_hook');
+		register_plugin_hook('entity:icon:url', 'group', 'dgroups_dgroupicon_hook');
 	}
 	
 	/**
