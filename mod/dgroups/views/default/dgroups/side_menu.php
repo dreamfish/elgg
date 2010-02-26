@@ -3,7 +3,9 @@
 <?php
 	if(isloggedin()){
 		echo "<li><a href=\"{$vars['url']}pg/dgroups/member/{$_SESSION['user']->username}\">". elgg_echo('dgroups:yours') ."</a></li>";
-		echo "<li><a href=\"{$vars['url']}pg/dgroups/new/\">". elgg_echo('dgroups:new') ."</a></li>";
+		if (isadminloggedin()) {
+			echo "<li><a href=\"{$vars['url']}pg/dgroups/new/\">". elgg_echo('dgroups:new') ."</a></li>";
+		}
 	}
 ?>
 </ul></div></div>

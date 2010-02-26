@@ -31,7 +31,7 @@
 	$dgroup = new ElggGroup($dgroup_guid); // load if present, if not create a new dgroup
 	$dgroup->subtype = 'dgroup';
 
-	if (($dgroup_guid) && (!$dgroup->canEdit()))
+	if (($dgroup_guid) && (!$dgroup->canEdit()) && !isadminloggedin())
 	{
 		register_error(elgg_echo("dgroups:cantedit"));
 		
