@@ -17,7 +17,6 @@
 <div id="elgg_horizontal_tabbed_nav">
 <ul>
 	<li <?php if($filter == "newest") echo "class='selected'"; ?>><a href="<?php echo $url; ?>?filter=newest"><?php echo elgg_echo('dgroups:newest'); ?></a></li>
-	<li <?php if($filter == "pop") echo "class='selected'"; ?>><a href="<?php echo $url; ?>?filter=pop"><?php echo elgg_echo('dgroups:popular'); ?></a></li>
 	<li <?php if($filter == "active") echo "class='selected'"; ?>><a href="<?php echo $url; ?>?filter=active"><?php echo elgg_echo('dgroups:latestdiscussion'); ?></a></li>
 </ul>
 </div>
