@@ -17,7 +17,7 @@
 		$username = get_input('username');
 		if ($username == '')
 		{
-			$username = $_SESSION['user']->name;
+			$username = get_loggedin_user()->username;
 		}
 		$body = "";
 		
