@@ -45,6 +45,9 @@
 
 
     echo "</div>";
+	if ($vars['entity']->canEdit()) {
+		echo '<a href="' . $vars['url'] . 'mod/profile/editicon.php' . '">'. elgg_echo('profile:editicon').'</a>';
+	}
     echo "<div class=\"clearfloat\"></div>";
      // display relevant links			
     echo elgg_view("profile/profilelinks", array("entity" => $vars['entity']));
