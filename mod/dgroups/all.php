@@ -31,7 +31,7 @@
 			$objects = list_entities('group',"dgroup", 0, $limit, false);
 			break;
 			case "pop":
-			$objects = list_entities_by_relationship_count('member');
+			$objects = list_entities_by_relationship_count('member', 'false', 'group', 'dgroup');
 			break;
 			case "active":
 			$objects = list_entities_from_annotations("object", "dgroupforumtopic", "dgroup_topic_post", "", 40, 0, 0, false, true);
