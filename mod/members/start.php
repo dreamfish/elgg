@@ -23,6 +23,8 @@
 				if (isloggedin()) {
 					add_menu(elgg_echo('Members'), $CONFIG->wwwroot . "mod/members/index.php");
 				}
+				
+				$CONFIG->member_skills = 'Arts, Account Management / Sales, Business Services, Coaching and Mentorship, Community Management, Education and Training, Engineering - Industrial, Engineering - Software, Environmental, Design, Group Facilitation, Funding, Fundraising, Health and Wellness, Insurance, ICT - Information Communication Tech, Marketing, NGO Management, Outsourcing, Project Management, Strategy / Planning, Value and Social Impact Analysis, Virtual Assistance - Data / Contact management, Virtual Assistance - Research, Virtual Assistance - Social networking, Virtual Assistance - Scheduling / ToDo List, Virtual Assistance - Technical, Virtual Assistance - Transcription, Web hosting - Systems Administration, Writing, Other';				
 			
 		}
 		

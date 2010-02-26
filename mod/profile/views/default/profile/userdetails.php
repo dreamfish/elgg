@@ -16,8 +16,7 @@
 		$iconsize = "large";
 	} else {
 		$iconsize = "medium";
-	}
-	
+	}	
 	// wrap all profile info
 	echo "<div id=\"profile_info\">";
 

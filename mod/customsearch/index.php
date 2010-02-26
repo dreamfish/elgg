@@ -407,13 +407,15 @@ $i=0;
 
     } 
     elseif ($searchType == 'tags')
-    {
+    {		
       if (!empty($tag)) 
       {
         $body  = "";
-        
+			
         //$meta_name, $meta_value = "", $entity_type = "", $entity_subtype = "", $owner_guid = 0, $limit = 10, $fullview = true, $viewtypetoggle = true, $pagination = true) {
-        $body .= list_entities_from_metadata('tags', $tag, $objecttype, $subtype, $owner_guid_array, $page_size, false, false,true);
+			$body .= list_entities_from_metadata('tags', $tag, $objecttype, $subtype, $owner_guid_array, $page_size, false, false,true);
+         
+
       }
       
     }

@@ -17,9 +17,10 @@
 		
 	// Set context
 		set_context('search');
-		
+				
 	// Get input
 		$tag = get_input('tag');
+		
 		$subtype = get_input('subtype');
 		if (!$objecttype = get_input('object')) {
 			$objecttype = "";
@@ -71,15 +72,29 @@
 			$title = sprintf(elgg_echo('advancedsearchtitle'),$itemtitle,$tag);
 		}
 		
+		global $CONFIG;
+		$tagSearch = false;		
+		 if (strpos(current_page_url(), $CONFIG->wwwroot . 'tag')>-1 || strpos(current_page_url(), $CONFIG->wwwroot . 'search/?tag')>-1)
+		 {
+			$tagSearch = true;
+		 }
+		 
 		if (!empty($tag)) {
 			$body = "";
-			$body .= elgg_view_title($title); // elgg_view_title(sprintf(elgg_echo('searchtitle'),$tag));
-			$body .= trigger_plugin_hook('search','',$tag,"");
+			$body .= elgg_view_title($title); // elgg_view_title(sprintf(elgg_echo('searchtitle'),$tag));			
+			
+			//the custom search doesn't work with tag searching
+			if (!$tagSearch) {
+				$body .= trigger_plugin_hook('search','',$tag,"");
+			}
+			
 			$body .= elgg_view('search/startblurb',array('tag' => $tag));
 			$body .= list_entities_from_metadata($md_type, $tag, $objecttype, $subtype, $owner_guid_array, 10, false, false);
 			$body = elgg_view_layout('two_column_left_sidebar','',$body);
 		}
-		
-		//page_draw($title,$body);
+				
+		if ($tagSearch) {
+			page_draw($title,$body);
+		}
 
 ?>

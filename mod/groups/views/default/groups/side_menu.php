@@ -7,3 +7,12 @@
 	}
 ?>
 </ul></div></div>
+<div class="sidebarBox">
+<h3>Search by Skills</h3>
+<?php 
+	foreach(preg_split('/\,/', $CONFIG->member_skills) as $skill)
+	{
+		echo '<a href="' . $vars['url'] . 'search/?tag=' . $skill . '&subtype=project&object=group&tagtype=">' . $skill . '</a><br>';
+	}
+?>
+</div>

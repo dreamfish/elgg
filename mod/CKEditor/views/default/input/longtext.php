@@ -27,23 +27,25 @@ if($xpan == $ma[1] || ($xpa[0] != "" && $xpa[1] == "undefined" && !is_numeric($m
 		
                 var drafturl = "<?php echo $vars['url']; ?>mod/blog/savedraft.php";
 		var temptitle = $("input[name='blogtitle']").val();
-		var tempbody = CKEDITOR.instances['blogbody'].getData();
-		var temptags = $("input[name='blogtags']").val();
-                pathArray = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-                postid = pathArray[0].split("=");
-               
-                var postdata = { blogtitle: temptitle, blogbody: tempbody + "~^|!#" + postid[1], blogtags: temptags };
-
-                $.post(drafturl, postdata, function() {
-			var d = new Date();
-			var mins = d.getMinutes() + '';
-			if (mins.length == 1) mins = '0' + mins;
-			$("span#draftSavedCounter").html(d.getHours() + ":" + mins);
-		});
-        }
-        $("div.publish_controls").html('<p><a onclick="javascript:saveDraftCKE(false);return false;" href="#">Save Draft</a></p>');
-        $("div.preview_button").html('<a onclick="CKEDITOR.tools.callFunction(6, this);"> Preview </a>');
-        <? 
+			var tempbody = CKEDITOR.instances['blogbody'].getData();
+			var temptags = $("input[name='blogtags']").val();
+					pathArray = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+					postid = pathArray[0].split("=");
+				   
+					var postdata = { blogtitle: temptitle, blogbody: tempbody + "~^|!#" + postid[1], blogtags: temptags };
+/*
+					$.post(drafturl, postdata, function() {
+				var d = new Date();
+				var mins = d.getMinutes() + '';
+				if (mins.length == 1) mins = '0' + mins;
+				$("span#draftSavedCounter").html(d.getHours() + ":" + mins);
+			});
+			*/
+			}
+			$("div.publish_controls").html('<p><a onclick="javascript:saveDraftCKE(false);return false;" href="#">Save Draft</a></p>');
+			$("div.preview_button").html('<a onclick="CKEDITOR.tools.callFunction(6, this);"> Preview </a>');
+		
+        <?         
         if($match == true)
         {
         ?>
@@ -78,7 +80,8 @@ if($xpan == $ma[1] || ($xpa[0] != "" && $xpa[1] == "undefined" && !is_numeric($m
             $(document).ready(function(){
             $("input[name='blogtitle']").val("");
             $("input[name='blogtags']").val("");
-            CKEDITOR.instances['blogbody'].setData("");
+            if (CKEDITOR.instances.blogbody != null)
+				CKEDITOR.instances['blogbody'].setData("");
             });
        <?
         }
