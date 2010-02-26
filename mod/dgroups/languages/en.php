@@ -19,7 +19,7 @@
 			'dgroups:owned' => "groups you own",
 			'dgroups:yours' => "Your group",
 			'dgroups:user' => "%s's group",
-			'dgroups:all' => "All site groups",
+			'dgroups:all' => "All Dreamfish groups",
 			'dgroups:new' => "Create a new group",
 			'dgroups:edit' => "Edit group",
 			'dgroups:delete' => 'Delete group',
