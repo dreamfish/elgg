@@ -8,6 +8,7 @@
 	
 			'item:site' => 'Sites',
 	
+		'content:search:results-found' => ' Found ',
 		/**
 		 * Sessions
 		 */
