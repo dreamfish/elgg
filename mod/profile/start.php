@@ -146,7 +146,7 @@
 			// The username should be the file we're getting
 			if (isset($page[0])) {
 				set_input('username',$page[0]);
-			}
+			} 
 			// Include the standard profile index
 			include($CONFIG->pluginspath . "profile/index.php");
 			
@@ -159,8 +159,7 @@
 	 */
 		function profileedit_page_handler($page) {
 			
-			global $CONFIG;
-			
+			global $CONFIG;			
 			// The username should be the file we're getting
 			if (isset($page[0])) {
 				switch ($page[0])

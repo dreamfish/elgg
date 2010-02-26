@@ -15,7 +15,10 @@
 
 	// Get the username
 		$username = get_input('username');
-		
+		if ($username == '')
+		{
+			$username = $_SESSION['user']->name;
+		}
 		$body = "";
 		
 	// Try and get the user from the username and set the page body accordingly
