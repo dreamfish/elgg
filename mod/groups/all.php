@@ -46,8 +46,8 @@
 	//get a group count
 	$group_count = get_entities("group", "project", 0, "", 10, 0, true, 0, null);
 		
-	//find groups
-	$area1 = elgg_view("groups/find");
+	//DISABLE find groups (Sx: Search by tag needs to be reconstituted or removed from the left side of the people and project lists)
+	//$area1 = elgg_view("groups/find");
 	
 	//menu options
 	$area1 .= elgg_view("groups/side_menu");
