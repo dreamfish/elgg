@@ -229,8 +229,8 @@ To remove a widget drag it back to the <b>Widget gallery</b>.",
 		 * Groups
 		 */
 	
-			'group' => "Group", 
-			'item:group' => "Groups",
+			'group' => "Project", 
+			'item:group' => "Projects",
 	
 		/**
 		 * Profile
