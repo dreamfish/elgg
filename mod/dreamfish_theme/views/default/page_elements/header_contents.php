@@ -17,7 +17,7 @@
 <div id="layout_header">
 <div id="wrapper_header">
 	<!-- display the page title -->
-	<a href="<?php echo $vars['url']; ?>"><img src="<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/header.jpg" border="0"></a></h1>	
+	<a href="<?php echo $vars['url']; ?>"><img src="<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/header.png" border="0"></a></h1>	
 </div><!-- /#wrapper_header -->
 <div id="container_search">
 <?php
