@@ -155,8 +155,8 @@ overflow:hidden;
 <div id="navigation" class="clearpush">
 <ul class="tabnav" id="topleftnav">
 <?php if (isloggedin()) { ?>
-<li <?php echo strpos(current_page_url(),"pg/dashboard") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/dashboard/"><span><h4>Home</h4></span></a>
+<li <?php echo strpos(current_page_url(),"") ? "class=\"selected\"" :"" ?>>
+	<a href="<?php echo $vars['url']; ?>"><span><h4>Home</h4></span></a>
 </li>
 
 <li <?php echo strpos(current_page_url(),"mod/members") ? "class=\"selected\"" :"" ?>>
@@ -176,8 +176,8 @@ overflow:hidden;
 	<li><a href="<?php echo $vars['url']; ?>pg/pages/view/208/">meeting space</a></li>
 	</ul>
 </li>
-<li <?php echo strpos(current_page_url(),"profile") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $_SESSION['user']->getURL(); ?>"><span><h4>My Dreamfish</h4></span></a>
+<li <?php echo strpos(current_page_url(),"dashboard") ? "class=\"selected\"" :"" ?>>
+	<a href="<?php echo $vars['url']; ?>pg/dashboard"><span><h4>My Dreamfish</h4></span></a>
 	
 	<ul>
 	<li><a href="<?php echo $vars['url']; ?>pg/dashboard/">dashboard</a></li>
