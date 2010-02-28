@@ -185,9 +185,11 @@ overflow:hidden;
 	<li><a href="#">settings</a></li>
 	</ul>
 </li>
+<!--
 <li <?php echo strpos(current_page_url(),"riverdashboard") ? "class=\"selected\"" :"" ?>>
 	<a href="<?php echo $vars['url']; ?>mod/riverdashboard"><span><h4>Activity</h4></span></a>
 </li>
+-->
 <li <?php echo strpos(current_page_url(),"chat") ? "class=\"selected\"" :"" ?>>
 	<a href="<?php echo $vars['url']; ?>pg/chat"><span><h4><span class="chat"></span></h4></span></a>
 </li>
