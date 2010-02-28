@@ -16,8 +16,7 @@
 		$iconsize = "large";
 	} else {
 		$iconsize = "medium";
-	}
-	
+	}	
 	// wrap all profile info
 	echo "<div id=\"profile_info\">";
 
@@ -46,6 +45,10 @@
 
     echo "</div>";
     echo "<div class=\"clearfloat\"></div>";
+	if ($vars['entity']->canEdit()) {
+		echo '<a href="' . $vars['url'] . 'mod/profile/editicon.php' . '">'. elgg_echo('profile:editicon').'</a>';
+	}
+    
      // display relevant links			
     echo elgg_view("profile/profilelinks", array("entity" => $vars['entity']));
        

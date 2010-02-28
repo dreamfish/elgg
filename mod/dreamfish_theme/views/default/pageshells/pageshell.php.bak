@@ -52,6 +52,7 @@ body, #wrapper_header, #layout_header { background-color: rgb(157,16,9); }
 	position: relative;	
 	margin-right:5px;
 	top: -1px;
+	z-index: 50000;
 }
 
 .tabnav a {

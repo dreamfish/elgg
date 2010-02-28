@@ -65,8 +65,10 @@
 			$content = list_user_search($tag);
 			break;
 			case "search_tags":
-			$content = trigger_plugin_hook('search','',$tag,"");
+			//$content = trigger_plugin_hook('search','',$tag,"");
 			$content .= list_entities_from_metadata("", $tag, "user", "", "", 10, false, false);
+			$members  = get_entities_from_metadata("", $tag, "user", "", 0, 1000, 0, '', 0, true, false);
+			
 			break;
 			case 'default':
 			$content = list_entities("user","",0,10,false, true);

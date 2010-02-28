@@ -107,7 +107,6 @@
 				
 				$guid = $_SESSION['guid'];					
 				add_widget ( $guid, 'river_widget', 'dashboard', 1, 1 );				
-				add_widget ( $guid, 'a_users_groups', 'dashboard', 2, 1 );
 				add_widget ( $guid, 'bookmarks', 'dashboard', 3, 1 );
 				add_widget ( $guid, 'tasks', 'dashboard', 4, 1 );
 				

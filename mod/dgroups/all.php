@@ -31,7 +31,7 @@
 			$objects = list_entities('group',"dgroup", 0, $limit, false);
 			break;
 			case "pop":
-			$objects = list_entities_by_relationship_count('member');
+			$objects = list_entities_by_relationship_count('member', 'false', 'group', 'dgroup');
 			break;
 			case "active":
 			$objects = list_entities_from_annotations("object", "dgroupforumtopic", "dgroup_topic_post", "", 40, 0, 0, false, true);
@@ -45,8 +45,8 @@
 	//get a dgroup count
 	$dgroup_count = get_entities("dgroup", "dgroup", 0, "", 10, 0, true, 0, null);
 		
-	//find dgroups
-	$area1 = elgg_view("dgroups/find");
+	//DISABLE find dgroups Sx: Search by tag needs to be reconstituted or removed from the left side of the people and project lists
+	//$area1 = elgg_view("dgroups/find");
 	
 	//menu options
 	$area1 .= elgg_view("dgroups/side_menu");

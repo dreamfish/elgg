@@ -31,8 +31,9 @@ if (empty($vars['title'])) {
 <?php echo elgg_view('page_elements/header_contents', $vars); ?>
 
 <style>
-body { padding: 0; margin: 0; }
-body, #wrapper_header, #layout_header { background-color: rgb(157,16,9); }
+body { padding: 0; margin: 0; background-color: rgb(157,16,9); }
+#wrapper_header { padding-left: 10px; }
+#wrapper_header, #layout_header { background-color: rgb(157,16,9); }
 #layout_canvas  { margin: 0;  }
 #two_column_left_sidebar {  background-color: rgb(216,244,255); }
 #layout-canvas { width: 960px; }
@@ -41,28 +42,67 @@ body, #wrapper_header, #layout_header { background-color: rgb(157,16,9); }
 /* begin css tabs */
 
 ul.tabnav {
-	margin: 0 0 4px 0;
-	padding: 4px 0 0 10px; /* THIRD number must change with respect to padding-top (X) below */
+	margin: 0;
+	margin-left: 10px;
+	padding: 0; /* THIRD number must change with respect to padding-top (X) below */
 	list-style-type: none;
 }
 
 ul.tabnav li {
-	display: inline;
+	list-style-type: none;
+	margin-right: 5px;
+	float: left;
 	position: relative;
+	z-index: 50000;
 }
 
 ul.tabnav li a {
-	margin-right: 0px;
-	padding: 5px 12px;
-	color: #ffffff;
-	background-color: #ae1a10;
+	display: block;
+	height: 30px;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/tab_left_R.png') left center no-repeat;
+	padding-left: 5px;
 	text-decoration: none;
-	font: bold 10pt Verdana, Arial, sans-serif;
+	color: #fff;
+	font-family: AvantGarde, Verdana;
 }
 
 ul.tabnav li a:hover {
-	background-color: #fff;
-	color: #ae1a10;
+	color: #c00;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/tab_left.png') left center no-repeat;
+}
+
+ul.tabnav li a span {
+	display: block;
+	padding-right: 5px;
+	height: 30px;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/tab_right_R.png') right center no-repeat;
+}
+
+ul.tabnav li a:hover span {
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/tab_right.png') right center no-repeat;
+}
+
+ul.tabnav li a span h4 {
+	font-weight: normal;
+	text-transform: lowercase;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/bg.png');
+	line-height: 30px;
+}
+
+ul.tabnav li a span h4 span.chat {
+	display: block;
+	width: 16px;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/chat_alt_stroke_16x16.png') center center no-repeat;
+}
+
+ul.tabnav li a span h4 span.mail {
+	display: block;
+	width: 16px;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/mail_16x12.png') center center no-repeat;
+}
+
+ul li a:hover span h4, ul li a:hover span img {
+	background: #fff;
 }
 
 ul.tabnav li ul { /* second-level lists */
@@ -72,27 +112,27 @@ ul.tabnav li ul { /* second-level lists */
 }
 
 ul.tabnav li:hover ul {
-	margin-top: 4px;
-	padding: 0;
-	display: block;
-	width: 150px;
-}
-
-ul.tabnav li:hover ul li {
 	margin: 0;
 	padding: 0;
 	display: block;
 }
 
+ul.tabnav li:hover ul li {
+	margin: 0;
+	padding: 0;
+	clear: both;
+}
+
 ul.tabnav li ul li a {
-	margin-right: 0px;
-	padding: 5px 12px;
+	margin: 0;
+	padding: 0 5px;
 	color: #ffffff;
-	background-color: #ae1a10;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/bg.png');
 	text-decoration: none;
-	font: bold 10pt Verdana, Arial, sans-serif;
-	width: 100%;
+	font-family: AvantGarde, Verdana;
+	width: 150px;
 	display: block;
+	line-height: 30px;
 }
 
 ul.tabnav li ul li a:hover {
@@ -109,25 +149,25 @@ height:0px;
 overflow:hidden;
 }
 #wrapper_header { float: left; width: 600px; }
-#container_search { float: left; width: 280px; margin-top:30px; }
-
+#container_search { float: left; width: 280px; margin-top:20px; }
+#two_column_left_sidebar_maincontent { background-color: #f0f0f0; }
 </style>
 <div id="navigation" class="clearpush">
 <ul class="tabnav" id="topleftnav">
 <?php if (isloggedin()) { ?>
 <li <?php echo strpos(current_page_url(),"pg/dashboard") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/dashboard/">home</a>
+	<a href="<?php echo $vars['url']; ?>pg/dashboard/"><span><h4>Home</h4></span></a>
 </li>
 
 <li <?php echo strpos(current_page_url(),"mod/members") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>mod/members">people</a>
+	<a href="<?php echo $vars['url']; ?>mod/members"><span><h4>People</h4></span></a>
 </li>
 	
 <li <?php echo strpos(current_page_url(),"groups") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/groups/world">projects</a>
+	<a href="<?php echo $vars['url']; ?>pg/groups/world"><span><h4>Projects</h4></span></a>
 </li>
 <li <?php echo strpos(current_page_url(),"community") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/page/community">community</a>
+	<a href="<?php echo $vars['url']; ?>pg/page/community"><span><h4>Community</h4></span></a>
 	
 	<ul>
 	<li><a href="<?php echo $vars['url']; ?>mod/blogextended/group.php">labs</a></li>
@@ -137,7 +177,7 @@ overflow:hidden;
 	</ul>
 </li>
 <li <?php echo strpos(current_page_url(),"profile") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $_SESSION['user']->getURL(); ?>">my dreamfish</a>
+	<a href="<?php echo $_SESSION['user']->getURL(); ?>"><span><h4>My Dreamfish</h4></span></a>
 	
 	<ul>
 	<li><a href="<?php echo $vars['url']; ?>pg/dashboard/">dashboard</a></li>
@@ -146,27 +186,27 @@ overflow:hidden;
 	</ul>
 </li>
 <li <?php echo strpos(current_page_url(),"riverdashboard") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>mod/riverdashboard">activity</a>
+	<a href="<?php echo $vars['url']; ?>mod/riverdashboard"><span><h4>Activity</h4></span></a>
 </li>
 <li <?php echo strpos(current_page_url(),"chat") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/chat"><img src="<?php echo $vars['url']; ?>/mod/dreamfish_theme/graphics/chat_alt_stroke_16x16.png" border="0"></a>
+	<a href="<?php echo $vars['url']; ?>pg/chat"><span><h4><span class="chat"></span></h4></span></a>
 </li>
 <li <?php echo strpos(current_page_url(),"messages") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>mod/messages"><img src="<?php echo $vars['url']; ?>/mod/dreamfish_theme/graphics/mail_16x12.png" border="0"></a>
+	<a href="<?php echo $vars['url']; ?>mod/messages"><span><h4><span class="mail"></span></h4></span></a>
 </li>
 <? } else { ?>
 <li <?php echo current_page_url() == $vars['url'] ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>">home</a>
+	<a href="<?php echo $vars['url']; ?>"><span><h4>Home</h4></span></a>
 </li>
 
 <li <?php echo strpos(current_page_url(),"mod/members") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>mod/members">people</a>
+	<a href="<?php echo $vars['url']; ?>mod/members"><span><h4>People</h4></span></a>
 </li>
 <li <?php echo strpos(current_page_url(),"groups") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/groups/world">projects</a>
+	<a href="<?php echo $vars['url']; ?>pg/groups/world"><span><h4>Projects</h4></span></a>
 </li>
 <li <?php echo strpos(current_page_url(),"community") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/page/community">community</a>
+	<a href="<?php echo $vars['url']; ?>pg/page/community"><span><h4>Community</h4></span></a>
 	
 	<ul>
 	<li><a href="<?php echo $vars['url']; ?>mod/blogextended/group.php">labs</a></li>
@@ -181,11 +221,11 @@ overflow:hidden;
 <ul class="tabnav"  id="toprightnav">
 
 <?php if (isloggedin()) { ?>
-<li><a href="<?php echo $vars['url']; ?>action/logout"><small><?php echo elgg_echo('logout'); ?></small></a>
+<li><a href="<?php echo $vars['url']; ?>action/logout"><span><h4><?php echo elgg_echo('logout'); ?></h4></span></a>
  </li>
 <? } else { ?>
-<li><a href="<?php echo $vars['url']; ?>pg/page/become_a_member">join dreamfish</a></li>
-<li><a href="<?php echo $vars['url']; ?>pg/page/login">sign in</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/page/become_a_member"><span><h4>Join Dreamfish</h4></span></a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/page/login"><span><h4>Sign In</h4></span></a></li>
 <? } ?>
 </ul>
 <div class="clear"></div>

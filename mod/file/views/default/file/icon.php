@@ -13,6 +13,7 @@
 	global $CONFIG;
 	
 	$mime = $vars['mimetype'];
+  
 	if (isset($vars['thumbnail'])) {
 		$thumbnail = $vars['thumbnail'];
 	} else {
@@ -23,7 +24,6 @@
 	if ($size != 'large') {
 		$size = 'small';
 	}
-	
 	// Handle 
 	switch ($mime)
 	{

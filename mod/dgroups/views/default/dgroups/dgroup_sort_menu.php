@@ -13,11 +13,17 @@
 	 //url
 	 $url = $vars['url'] . "pg/dgroups/world/";
 
+	$pages = search_for_object('DF_'.'Starting_A_Group');
+	if ($pages && sizeof($pages) > 0) {
+		$toptext .= $pages[0]->description;
+	} 
+
+
 ?>
+<?php echo $toptext ?>
 <div id="elgg_horizontal_tabbed_nav">
 <ul>
 	<li <?php if($filter == "newest") echo "class='selected'"; ?>><a href="<?php echo $url; ?>?filter=newest"><?php echo elgg_echo('dgroups:newest'); ?></a></li>
-	<li <?php if($filter == "pop") echo "class='selected'"; ?>><a href="<?php echo $url; ?>?filter=pop"><?php echo elgg_echo('dgroups:popular'); ?></a></li>
 	<li <?php if($filter == "active") echo "class='selected'"; ?>><a href="<?php echo $url; ?>?filter=active"><?php echo elgg_echo('dgroups:latestdiscussion'); ?></a></li>
 </ul>
 </div>

@@ -43,9 +43,11 @@ function blogextended_init(){
   
   $options = array(
   				""=>"All",
+				"WorkStories"=>"Work Stories",
   				"HowTo"=>"How To's",
-  				"WorkStories"=>"Work Stories",
-  				"ManagingProjects"=>"Managing Projects",
+  				"GroupGuides"=>"Group Guides",
+  				"ManagingProjects"=>"Managing a Project",
+  				"TellingYourStory"=>"Telling your Story"
   );
 
   

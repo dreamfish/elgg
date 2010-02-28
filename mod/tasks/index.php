@@ -22,7 +22,26 @@
 	// List tasks
 		$area2 = elgg_view_title(sprintf(elgg_echo('tasks:read'), $page_owner->name));
 		set_context('search');
-		$area2 .= list_entities('object','tasks',page_owner());
+		$status = get_input('status');	
+		if ($status == '') {
+			$area2 .= list_entities('object','tasks',page_owner(), 20);
+		}
+		else
+		{
+			if ($status == 'open')
+				$area2 .= list_entities_from_metadata('status', '0', 'object','tasks',page_owner(), 20);
+			elseif ($status == 'closed')
+				$area2 .= list_entities_from_metadata('status', '5', 'object','tasks',page_owner(), 20);
+			elseif ($status == 'info')
+				$area2 .= list_entities_from_metadata('status', '4', 'object','tasks',page_owner(), 20);
+			elseif ($status == 'testing')
+				$area2 .= list_entities_from_metadata('status', '3', 'object','tasks',page_owner(), 20);
+			elseif ($status == 'progress')
+				$area2 .= list_entities_from_metadata('status', '2', 'object','tasks',page_owner(), 20);
+			elseif ($status == 'assigned')
+				$area2 .= list_entities_from_metadata('status', '1', 'object','tasks',page_owner(), 20);
+
+		}
 		set_context('tasks');
 		
 	// Format page

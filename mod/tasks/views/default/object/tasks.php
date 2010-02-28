@@ -67,7 +67,9 @@
 		
 	} else {
 
+//die(var_dump(get_metadata_for_entity(85)));
 ?>
+
 	<?php echo elgg_view_title(elgg_echo('tasks:shareditem'), false); ?>
 	<div class="contentWrapper">
 	<div class="sharing_item">

@@ -28,10 +28,10 @@
 	else{
 		switch($filter){
 			case "newest":
-			$objects = list_entities('group',"project", 0, $limit, false);
+			$objects = list_entities('group','project', 0, $limit, false);
 			break;
 			case "pop":
-			$objects = list_entities_by_relationship_count('member');
+			$objects = list_entities_by_relationship_count('member', 'false', 'group', 'project');
 			break;
 			case "active":
 			$objects = list_entities_from_annotations("object", "groupforumtopic", "group_topic_post", "", 40, 0, 0, false, true);
@@ -42,11 +42,12 @@
 		}
 	}
 	
+
 	//get a group count
 	$group_count = get_entities("group", "project", 0, "", 10, 0, true, 0, null);
 		
-	//find groups
-	$area1 = elgg_view("groups/find");
+	//DISABLE find groups (Sx: Search by tag needs to be reconstituted or removed from the left side of the people and project lists)
+	//$area1 = elgg_view("groups/find");
 	
 	//menu options
 	$area1 .= elgg_view("groups/side_menu");

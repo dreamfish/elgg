@@ -31,7 +31,7 @@
 	$dgroup = new ElggGroup($dgroup_guid); // load if present, if not create a new dgroup
 	$dgroup->subtype = 'dgroup';
 
-	if (($dgroup_guid) && (!$dgroup->canEdit()))
+	if (($dgroup_guid) && (!$dgroup->canEdit()) && !isadminloggedin())
 	{
 		register_error(elgg_echo("dgroups:cantedit"));
 		
@@ -101,7 +101,6 @@
 		$filehandler->open("write");
 		$filehandler->write(get_uploaded_file('icon'));
 		$filehandler->close();
-		
 		$thumbtiny = get_resized_image_from_existing_file($filehandler->getFilenameOnFilestore(),25,25, true);
 		$thumbsmall = get_resized_image_from_existing_file($filehandler->getFilenameOnFilestore(),40,40, true);
 		$thumbmedium = get_resized_image_from_existing_file($filehandler->getFilenameOnFilestore(),100,100, true);

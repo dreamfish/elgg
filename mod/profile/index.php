@@ -15,7 +15,10 @@
 
 	// Get the username
 		$username = get_input('username');
-		
+		if ($username == '')
+		{
+			$username = get_loggedin_user()->username;
+		}
 		$body = "";
 		
 	// Try and get the user from the username and set the page body accordingly

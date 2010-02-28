@@ -85,6 +85,7 @@
 				$assign_list[$friends->getGUID()] = $friends->name;
     }	
 ?>
+ <?php echo elgg_view('input/securitytoken'); ?>
 
 		<table class="tasks" width="100%">
 			<tr>
@@ -171,13 +172,13 @@
 				<label>
 				<?php echo elgg_echo('tasks:status'); ?>	
 				<?php
-					echo elgg_view('input/pulldown', array(
+						echo elgg_view('input/pulldown', array(
 							'internalname' => 'status',
-							'options_values' => array( '0' => "",
+							'options_values' => array( '0' => "Open",
 													   '1' => elgg_echo('tasks:task_status_1'),
 													   '2' => elgg_echo('tasks:task_status_2'),
 				                                 	   '3' => elgg_echo('tasks:task_status_3'),
-							                           '4' => elgg_echo('tasks:task_status_4'),
+				                                 	   '4' => elgg_echo('tasks:task_status_4'),
 							                           '5' => elgg_echo('tasks:task_status_5'),
 							                         ),
 							'value' => $status
