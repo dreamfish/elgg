@@ -177,8 +177,8 @@
 			'name' => 'text',
 			'description' => 'longtext',
 			'briefdescription' => 'text',
-			'interests' => 'tags',
-			'website' => 'url',
+	//		'interests' => 'tags',
+	//		'website' => 'url',
 							   
 		);
 		
