@@ -30,128 +30,6 @@ if (empty($vars['title'])) {
 <?php echo elgg_view('page_elements/header', $vars); ?>
 <?php echo elgg_view('page_elements/header_contents', $vars); ?>
 
-<style>
-body { padding: 0; margin: 0; background-color: rgb(157,16,9); }
-#wrapper_header { padding-left: 10px; }
-#wrapper_header, #layout_header { background-color: rgb(157,16,9); }
-#layout_canvas  { margin: 0;  }
-#two_column_left_sidebar {  background-color: rgb(216,244,255); }
-#layout-canvas { width: 960px; }
-#one_column { background-color: #ffffff; }
-
-/* begin css tabs */
-
-ul.tabnav {
-	margin: 0;
-	margin-left: 10px;
-	padding: 0; /* THIRD number must change with respect to padding-top (X) below */
-	list-style-type: none;
-}
-
-ul.tabnav li {
-	list-style-type: none;
-	margin-right: 5px;
-	float: left;
-	position: relative;
-	z-index: 50000;
-}
-
-ul.tabnav li a {
-	display: block;
-	height: 30px;
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/tab_left_R.png') left center no-repeat;
-	padding-left: 5px;
-	text-decoration: none;
-	color: #fff;
-	font-family: AvantGarde, Verdana;
-}
-
-ul.tabnav li a:hover {
-	color: #c00;
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/tab_left.png') left center no-repeat;
-}
-
-ul.tabnav li a span {
-	display: block;
-	padding-right: 5px;
-	height: 30px;
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/tab_right_R.png') right center no-repeat;
-}
-
-ul.tabnav li a:hover span {
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/tab_right.png') right center no-repeat;
-}
-
-ul.tabnav li a span h4 {
-	font-weight: normal;
-	text-transform: lowercase;
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/bg.png');
-	line-height: 30px;
-}
-
-ul.tabnav li a span h4 span.chat {
-	display: block;
-	width: 16px;
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/chat_alt_stroke_16x16.png') center center no-repeat;
-}
-
-ul.tabnav li a span h4 span.mail {
-	display: block;
-	width: 16px;
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/mail_16x12.png') center center no-repeat;
-}
-
-ul li a:hover span h4, ul li a:hover span img {
-	background: #fff;
-}
-
-ul.tabnav li ul { /* second-level lists */
-	position: absolute;
-	left: 0;
-	display: none;
-}
-
-ul.tabnav li:hover ul {
-	margin: 0;
-	padding: 0;
-	display: block;
-}
-
-ul.tabnav li:hover ul li {
-	margin: 0;
-	padding: 0;
-	clear: both;
-}
-
-ul.tabnav li ul li a {
-	margin: 0;
-	padding: 0 5px;
-	color: #ffffff;
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/bg.png');
-	text-decoration: none;
-	font-family: AvantGarde, Verdana;
-	width: 150px;
-	display: block;
-	line-height: 30px;
-}
-
-ul.tabnav li ul li a:hover {
-	background-color: #fff;
-	color: #ae1a10;
-}
-
-#navigation { width: 960px; }
-#topleftnav { float: left; width:650px;}
-#toprightnav { float: right; width: 250px; }
-.clear {
-clear:both;
-height:0px;
-overflow:hidden;
-}
-#wrapper_header { float: left; width: 600px; }
-#container_search { float: left; width: 280px; margin-top:20px; }
-#two_column_left_sidebar_maincontent { background-color: #f0f0f0; }
-</style>
 <div id="navigation" class="clearpush">
 <ul class="tabnav" id="topleftnav">
 <?php if (isloggedin()) { ?>
@@ -279,7 +157,7 @@ echo elgg_view("navigation/topbar_tools");
 
 <div class="clearfloat"></div>
 <div id="footer">
-<img src="<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/footer.jpg" border="0">
+
 </div>
 </div><!-- /#layout_canvas -->
 <?       if ($vars['user']->admin || $vars['user']->siteadmin) { ?>

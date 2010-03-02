@@ -17,6 +17,9 @@
     register_plugin_hook('permissions_check', 'all', 'dreamfish_permissions_check');
     add_group_tool_option('blogposts','Enable Blog Posts',true);
     register_elgg_event_handler('pagesetup','system','df_pagesetup');    
+   
+   	   	// Extend system CSS with our own styles
+	extend_view('css','dreamfish_theme/css');
 
 		//the following tags need to be added to \engine\lib\input.php's allowedtags
 		/*
@@ -107,6 +110,7 @@
 				
 				$guid = $_SESSION['guid'];					
 				add_widget ( $guid, 'river_widget', 'dashboard', 1, 1 );				
+				add_widget ( $guid, 'a_users_groups', 'dashboard', 2, 1 );
 				add_widget ( $guid, 'bookmarks', 'dashboard', 3, 1 );
 				add_widget ( $guid, 'tasks', 'dashboard', 4, 1 );
 				
