@@ -48,11 +48,9 @@ if (empty($vars['title'])) {
 	<a href="<?php echo $vars['url']; ?>pg/page/community"><span><h4>Community</h4></span></a>
 	
 	<ul>
-	<li><a href="<?php echo $vars['url']; ?>mod/riverdashboard/">Activity</a></li>
+	<li><a href="<?php echo $vars['url']; ?>mod/riverdashboard/">activity</a></li>
 	<li><a href="<?php echo $vars['url']; ?>mod/blogextended/group.php">labs</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/dgroups/world">Groups</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/pages/view/209/">Updates</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/pages/view/208/">Meeting Space</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/dgroups/world">groups</a></li>
 	</ul>
 </li>
 <li <?php echo strpos(current_page_url(),"dashboard") ? "class=\"selected\"" :"" ?>>
@@ -90,11 +88,9 @@ if (empty($vars['title'])) {
 	<a href="<?php echo $vars['url']; ?>pg/page/community"><span><h4>Community</h4></span></a>
 	
 	<ul>
-	<li><a href="<?php echo $vars['url']; ?>mod/riverdashboard/">Activity</a></li>
-	<li><a href="<?php echo $vars['url']; ?>mod/blogextended/group.php">Labs</a></li>
-	<li><a href="#">Groups</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/pages/view/209/">Updates</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/pages/view/208/">Meeting Space</a></li>
+	<li><a href="<?php echo $vars['url']; ?>mod/riverdashboard/">activity</a></li>
+	<li><a href="<?php echo $vars['url']; ?>mod/blogextended/group.php">labs</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/dgroups/world">groups</a></li>
 	</ul>
 </li>
 <? }  // end if(isloggedin) ?>
