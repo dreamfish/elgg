@@ -1,22 +1,25 @@
 <?php
 	/**
-	 * Elgg customindex plugin
-	 * This plugin substitutes the frontpage with a custom one
+	 * Elgg dreamfish_theme plugin
+	 * This plugin plugs the dreamfish theme into elgg
 	 * 
 		* @package Customdash
 	 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU Public License version 2
-	 * @author Boris Glumpler
-	 * @copyright Boris Glumpler 2008
-	 * @link /travel-junkie.com
+	 * @author Astrid Johannson 
+	 * @copyright dreamfish.com 2010
 	 */
 
-	function customindex_init() {
+	function dreamfish_theme_init() {
 
 		register_plugin_hook('index','system','new_index');		
 		register_page_handler('dashboard','new_dashboard');
     register_plugin_hook('permissions_check', 'all', 'dreamfish_permissions_check');
     add_group_tool_option('blogposts','Enable Blog Posts',true);
     register_elgg_event_handler('pagesetup','system','df_pagesetup');    
+
+	// inserts dreamfish-specific form elements and JS on the registration page.
+        extend_view('account/forms/register', 'register');
+
    
    	   	// Extend system CSS with our own styles
 	extend_view('css','dreamfish_theme/css');
@@ -69,17 +72,17 @@
   }
   
   function new_dashboard($page) {
-		customindex_fetchpage(array('MemberDashboard'));
+		dreamfish_theme_fetchpage(array('MemberDashboard'));
   }
 
 	function new_index() {
-		//if (!@include_once(dirname(dirname(__FILE__))) . "/customindex/index.php") return false;
+		//if (!@include_once(dirname(dirname(__FILE__))) . "/dreamfish_theme/index.php") return false;
 		//return true;
-		customindex_fetchpage(array('Home'));
+		dreamfish_theme_fetchpage(array('Home'));
 		return true;
 	}
 
-	function customindex_fetchpage($page) {
+	function dreamfish_theme_fetchpage($page) {
 		$body = "";
 		switch ($page[0]) 
 		{
@@ -136,6 +139,6 @@
 		echo page_draw(null, $content);
 		
 	}
-	register_elgg_event_handler('init','system','customindex_init');
-	register_page_handler('page', 'customindex_fetchpage');
+	register_elgg_event_handler('init','system','dreamfish_theme_init');
+	register_page_handler('page', 'dreamfish_theme_fetchpage');
 ?>

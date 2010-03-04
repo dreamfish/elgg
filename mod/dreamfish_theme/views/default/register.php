@@ -4,15 +4,15 @@
 //Also, it adds some validation to the form
 ?>
 <script language="javascript" type="text/javascript">
-//var form = $("form");
+var form = $("form");
 //form.append('<input type="checkbox" name="terms" value="terms" />');
 
 function validateForm() {
 	var ok = true;
-	var regform = document.forms[0];
-//	var form = $("form");
+	var regform = document.forms.regform;
 
-	if ( regform.yes_dreamfish.checked == false ) {
+
+	if ( ! (regform.yes_dreamfish.checked  ) ) {
 		alert("Please confirm that you read the terms and the guidelines!");
 		ok = false;
 	}
@@ -41,6 +41,7 @@ function validateForm() {
 		alert("Password repetition cannot be empty");
 		ok = false;
 	}
+
 	if (regform.password.value != regform.password2.value) {
 		alert("Passwords do not match!");
 		ok = false;
