@@ -2629,3 +2629,132 @@ overflow:hidden;
 }
 
 #container_search { float: left; width: 280px; margin-top:20px; }
+
+/* Front Page Styling */
+
+#df_rollovers {
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%
+}
+	
+ul.bluewavy {
+	margin: 0;
+	padding: 0;
+	width: 960px;
+	height: 350px;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/bluewavy.png') no-repeat;
+}
+
+ul.bluewavy li {
+	margin: 0;
+	padding: 0;
+	float: left;
+	width: 480px;
+	height: 350px;
+	display: block;
+}
+
+ul.bluewavy li.rollover {
+	margin: 0;
+	padding: 0;
+}
+
+ul.bluewavy li.people {
+	margin: 0;
+	padding: 0;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/df_peeps.png') no-repeat;
+}
+
+#df_buttons ul.frontbuttons {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	margin-top: 25px;
+	clear: both;
+}
+
+#df_buttons ul.frontbuttons li {
+	margin: 0;
+	padding: 0 0 150px 0;
+	float: left;
+}
+
+#df_buttons a {
+	margin-left: 22px;
+	margin-right: 23px;
+	position: relative;
+}
+
+#df_buttons a span {
+	margin: 0;
+	padding: 0;
+	display: none;
+}
+
+#df_buttons a.people_button:hover span {
+	margin: 0;
+	padding: 0;
+	display: block;
+	width: 500px;
+	height: 350px;
+	position: absolute;
+	left: -22px;
+	bottom: 225px;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/people_rollover.png') no-repeat;
+	z-index: 500;
+}
+
+#df_buttons a.projects_button:hover span {
+	margin: 0;
+	padding: 0;
+	display: block;
+	width: 500px;
+	height: 350px;
+	position: absolute;
+	left: -342px;
+	bottom: 225px;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/projects_rollover.png') no-repeat;
+	z-index: 500;
+}
+
+#df_buttons a.membership_button:hover span {
+	margin: 0;
+	padding: 0;
+	display: block;
+	width: 500px;
+	height: 350px;
+	position: absolute;
+	left: -662px;
+	bottom: 225px;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/membership_rollover.png') no-repeat;
+	z-index: 500;
+}
+
+a.people_button {
+	margin: 0;
+	padding: 0;
+	display: block;
+	width: 275px;
+	height: 200px;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/df_people.png') no-repeat;
+}
+
+a.projects_button {
+	margin: 0;
+	padding: 0;
+	display: block;
+	width: 275px;
+	height: 200px;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/df_projects.png') no-repeat;
+}
+
+a.membership_button {
+	margin: 0;
+	padding: 0;
+	display: block;
+	width: 275px;
+	height: 200px;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/df_membership.png') no-repeat;
+}
