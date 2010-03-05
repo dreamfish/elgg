@@ -2691,6 +2691,7 @@ ul.bluewavy li.people {
 	margin: 0;
 	padding: 0;
 	display: none;
+	text-decoration: none;
 }
 
 #df_buttons a.people_button:hover span {
