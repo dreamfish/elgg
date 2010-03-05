@@ -1,0 +1,59 @@
+Uncaptcha v1.5
+Brett Profitt
+
+In addition to providing protection against spam-bots, this plugin adds 
+a way of immediately validating, enabling, and logging in new user accounts
+without the need for email verification.
+
+Uncaptcha uses a reverse captcha to protect against spam bots by inserting a 
+"trick" form element into the registration page, but hiding it from users.
+If the honey-pot form element has a value, we know a bot is posting the information
+and will deny registration to that request. 
+
+**INSTALLATION**
+	* Unzip the file to the elgg/mods/ directory.
+	* Go to your Elgg tools administration section, find the uncaptcha tool, and 
+	  enable it.
+	* Customize the settings if desired.
+
+If you plan to use Uncaptcha as a bot-guard only, simply enable the plugin and
+it will work automatically--No need to enable validation, enable user, or login
+user.  In this case, leave uservalidationbyemail enabled, too.
+
+If you plan to use Uncaptcha to validate, enable, or log in users, you must
+DISABLE uservalidationbyemail.  Note that users cannot be logged in without
+being validated and enabled.
+
+
+**CHANGES**
+v1.5
+	* Added forwarding options after user registration.
+	* Major re-working of how users are verified.  Instead of hooking into the
+		validate user even, we check in the actual registration action.
+	* Added a plugin hook "uncaptcha_register_user" where users are enabled and 
+		logged in.
+	* Code simplification.
+
+v1.4
+	* Changed from checkboxes to pulldown menus for admin settings to get around
+		oddity in Elgg Core's handling of plugin settings.
+	* Added more explicit installation instructions to README.
+
+v1.3
+	* Added default settings that fixes a bug with displaying the trick field.
+	* Clarified the settings page.
+	* Added installation instructions to README.
+
+v1.2
+	* No longer requires a patch to Elgg Core.
+	* Updates to allow request_user_validation() to work when not called 
+		during registration.
+	* Code cleanup in the language file.
+	* Better generation of uncaptcha code.
+
+v1.1
+	* Code cleanup.
+	* Use external CSS for a hidden field.
+
+v1.0
+	* Initial release.
