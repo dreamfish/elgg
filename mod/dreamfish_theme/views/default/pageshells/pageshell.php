@@ -88,7 +88,6 @@ if (empty($vars['title'])) {
 	<a href="<?php echo $vars['url']; ?>pg/page/community"><span><h4>Community</h4></span></a>
 	
 	<ul>
-	<li><a href="<?php echo $vars['url']; ?>mod/riverdashboard/">activity</a></li>
 	<li><a href="<?php echo $vars['url']; ?>mod/blogextended/group.php">labs</a></li>
 	<li><a href="<?php echo $vars['url']; ?>pg/dgroups/world">groups</a></li>
 	</ul>
