@@ -72,7 +72,7 @@
 			exit;
 		}
 	$container = get_entity($page->container_guid);
-	if (strpos($page->title, 'DFADMIN')==0 or isadmin() or ($container instanceof ElggGroup and $container->name == 'Dreamfish')) {
+	if (strpos($page->title, 'DF_')==0 or isadmin() or ($container instanceof ElggGroup and $container->name == 'Community Guides')) {
 		$page->description = get_input('description', '', false);
 	}
 
