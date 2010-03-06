@@ -433,7 +433,7 @@ To remove a widget drag it back to the <b>Widget gallery</b>.",
             'tools' => "Tools",
             'tools:yours' => "Your tools",
 	
-			'register' => "Register",
+			'register' => "Join Dreamfish",
 			'registerok' => "You have successfully registered for %s.",
 			'registerbad' => "Your registration was unsuccessful. The username may already exist, your passwords might not match, or your username or password may be too short.",
 			'registerdisabled' => "Registration has been disabled by the system administrator",
