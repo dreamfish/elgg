@@ -2692,7 +2692,6 @@ ul.bluewavy li.people {
 	margin: 0;
 	padding: 0;
 	display: none;
-	text-decoration: none;
 }
 
 #df_buttons a.people_button:hover span {
@@ -2743,6 +2742,10 @@ a.people_button {
 	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/df_people.png') top left no-repeat;
 }
 
+a.people_button:hover {
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/df_people_hover.png') top left no-repeat;
+}
+
 a.projects_button {
 	margin: 0;
 	padding: 0;
@@ -2752,6 +2755,10 @@ a.projects_button {
 	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/df_projects.png') top left no-repeat;
 }
 
+a.projects_button:hover {
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/df_projects_hover.png') top left no-repeat;
+}
+
 a.membership_button {
 	margin: 0;
 	padding: 0;
@@ -2759,4 +2766,8 @@ a.membership_button {
 	width: 275px;
 	height: 200px;
 	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/df_membership.png') top left no-repeat;
+}
+
+a.membership_button:hover {
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/df_membership_hover.png') top left no-repeat;
 }
