@@ -238,11 +238,12 @@
 		public function getFilenameOnFilestore(ElggFile $file)
 		{
 			$owner = $file->getOwnerEntity();
-			if (!$owner)
+
+      if ($owner->guid == '1')
+        $owner = get_entity($owner->container_guid);
+        
+      if (!$owner)
 				$owner = get_loggedin_user();
-					
-			if ((!$owner) || (!$owner->username))
-				$user = $_SESSION['user'];
 			
 			if ((!$owner) || (!$owner->username)) 
 				throw new InvalidParameterException(elgg_echo('InvalidParameterException:MissingOwner'));
