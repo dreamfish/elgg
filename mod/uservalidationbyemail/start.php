@@ -67,8 +67,15 @@
 			// Work out validate link
 			$link = $CONFIG->site->url . "action/email/confirm?u=$user_guid&c=" . uservalidationbyemail_generate_code($user_guid, $user->email);
 
+			//Fabio: getting the messages from db if available (I know, ugly, should not fiddle around with this plugin...
+	        	$confirm_subject_key = "email:validate:subject";
+        		$confirm_body_key = "email:validate:body";
+
+			$confirm_subject = get_custom_string_if_available($confirm_subject_key,elgg_echo($confirm_subject_key));
+			$confirm_body = get_custom_string_if_available($confirm_body_key,elgg_echo($confirm_body_key));
+
 			// Send validation email		
-			$result = notify_user($user->guid, $CONFIG->site->guid, sprintf(elgg_echo('email:validate:subject'), $user->username), sprintf(elgg_echo('email:validate:body'), $user->name, $link), NULL, 'email');
+			$result = notify_user($user->guid, $CONFIG->site->guid, sprintf($confirm_subject, $user->username), sprintf($confirm_body, $user->name, $link), NULL, 'email');
 			if ($result)
 				system_message(elgg_echo('uservalidationbyemail:registerok'));
 				
@@ -95,7 +102,43 @@
 		
 		return $valid;
 	}
+
+	/**
+	 * Dreamfish customization: Check to see if there is an updated email text in the db
+	 * If available, returns that string, otherwise returns original value
+         *
+	 * @param string $message_key
+	 * @param string $message_value
+	*/
+	function get_custom_string_if_available($message_key, $message_value)
+	{
+
+                $entity_type = 'object';
+		$subtype = 'df_custom_msg';
+		$owner_guid = 0;
+
+		$dbg = fopen ("/tmp/msg_debug.txt",'w');
+		fwrite($dbg,"get_custom");
+		$custom_messages = get_entities($entity_type, $subtype, $owner_guid);
+
+
+		fwrite($dbg,"before loop");
+		foreach ($custom_messages as $msg)
+		{
+			fwrite($dbg,"in loop");
+		
+        		if ($msg->title == $message_key)
+        		{
+				fwrite($dbg,"found");
+		                return $msg->description;
+        		}
+		}		
+				fwrite($dbg,"not found");
+		fclose($dbg);
+		return $message_value;
+	} 
 	
 	// Initialise
 	register_elgg_event_handler('init','system','uservalidationbyemail_init');
+
 ?>

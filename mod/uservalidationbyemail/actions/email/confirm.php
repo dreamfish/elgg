@@ -29,8 +29,14 @@
 		
 			$user = get_entity($user_guid);
 			$user->enable();
+
+			$email_subject_key = "email:validate:success:subject";
+			$email_body_key    = "email:validate:success:body";
+
+			$email_subject = get_custom_string_if_available($email_subject_key,elgg_echo($email_subject_key));
+			$email_body    = get_custom_string_if_available($email_body_key,elgg_echo($email_body_key));
 			
-			notify_user($user_guid, $CONFIG->site->guid, sprintf(elgg_echo('email:validate:success:subject'), $user->username), sprintf(elgg_echo('email:validate:success:body'), $user->name), NULL, 'email');
+			notify_user($user_guid, $CONFIG->site->guid, sprintf($email_subject, $user->username), sprintf($email_body, $user->name), NULL, 'email');
 			
 		} else
 			register_error(elgg_echo('email:confirm:fail'));
