@@ -14,7 +14,10 @@ $file->owner_guid = $user->guid;
 $file->subtype = "file";
 $file->originalfilename = $filestorename;
 
-$file->access_id = ACCESS_DEFAULT;
+//$file->access_id = ACCESS_DEFAULT;
+//Changed by fabio due to bug report at:
+//http://community.elgg.org/mod/plugins/read.php?guid=385093
+$file->access_id = ACCESS_LOGGED_IN;
 
 $file->open("write");
 $file->write(get_uploaded_file('upload'));
