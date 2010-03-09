@@ -65,7 +65,7 @@
 	
 			'groupforumtopic:new' => "New discussion post",
 			
-			'groups:count' => "groups created",
+			'groups:count' => "projects created",
 			'groups:open' => "open project",
 			'groups:closed' => "closed project",
 			'groups:member' => "members",

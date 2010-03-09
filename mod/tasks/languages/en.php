@@ -34,8 +34,10 @@
 	
 			'item:object:tasks' => 'tasked items',
 	
-			'tasks:group' => 'Group tasks',
-			'tasks:enabletasks' => 'Enable group tasks',
+			'tasks:group' => 'Project tasks',
+			'tasks:nogroup' => 'This project does not have any tasks yet',
+
+			'tasks:enabletasks' => 'Enable project tasks',
 	
 	
 		/**
