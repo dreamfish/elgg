@@ -2632,142 +2632,128 @@ overflow:hidden;
 
 /* Front Page Styling */
 
-#df_rollovers {
-	margin-top: 10px;
-	margin-left: auto;
-	margin-right: auto;
-	width: 100%
+#front_page {
+	margin: 0 auto;
+	padding: 0;
+	width: 960px;
 }
-	
-ul.bluewavy {
-	margin: 0;
+
+ul#bluewavy {
+	margin: 20px 0;
 	padding: 0;
 	width: 960px;
 	height: 350px;
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/bluewavy.png') no-repeat;
-}
-
-ul.bluewavy li {
-	margin: 0;
-	padding: 0;
-	float: left;
-	width: 480px;
-	height: 350px;
-	display: block;
-}
-
-ul.bluewavy li.rollover {
-	margin: 0;
-	padding: 0;
-}
-
-ul.bluewavy li.people {
-	margin: 0;
-	padding: 0;
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/df_peeps.png') no-repeat;
-}
-
-#df_buttons ul.frontbuttons {
-	margin: 0;
-	padding: 0;
+	background: url('bluewavy.png') top left no-repeat;
 	list-style-type: none;
-	margin-top: 25px;
-	clear: both;
 }
 
-#df_buttons ul.frontbuttons li {
+ul#bluewavy li {
 	margin: 0;
-	padding: 0 0 150px 0;
+	padding: 0;
 	float: left;
 }
 
-#df_buttons a {
-	margin-left: 22px;
-	margin-right: 23px;
-	position: relative;
-	text-decoration: none;
+ul#bluewavy li.df_text {
+	width: 540px;
+	height: 350px;
+	background: url('df_text.png') top left no-repeat;
 }
 
-#df_buttons a span {
+ul#bluewavy li.df_peeps {
+	width: 420px;
+	height: 350px;
+	background: url('df_peeps.png') top left no-repeat;
+}
+
+ul#df_buttons {
+	margin: 20px 0;
+	padding: 0;
+	width: 960px;
+	height: 200px;
+	list-style-type: none;
+}
+
+ul#df_buttons li {
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+ul#df_buttons li a {
+	margin: 0 22px 0 23px;
+	padding: 0;
+	width: 275px;
+	height: 200px;
+	display: block;
+	text-decoration: none;
+	position: relative;
+}
+
+ul#df_buttons li a.button_people {
+	background: url('df_people.png') top left no-repeat;
+}
+
+ul#df_buttons li a.button_people:hover {
+	background: url('df_people_hover.png') top left no-repeat;
+}
+
+ul#df_buttons li a.button_projects {
+	background: url('df_projects.png') top left no-repeat;
+}
+
+ul#df_buttons li a.button_projects:hover {
+	background: url('df_projects_hover.png') top left no-repeat;
+}
+
+ul#df_buttons li a.button_membership {
+	background: url('df_membership.png') top left no-repeat;
+}
+
+ul#df_buttons li a.button_membership:hover {
+	background: url('df_membership_hover.png') top left no-repeat;
+}
+
+ul#df_buttons li a.button_people:hover span {
+	margin: 0;
+	padding: 0;
+	display: block;
+	width: 540px;
+	height: 350px;
+	position: absolute;
+	left: -23px;
+	bottom: 220px;
+	background: url('people_rollover.png') top left no-repeat;
+	z-index: 500;
+}
+
+ul#df_buttons li a span {
 	margin: 0;
 	padding: 0;
 	display: none;
 }
 
-#df_buttons a.people_button:hover span {
+ul#df_buttons li a.button_projects:hover span {
 	margin: 0;
 	padding: 0;
 	display: block;
-	width: 500px;
+	width: 540px;
 	height: 350px;
 	position: absolute;
-	left: -22px;
-	bottom: 225px;
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/people_rollover.png') top left no-repeat;
+	left: -343px;
+	bottom: 220px;
+	background: url('projects_rollover.png') top left no-repeat;
 	z-index: 500;
 }
 
-#df_buttons a.projects_button:hover span {
+ul#df_buttons li a.button_membership:hover span {
 	margin: 0;
 	padding: 0;
 	display: block;
-	width: 500px;
+	width: 540px;
 	height: 350px;
 	position: absolute;
-	left: -342px;
-	bottom: 225px;
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/projects_rollover.png') top left no-repeat;
+	left: -663px;
+	bottom: 220px;
+	background: url('membership_rollover.png') top left no-repeat;
 	z-index: 500;
-}
-
-#df_buttons a.membership_button:hover span {
-	margin: 0;
-	padding: 0;
-	display: block;
-	width: 500px;
-	height: 350px;
-	position: absolute;
-	left: -662px;
-	bottom: 225px;
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/membership_rollover.png') top left no-repeat;
-	z-index: 500;
-}
-
-a.people_button {
-	margin: 0;
-	padding: 0;
-	display: block;
-	width: 275px;
-	height: 200px;
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/df_people.png') top left no-repeat;
-}
-
-a.people_button:hover {
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/df_people_hover.png') top left no-repeat;
-}
-
-a.projects_button {
-	margin: 0;
-	padding: 0;
-	display: block;
-	width: 275px;
-	height: 200px;
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/df_projects.png') top left no-repeat;
-}
-
-a.projects_button:hover {
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/df_projects_hover.png') top left no-repeat;
-}
-
-a.membership_button {
-	margin: 0;
-	padding: 0;
-	display: block;
-	width: 275px;
-	height: 200px;
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/df_membership.png') top left no-repeat;
-}
-
-a.membership_button:hover {
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/df_membership_hover.png') top left no-repeat;
 }
