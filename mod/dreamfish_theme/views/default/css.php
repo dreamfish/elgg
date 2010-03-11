@@ -2667,7 +2667,7 @@ ul#bluewavy li.df_peeps {
 
 ul#df_buttons {
 	margin: 20px 0;
-	padding: 0;
+	padding: 0 0 35px 0;
 	width: 960px;
 	height: 200px;
 	list-style-type: none;
@@ -2756,4 +2756,49 @@ ul#df_buttons li a.button_membership:hover span {
 	bottom: 220px;
 	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/membership_rollover.png') top left no-repeat;
 	z-index: 500;
+}
+
+ul#frontcopy {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 300px;
+}
+
+ul#frontcopy li {
+	float: left;
+}
+
+ul#frontcopy li.dfcopy {
+	margin-right: 10px;
+	width: 540px;
+}
+
+ul#frontcopy li.dfvideo {
+	margin-left: 10px;
+	width: 400px;
+}
+
+ul#frontcopy li.dfcopy a.facebook,
+ul#frontcopy li.dfcopy a.twitter,
+ul#frontcopy li.dfcopy a.vimeo {
+	margin: 0 5px;
+	padding: 0;
+	width: 20px;
+	height: 20px;
+	display: block;
+	float: left;
+	text-decoration: none;
+}
+
+ul#frontcopy li.dfcopy a.facebook {
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/facebook.png') top left no-repeat;
+}
+
+ul#frontcopy li.dfcopy a.twitter {
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/twitter.png') top left no-repeat;
+}
+
+ul#frontcopy li.dfcopy a.vimeo {
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/vimeo.png') top left no-repeat;
 }
