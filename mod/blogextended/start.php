@@ -22,7 +22,7 @@ function blogextended_init(){
   extend_view("blog/fields_before","blog/forms/type");
   extend_view("blog/fields_before","groups/groupselector");
 
-  extend_view('groups/left_column', 'groups/groupcontents',1);
+  //extend_view('groups/left_column', 'groups/groupcontents',1);
 
   add_widget_type('blog',elgg_echo('blog:widget:title'), elgg_echo('blog:widget:description'));
 
