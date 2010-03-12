@@ -40,8 +40,7 @@
 			$objects = list_entities('group',"project", 0, $limit, false);
 			break;
 		}
-	}
-	
+	}	
 
 	//get a group count
 	$group_count = get_entities("group", "project", 0, "", 10, 0, true, 0, null);
@@ -53,7 +52,7 @@
 	$area1 .= elgg_view("groups/side_menu");
 	
 	//featured groups
-	$featured_groups = get_entities_from_metadata("featured_group", "yes", "group", "", 0, 10, false, false, false);	
+	$featured_groups = get_entities_from_metadata("featured_group", "yes", "group", "project", 0, 10, false, false, false);	
 	$area1 .= elgg_view("groups/featured", array("featured" => $featured_groups));
 		
 		
@@ -61,8 +60,9 @@
 	
 	$title = sprintf(elgg_echo("groups:all"),page_owner_entity()->name);
 	$area2 = elgg_view_title($title);
-	$area2 .= elgg_view('groups/contentwrapper', array('body' => elgg_view("groups/group_sort_menu", array("count" => $group_count, "filter" => $filter)) . $objects));
+	$area2 .= elgg_view('groups/contentwrapper', array('body' => elgg_view("groups/group_sort_menu", array("count" => $group_count, "filter" => $filter)) . $objects));	
 	$body = elgg_view_layout('sidebar_boxes',$area1, $area2);
+	
 	
 	// Finally draw the page
 	page_draw($title, $body);

@@ -52,7 +52,7 @@
 	$area1 .= elgg_view("dgroups/side_menu");
 	
 	//featured dgroups
-	$featured_dgroups = get_entities_from_metadata("featured_dgroup", "yes", "dgroup", "", 0, 10, false, false, false);	
+	$featured_dgroups = get_entities_from_metadata("featured_group", "yes", "group", "dgroup", 0, 10, false, false, false);	
 	$area1 .= elgg_view("dgroups/featured", array("featured" => $featured_dgroups));
 		
 		
