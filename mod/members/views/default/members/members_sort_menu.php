@@ -23,6 +23,6 @@
 
 <div class="group_count">
 	<?php
-		echo $members . " " . elgg_echo("members:active");
+		echo elgg_echo("members:active");
 	?>
 </div>
