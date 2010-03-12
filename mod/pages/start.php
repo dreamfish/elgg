@@ -122,6 +122,18 @@
 			// See what context we're using
 			switch($page[0])
 			{
+				case "url" :
+				case "slug":
+					$pages = get_entities_from_metadata('slug', $page[1], 'object','',0, 40);
+					
+					if ($pages && sizeof($pages) > 0) {
+						$body = $pages[0]->description;
+					} else {
+						$body = 'page does not exist';
+					}
+					$content = elgg_view_layout('one_column', $body);
+					echo page_draw(null, $content);
+				break;
 				case "new" :
 					include($CONFIG->pluginspath . "pages/new.php");
           		break;

@@ -58,6 +58,17 @@
 <?php
 			
 		}
+?>
+	<p>
+		<label>
+			Slug<br />
+			<?php echo elgg_view("input/text",array(
+															'internalname' => 'slug',
+															'value' => $vars['entity']->slug,
+															)); ?>
+		</label>
+	</p>
+<?php 
 		$cats = elgg_view('categories',$vars);
 		if (!empty($cats)) {
 			

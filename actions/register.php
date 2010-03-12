@@ -59,7 +59,7 @@
 					
 					system_message(sprintf(elgg_echo("registerok"),$CONFIG->sitename));
 				
-					forward($CONFIG->wwwroot . 'pg/page/email_confirmation' );// Forward on success, assume everything else is an error...
+					forward($CONFIG->wwwroot . 'pg/pages/url/getting-started`' );// Forward on success, assume everything else is an error...
 					
 				} else {
 					register_error(elgg_echo("registerbad"));
