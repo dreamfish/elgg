@@ -8,7 +8,7 @@
 	
 	
 	$readfile = new ElggFile();
-	$file->owner_guid;
+	$readfile->owner_guid = $file->owner_guid;
 	$readfile->setFilename($file->originalfilename);
 	$filename = $readfile->getFilenameOnFilestore();
 	$handle = fopen($filename, "r");
