@@ -46,7 +46,8 @@
 		$entity->percent_done = $percent_done;
 		$entity->work_remaining = $work_remaining;
 		$entity->write_access_id = $write_access;
-		
+		$entity->description = get_input('description');
+		$entity->title = get_input('title');
 		if ($entity->save()) {
 			
 			system_message(elgg_echo('tasks:save:success'));

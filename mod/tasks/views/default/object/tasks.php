@@ -112,7 +112,7 @@
 			<p>
 
 				<a href="<?php echo $vars['url']; ?>mod/tasks/manage.php?task=<?php echo $vars['entity']->getGUID(); ?>"><?php echo elgg_echo('tasks:tasksmanage'); ?></a> &nbsp; 
-				<a href="<?php echo $vars['url']; ?>mod/tasks/add.php?task=<?php echo $vars['entity']->getGUID(); ?>"><?php echo elgg_echo('edit'); ?></a> &nbsp; 
+				
 				<?php 
 						echo elgg_view('output/confirmlink',array(
 						

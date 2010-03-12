@@ -83,7 +83,11 @@
 		<?php echo elgg_view('input/securitytoken'); ?>
 		<div class="contentWrapper">
 		<h2>
-			<?php echo elgg_view('output/text',array('value' => $title)); ?>
+			<? echo elgg_view('input/text',array(
+								'internalname' => 'title',
+								'value' => $title,
+						)); 
+			?>
 		</h2>
 		<br/>
 		<?php echo elgg_view('tasks/taskform',$vars); ?>
@@ -91,7 +95,15 @@
 			<label>
 				<?php 	echo elgg_echo('description'); ?>
 				<br />
-				<?php echo elgg_view('output/longtext', array('value' => $vars['entity']->description)); ?>
+				<?php
+				
+				 echo elgg_view('input/longtext',array(
+								'internalname' => 'description',
+								'value' => $description,
+								
+						)); 
+				 
+				 ?>
 			</label>
 		</p>
 		</div>
