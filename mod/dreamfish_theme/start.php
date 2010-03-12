@@ -143,29 +143,25 @@ function unregister_plugin_hook($hook, $entity_type, $function) {
 					$body .= $pages[0]->description;
 				} 
 			
+				
 				//clear existing widgets
-				$area1widgets = get_widgets(page_owner(),'dashboard',1);
+				$area1widgets = get_widgets(page_owner(),'custom_dashboard',1);
+				
+				//var_dump($area1widgets);
+				
 				foreach($area1widgets as $widget) {
 					$widget->delete();
 				}
-				
-				//save widgets
-				$widgettypes = get_widget_types();	
-				foreach($widgettypes as $handler => $widget) {
-					$guid = $_SESSION['guid'];					
-					//add_widget ( $guid, $handler, 'dashboard', $i, 1 );
-					//echo "<!--" . $handler . "-->";
-					$i = $i + 1;				
-				}
-				
+						
+
 				$guid = $_SESSION['guid'];					
-				add_widget ( $guid, 'river_widget', 'dashboard', 1, 1 );				
-				add_widget ( $guid, 'a_users_groups', 'dashboard', 2, 1 );
-				add_widget ( $guid, 'bookmarks', 'dashboard', 3, 1 );
-				add_widget ( $guid, 'tasks', 'dashboard', 4, 1 );
+				add_widget ( $guid, 'river_widget', 'custom_dashboard', 1, 1 );				
+				add_widget ( $guid, 'a_users_groups', 'custom_dashboard', 2, 1 );
+				add_widget ( $guid, 'bookmarks', 'custom_dashboard', 3, 1 );
+				add_widget ( $guid, 'tasks', 'custom_dashboard', 4, 1 );
 				
 				//display widgets
-				$area1widgets = get_widgets(page_owner(),'dashboard',1);
+				$area1widgets = get_widgets(page_owner(),'custom_dashboard',1);
 				foreach($area1widgets as $widget) {
 					$body .= elgg_view_entity($widget);
 				}

@@ -12,6 +12,34 @@
 
 	// Start engine
 		require_once(dirname(dirname(dirname(__FILE__))) . "/engine/start.php");
+
+function sksort(&$array, $subkey="id", $sort_ascending=false) {
+
+    if (count($array))
+        $temp_array[key($array)] = array_shift($array);
+
+    foreach($array as $key => $val){
+        $offset = 0;
+        $found = false;
+        foreach($temp_array as $tmp_key => $tmp_val)
+        {
+            if(!$found and strtolower($val[$subkey]) > strtolower($tmp_val[$subkey]))
+            {
+                $temp_array = array_merge(    (array)array_slice($temp_array,0,$offset),
+                                            array($key => $val),
+                                            array_slice($temp_array,$offset)
+                                          );
+                $found = true;
+            }
+            $offset++;
+        }
+        if(!$found) $temp_array = array_merge($temp_array, array($key => $val));
+    }
+
+    if ($sort_ascending) $array = array_reverse($temp_array);
+
+    else $array = $temp_array;
+}
 		
 		$page_owner = page_owner_entity();
 		if ($page_owner === false || is_null($page_owner)) {
@@ -24,24 +52,30 @@
 		set_context('search');
 		$status = get_input('status');	
 		if ($status == '') {
-			$area2 .= list_entities('object','tasks',page_owner(), 20);
+			$items = get_entities('object','tasks',page_owner());
 		}
 		else
 		{
+			 
 			if ($status == 'open')
-				$area2 .= list_entities_from_metadata('status', '0', 'object','tasks',page_owner(), 20);
+				$items = get_entities_from_metadata('status', '0', 'object','tasks',page_owner(), 40);
 			elseif ($status == 'closed')
-				$area2 .= list_entities_from_metadata('status', '5', 'object','tasks',page_owner(), 20);
+				$items = get_entities_from_metadata('status', '5', 'object','tasks',page_owner(), 40);
 			elseif ($status == 'info')
-				$area2 .= list_entities_from_metadata('status', '4', 'object','tasks',page_owner(), 20);
+				$items = get_entities_from_metadata('status', '4', 'object','tasks',page_owner(), 40);
 			elseif ($status == 'testing')
-				$area2 .= list_entities_from_metadata('status', '3', 'object','tasks',page_owner(), 20);
+				$items = get_entities_from_metadata('status', '3', 'object','tasks',page_owner(), 40);
 			elseif ($status == 'progress')
-				$area2 .= list_entities_from_metadata('status', '2', 'object','tasks',page_owner(), 20);
+				$items = get_entities_from_metadata('status', '2', 'object','tasks',page_owner(), 40);
 			elseif ($status == 'assigned')
-				$area2 .= list_entities_from_metadata('status', '1', 'object','tasks',page_owner(), 20);
+				$items = get_entities_from_metadata('status', '1', 'object','tasks',page_owner(), 40);
 
 		}
+		
+
+		sksort($items, "title");
+		$area2.= elgg_view_entity_list($items, count($items), 0, 20, false, false, true);;
+		
 		set_context('tasks');
 		
 	// Format page
