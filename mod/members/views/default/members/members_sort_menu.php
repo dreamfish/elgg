@@ -29,7 +29,4 @@
 </div>
 
 <div class="group_count">
-	<?php
-		echo elgg_echo("members:active");
-	?>
 </div>
