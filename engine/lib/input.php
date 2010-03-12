@@ -494,7 +494,11 @@
 			'object' => array('height'=>array(), 'width'=>array()),
 		'param' => array('name'=>array(), 'value'=>array()),
 		'embed' => array('allowfullscreen'=>array(), 'allowscriptaccess'=>array(),
-			'height'=>array(), 'src' => array(), 'type'=>array(), 'width'=>array()));
+			'height'=>array(), 'src' => array(), 'type'=>array(), 'width'=>array()),
+		'iframe' => array('frameborder'=>array(), 'scrolling'=>array(), 'style'=>array(),
+			'height'=>array(), 'src' => array(), 'type'=>array(), 'width'=>array())	
+			
+		);
 		
 
 		$CONFIG->allowedprotocols = array('http', 'https', 'ftp', 'news', 'mailto', 'rtsp', 'teamspeak', 'gopher', 'mms',
