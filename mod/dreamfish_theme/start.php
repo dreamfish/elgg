@@ -1,5 +1,13 @@
 <?php
-
+	/**
+	 * Elgg dreamfish_theme plugin
+	 * This plugin plugs the dreamfish theme into elgg
+	 * 
+		* @package Customdash
+	 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU Public License version 2
+	 * @author Astrid Johannson 
+	 * @copyright dreamfish.com 2010
+	 */
 
 function unregister_elgg_event_handler($event, $object_type, $function) {
 	global $CONFIG;
@@ -18,15 +26,6 @@ function unregister_plugin_hook($hook, $entity_type, $function) {
 		}
 	}
 }
-	/**
-	 * Elgg dreamfish_theme plugin
-	 * This plugin plugs the dreamfish theme into elgg
-	 * 
-		* @package Customdash
-	 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU Public License version 2
-	 * @author Astrid Johannson 
-	 * @copyright dreamfish.com 2010
-	 */
 
    /**
      * An event listener which will notify users based on certain events.
