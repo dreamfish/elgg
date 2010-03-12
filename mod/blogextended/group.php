@@ -23,7 +23,15 @@
    $area2 = elgg_view_title(elgg_echo('blog:everyone'));
 
     $type = get_input("type");
-	$area2 = list_entities_from_metadata_multi(array("content_owner"=>$group, "blog_type"=>$type), "object","blog",0, 10, false,false,false);
+    
+	$pages = search_for_object('DF_'.'LabListContent');
+	if ($pages && sizeof($pages) > 0) {
+		$toptext .= $pages[0]->description;
+	} 
+
+
+
+	$area2 = $toptext .  list_entities_from_metadata_multi(array("content_owner"=>$group, "blog_type"=>$type), "object","blog",0, 10, false,false,false);
 
     //search_for_group
     $objects = get_entities("group", "", 0, "", 10, 0, 0, 0, null);
