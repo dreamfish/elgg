@@ -59,7 +59,7 @@ if (empty($vars['title'])) {
 	<ul>
 	<li><a href="<?php echo $vars['url']; ?>pg/dashboard/">dashboard</a></li>
 	<li><a href="<?php echo $_SESSION['user']->getURL(); ?>">profile</a></li>
-	<li><a href="#">settings</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/settings/">settings</a></li>
 	</ul>
 </li>
 <!--
