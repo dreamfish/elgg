@@ -239,10 +239,7 @@
 		{
 			$owner = $file->getOwnerEntity();
 
-      if ($owner->guid == '1')
-        $owner = get_entity($owner->container_guid);
-        
-      if (!$owner)
+			if (!$owner)
 				$owner = get_loggedin_user();
 			
 			if ((!$owner) || (!$owner->username)) 
