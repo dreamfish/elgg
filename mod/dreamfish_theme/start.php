@@ -1,4 +1,23 @@
 <?php
+
+
+function unregister_elgg_event_handler($event, $object_type, $function) {
+	global $CONFIG;
+	foreach($CONFIG->events[$event][$object_type] as $key => $event_function) {
+	if (strcmp($event_function, $function) == 0) {
+			unset($CONFIG->events[$event][$object_type][$key]);
+		}
+	}
+}
+
+function unregister_plugin_hook($hook, $entity_type, $function) {
+	global $CONFIG;
+	foreach($CONFIG->hooks[$hook][$entity_type] as $key => $hook_function) {
+		if (strcmp($hook_function, $function) == 0) {
+			unset($CONFIG->hooks[$hook][$entity_type][$key]);
+		}
+	}
+}
 	/**
 	 * Elgg dreamfish_theme plugin
 	 * This plugin plugs the dreamfish theme into elgg
@@ -9,14 +28,43 @@
 	 * @copyright dreamfish.com 2010
 	 */
 
+   /**
+     * An event listener which will notify users based on certain events.
+     *
+     * @param unknown_type $event
+     * @param unknown_type $object_type
+     * @param unknown_type $object
+     */
+	function dfrelationship_notification_hook($event, $object_type, $object)
+	{
+		global $CONFIG;
+		
+		error_log("SENDING DFFRIEND MESSAGE");
+		if (
+			($object instanceof ElggRelationship) &&
+			($event == 'create') &&
+			($object_type == 'friend')
+		)
+		{
+			$user_one = get_entity($object->guid_one);
+			$user_two = get_entity($object->guid_two);
+			
+			// Notify target user
+			return notify_user($object->guid_two, $object->guid_one, sprintf(elgg_echo('friend:newfriend:subject'), $user_one->name), 
+				sprintf(elgg_echo("friend:newfriend:body"), $user_one->name, $CONFIG->site->url . "pg/profile/" . $user_one->username)
+			); 
+		}
+	}
 	function dreamfish_theme_init() {
 
-		register_plugin_hook('index','system','new_index');		
-		register_page_handler('dashboard','new_dashboard');
+	register_plugin_hook('index','system','new_index');		
+	register_page_handler('dashboard','new_dashboard');
     register_plugin_hook('permissions_check', 'all', 'dreamfish_permissions_check');
     add_group_tool_option('blogposts','Enable Blog Posts',true);
     register_elgg_event_handler('pagesetup','system','df_pagesetup');    
-
+	unregister_elgg_event_handler('create','friend','relationship_notification_hook');
+	register_elgg_event_handler('create','friend','dfrelationship_notification_hook');
+	
 	// inserts dreamfish-specific form elements and JS on the registration page.
         extend_view('account/forms/register', 'register');
 
