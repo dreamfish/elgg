@@ -10,12 +10,12 @@
 	 */
 
 	if ($vars['full']) {
-		echo elgg_view("groups/groupprofile",$vars);
+		echo elgg_view("dgroups/groupprofile",$vars);
 	} else {
 		if (get_input('search_viewtype') == "gallery") {
-			echo elgg_view('groups/groupgallery',$vars); 				
+			echo elgg_view('dgroups/groupgallery',$vars); 				
 		} else {
-			echo elgg_view("groups/grouplisting",$vars);
+			echo elgg_view("dgroups/grouplisting",$vars);
 		}
 	}
 ?>
