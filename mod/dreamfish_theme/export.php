@@ -9,8 +9,6 @@
 	
 	header("Content-type: application/vnd.ms-excel"); 
 	header("Content-disposition: attachment;filename=userexport.csv"); 
-	header("Pragma: no-cache"); 
-	header("Expires: 0");
 	$items = get_entities("user","",0,'',10000,false);
 	foreach($items as $item)
 	{
