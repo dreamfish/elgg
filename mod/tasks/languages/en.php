@@ -85,7 +85,7 @@
 			 'tasks:task_type_'=>"",
 			 'tasks:task_type_0'=>"Dev",
 			 'tasks:task_type_1'=>"Design",
-			 'tasks:task_type_2'=>"Other1",
+			 'tasks:task_type_2'=>"Research",
 			 'tasks:task_type_3'=>"Other2",
 			 'tasks:task_type_4'=>"Other3",
 			 'tasks:task_type_5'=>"Other4",
