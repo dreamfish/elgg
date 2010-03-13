@@ -38,7 +38,6 @@ function sksort(&$array, $subkey="id", $sort_ascending=false) {
     else $array = $temp_array;
 }
 
-sksort($items, "title");
 
 		global $CONFIG;
 		$url = $CONFIG->wwwroot;
@@ -54,6 +53,7 @@ sksort($items, "title");
 		set_context('search');
 		$items = get_entities('object','tasks',page_owner(),'', 1000);
 
+		sksort($items, "title", true);
 
 			
 		

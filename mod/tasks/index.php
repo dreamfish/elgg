@@ -73,7 +73,7 @@ function sksort(&$array, $subkey="id", $sort_ascending=false) {
 		}
 		
 
-		sksort($items, "title");
+		sksort($items, "title", true);
 		$area2.= elgg_view_entity_list($items, count($items), 0, 20, false, false, true);;
 		
 		set_context('tasks');
