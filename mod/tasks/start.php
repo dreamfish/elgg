@@ -61,6 +61,7 @@
 						if (page_owner()) {
 							$page_owner = page_owner_entity();
 						
+							add_submenu_item('table of tasks',$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/table");
 							add_submenu_item(sprintf(elgg_echo('tasks:read'), $page_owner->name),$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/items");
 							add_submenu_item(sprintf('open tasks', $page_owner->name),$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/items/open");			
 							add_submenu_item(sprintf('assigned tasks', $page_owner->name),$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/items/assigned");				
@@ -120,6 +121,13 @@
 										break;
 					case "manage": 		@include(dirname(__FILE__) . "/manage.php"); return true;
 										break;
+					case "table":
+						$area2 .= elgg_view_title('All Tasks', false);
+						$area2 .= elgg_view('tasks/table');
+						$body = elgg_view_layout('two_column_left_sidebar', $area1, $area2);
+						echo page_draw(elgg_echo('tasks:tasksmanageone'),$body);
+						return true;
+						break;
 				}
 			// If the URL is just 'tasks/username', or just 'tasks/', load the standard tasks index
 			} else {
