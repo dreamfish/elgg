@@ -10,6 +10,36 @@
 	 * @link http://elgg.org/
 	 */
 
+function sksort(&$array, $subkey="id", $sort_ascending=false) {
+
+    if (count($array))
+        $temp_array[key($array)] = array_shift($array);
+
+    foreach($array as $key => $val){
+        $offset = 0;
+        $found = false;
+        foreach($temp_array as $tmp_key => $tmp_val)
+        {
+            if(!$found and strtolower($val[$subkey]) > strtolower($tmp_val[$subkey]))
+            {
+                $temp_array = array_merge(    (array)array_slice($temp_array,0,$offset),
+                                            array($key => $val),
+                                            array_slice($temp_array,$offset)
+                                          );
+                $found = true;
+            }
+            $offset++;
+        }
+        if(!$found) $temp_array = array_merge($temp_array, array($key => $val));
+    }
+
+    if ($sort_ascending) $array = array_reverse($temp_array);
+
+    else $array = $temp_array;
+}
+
+sksort($items, "title");
+
 		global $CONFIG;
 		$url = $CONFIG->wwwroot;
 		
@@ -23,6 +53,8 @@
 		$area2 = elgg_view_title(sprintf(elgg_echo('tasks:read'), $page_owner->name));
 		set_context('search');
 		$items = get_entities('object','tasks',page_owner(),'', 1000);
+
+
 			
 		
 		//$area2.= '';
