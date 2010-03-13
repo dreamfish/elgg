@@ -38,6 +38,7 @@
 ?>
 <style>
 	th { cursor: pointer; }
+	th { font-weight: bold; background:#000000;color:#ffffff; }
 	.task_name { width: 350px; }
 	table
 {
@@ -54,6 +55,7 @@ td
     margin: 0;
     padding: 3px;    
 }
+table tr.odd td { background: #e6f2ff;}
 </style>
 <script src="<?php echo $url?>mod/tasks/js/jquery.tablesorter.min.js"></script>
 <script>
