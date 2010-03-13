@@ -39,6 +39,22 @@
 <style>
 	th { cursor: pointer; }
 	.task_name { width: 350px; }
+	table
+{
+    border-color: #600;
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+}
+
+td
+{
+    border-color: #600;
+    border-width: 1px 1px 0 0;
+    border-style: solid;
+    margin: 0;
+    padding: 4px;
+    background-color: #FFC;
+}
 </style>
 <script src="<?php echo $url?>mod/tasks/js/jquery.tablesorter.min.js"></script>
 <script>
@@ -106,7 +122,7 @@ $(function() {
 Filter Status: <select id="statusFilter"><option value="All">All</option> </select>
 Filter Worker: <select id="workerFilter"><option value="All">All</option> </select>
 
-<table style="width:100%;" id="taskTable" border="1" cellpadding="1" cellspacing="0">
+<table style="width:100%;" id="taskTable">
 <thead>
 	<tr>
 		<th>name</th>
