@@ -15,6 +15,9 @@
 	global $CONFIG;
 	
 	action_gatekeeper();
+	
+	$df_announce_list_name = 'df_announce';
+	$df_newproj_list_name  = 'df_new_projects';
 
 	// Get variables
 		$username = get_input('username');
@@ -24,6 +27,28 @@
 		$name = get_input('name');
 		$friend_guid = (int) get_input('friend_guid',0);
 		$invitecode = get_input('invitecode');
+		
+		//Dreamfish hack:
+		$df_announce_list = get_input('df_announce');
+		$df_newproj_list = get_input('df_new_projects');
+		
+		//DF: see which newsletters have been selected
+		$df_announce_list = get_input($df_announce_list_name);
+		$df_newproj_list = get_input($df_newproj_list_name);		
+		
+		$newsletters = array();
+		
+		if ($df_announce_list != "")
+		{
+			array_push($newsletters , $df_announce_list_name); 
+		}
+		
+		if ($df_newproj_list != "")
+		{
+			array_push($newsletters, $df_newproj_list_name);
+		}
+		
+		
 		
 		$admin = get_input('admin');
 		if (is_array($admin)) $admin = $admin[0];
@@ -43,6 +68,13 @@
 				) {
 					
 					$new_user = get_entity($guid);
+					
+					//add dreamfish newsletter registrations to metadata:
+					if (count($newsletters) > 0)
+					{					
+						$new_user->newsletters = implode(',',$newsletters);
+					}
+					
 					if (($guid) && ($admin))
 					{
 						admin_gatekeeper(); // Only admins can make someone an admin

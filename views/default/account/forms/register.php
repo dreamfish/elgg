@@ -27,11 +27,17 @@
 	$form_body .= "<label>" . elgg_echo('password') . "<br />" . elgg_view('input/password' , array('internalname' => 'password', 'class' => "general-textarea")) . "</label><br />";
 	$form_body .= "<label>" . elgg_echo('passwordagain') . "<br />" . elgg_view('input/password' , array('internalname' => 'password2', 'class' => "general-textarea")) . "</label><br />";
 	
+	$form_body .= "<label>" . elgg_echo('dreamfish_theme:newsletters') . "<br /></label>";
+	$form_body .= "<input type=\"checkbox\" name=\"df_announce\" class=\"input-checkboxes\" checked=\"true\"/><label>" . elgg_echo('dreamfish_theme:df_announce') . "</label><br />";
+	$form_body .= "<input type=\"checkbox\" name=\"df_new_projects\" class=\"input-checkboxes\" checked=\"true\"/><label>" . elgg_echo('dreamfish_theme:df_new_projects') . "</label><br />";
+	
  	$form_body .= "<h5>". elgg_echo('dreamfish_theme:accept_terms') . "</h5><br />";
 
 	//$form_body .= elgg_view('input/checkboxes', array('internalname' => "dreamfish_yes", 'options' => array(elgg_echo('yes_dreamfish')))) . "<br />";
 
 	$form_body .= "<input type=\"checkbox\" name=\"yes_dreamfish\" class=\"input-checkboxes\" /><label>" . elgg_echo('yes_dreamfish') . "</label><br />";
+	
+	
 
 	if ($admin_option)
 		$form_body .= elgg_view('input/checkboxes', array('internalname' => "admin", 'options' => array(elgg_echo('admin_option'))));
