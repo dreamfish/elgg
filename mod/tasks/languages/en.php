@@ -83,7 +83,7 @@
 			 'tasks:assigned_to' => 'Worker',
 			 
 			 'tasks:task_type_'=>"",
-			 'tasks:task_type_0'=>"Development",
+			 'tasks:task_type_0'=>"Dev",
 			 'tasks:task_type_1'=>"Design",
 			 'tasks:task_type_2'=>"Other1",
 			 'tasks:task_type_3'=>"Other2",
