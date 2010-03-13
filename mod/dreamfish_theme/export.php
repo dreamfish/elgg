@@ -13,6 +13,6 @@
 	foreach($items as $item)
 	{
 		$date = date('c', $item->getTimeCreated());
-		echo "\"{$item->name}\",\"{$item->email}\",\"{$date}\", \"{$item->newsletters}\"\r\n";
+		echo "\"{$item->name}\",\"{$item->email}\",\"{$date}\", {$item->newsletters}\r\n";
 	}
 ?>
