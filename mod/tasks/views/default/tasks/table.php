@@ -77,7 +77,7 @@ $(function() {
 
 
   
-	$('#taskTable').tablesorter(widgets: ['zebra']); 
+	$('#taskTable').tablesorter({widgets: ['zebra']}); 
 	var status = $.map($('.status'), function(item) { return $(item).text(); }).unique();
 	var workers = $.map($('.worker'), function(item) { return $(item).text(); }).unique()
 	$.each(status, function(idx, item) { $('#statusFilter').append(
