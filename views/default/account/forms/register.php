@@ -31,7 +31,7 @@
 	$form_body .= "<input type=\"checkbox\" name=\"df_announce\" class=\"input-checkboxes\" checked=\"true\"/><label>" . elgg_echo('dreamfish_theme:df_announce') . "</label><br />";
 	$form_body .= "<input type=\"checkbox\" name=\"df_new_projects\" class=\"input-checkboxes\" checked=\"true\"/><label>" . elgg_echo('dreamfish_theme:df_new_projects') . "</label><br />";
 	
- 	$form_body .= "<h5>". elgg_echo('dreamfish_theme:accept_terms') . "</h5><br />";
+ 	$form_body .= "<b><span style=\"font-size:.9em\">". elgg_echo('dreamfish_theme:accept_terms') . "</span></b><br>";
 
 	//$form_body .= elgg_view('input/checkboxes', array('internalname' => "dreamfish_yes", 'options' => array(elgg_echo('yes_dreamfish')))) . "<br />";
 
@@ -49,7 +49,7 @@
 ?>
 
 	
-	<div id="register-box">
+	<div id="register-box" style="width:930px;">
 	<h2><?php echo elgg_echo('register'); ?></h2>
 	<?php echo elgg_view('input/form', array('action' => "{$vars['url']}action/register", 'internalname' => 'regform', 'body' => $form_body)) ?>
 	</div>
