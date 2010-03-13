@@ -79,7 +79,7 @@
 			if ($result)
 				system_message(elgg_echo('uservalidationbyemail:registerok'));
 
-			forward($CONFIG->wwwroot . 'pg/pages/url/getting-started' );// Forward on success, assume everything else is an error...
+			forward($CONFIG->wwwroot . 'pg/pages/url/pending-email-confirmation' );// Forward on success, assume everything else is an error...
 					
 				
 			return $result;

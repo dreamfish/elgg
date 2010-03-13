@@ -1,16 +1,14 @@
 <?php
-
-	/**
-	 * Elgg registration action
-	 * 
-	 * @package Elgg
-	 * @subpackage Core
-	 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU Public License version 2
-	 * @author Curverider Ltd
-	 * @copyright Curverider Ltd 2008-2009
-	 * @link http://elgg.org/
-	 */
-
+	/**^M
+         * Elgg registration action^M
+         * ^M
+         * @package Elgg^M
+         * @subpackage Core^M
+         * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU Public License version 2^M
+         * @author Curverider Ltd^M
+         * @copyright Curverider Ltd 2008-2009^M
+         * @link http://elgg.org/^M
+         */^M
 	require_once(dirname(dirname(__FILE__)) . "/engine/start.php");
 	global $CONFIG;
 	
@@ -34,15 +32,16 @@
 		
 		$newsletters = array();
 		
-		if ($df_announce_list != "")
-		{
-			$newsletters = array_push($df_announce_list_name); 
-		}
-		
-		if ($df_newproj_list != "")
-		{
-			$newsletters = array_push($df_newproj_list_name);
-		}
+		 if ($df_announce_list != "")
+                {
+                        array_push($newsletters , $df_announce_list_name); 
+                }
+                
+                if ($df_newproj_list != "")
+                {
+                        array_push($newsletters, $df_newproj_list_name);
+                }
+
 		
 		$admin = get_input('admin');
 		if (is_array($admin)) $admin = $admin[0];
@@ -62,8 +61,14 @@
 				) {
 					
 					$new_user = get_entity($guid);
+
+					//add dreamfish newsletter registrations to metadata
+
+					if (count($newsletters) > 0)
+                                        {                                       
+                                                $new_user->newsletters = implode(',',$newsletters);
+                                        }
 					
-					//$new_user->newsletters = "";
 					if (($guid) && ($admin))
 					{
 						admin_gatekeeper(); // Only admins can make someone an admin
