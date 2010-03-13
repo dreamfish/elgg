@@ -106,7 +106,7 @@ $(function() {
 Filter Status: <select id="statusFilter"><option value="All">All</option> </select>
 Filter Worker: <select id="workerFilter"><option value="All">All</option> </select>
 
-<table style="width:100%;border:1px solid black;" id="taskTable">
+<table style="width:100%;" id="taskTable" border="1" cellpadding="1" cellspacing="0">
 <thead>
 	<tr>
 		<th>name</th>
