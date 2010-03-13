@@ -161,3 +161,15 @@ echo elgg_view("navigation/topbar_tools");
  <a href="<?php echo $vars['url']; ?>pg/admin/" class="usersettings"><?php echo elgg_echo("admin"); ?></a> | 
  <a href="<?php echo $vars['url']; ?>mod/pages/" class="usersettings">Maintain Pages</a>
  <?php }     ?>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-4959867-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
