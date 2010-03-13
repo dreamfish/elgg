@@ -52,8 +52,7 @@ td
     border-width: 1px 1px 0 0;
     border-style: solid;
     margin: 0;
-    padding: 4px;
-    background-color: #FFC;
+    padding: 3px;    
 }
 </style>
 <script src="<?php echo $url?>mod/tasks/js/jquery.tablesorter.min.js"></script>
@@ -78,7 +77,7 @@ $(function() {
 
 
   
-	$('#taskTable').tablesorter(); 
+	$('#taskTable').tablesorter(widgets: ['zebra']); 
 	var status = $.map($('.status'), function(item) { return $(item).text(); }).unique();
 	var workers = $.map($('.worker'), function(item) { return $(item).text(); }).unique()
 	$.each(status, function(idx, item) { $('#statusFilter').append(
