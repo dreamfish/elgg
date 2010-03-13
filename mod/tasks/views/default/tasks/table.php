@@ -143,6 +143,9 @@ foreach($metadata as $meta) {
 
 $type = elgg_echo("tasks:task_type_{$task->task_type}");
 $status = elgg_echo("tasks:task_status_{$task->status}");
+if ($status == '')
+	$status = 'Open';
+	
 if ($status != 'Closed') {
 	$manage_link = "<a href=\"{$url}mod/tasks/manage.php?task=".$task->getGUID()."\">". $task->title ."</a>&nbsp;"; 
 	$worker = get_entity($task->assigned_to);	
