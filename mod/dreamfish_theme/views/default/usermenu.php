@@ -18,7 +18,7 @@ $user = get_entity($vars['entity']->guid);
 if (!$user->validated) {
 ?>
 <p>
-		<a href="<?php echo $vars['url']; ?>action/user/enable/<?php echo $vars['entity']->guid; ?>">Enable User</a>	
+		<a href="<?php echo $vars['url']; ?>action/user/enable?guid=<?php echo $vars['entity']->guid; ?>">Enable User</a>	
 </p>
 <?php
 }
