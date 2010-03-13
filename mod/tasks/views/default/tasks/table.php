@@ -38,6 +38,7 @@
 ?>
 <style>
 	th { cursor: pointer; }
+	.task_name { width: 350px; }
 </style>
 <script src="<?php echo $url?>mod/tasks/js/jquery.tablesorter.min.js"></script>
 <script>
@@ -85,13 +86,27 @@ $(function() {
 			$('.status:contains("' + val + '")').each(function() { $(this).parents('tr:first').show(); });			
 		}
     });
+    
+	$('#workerFilter').change(function() {
+		val = $(this).val();
+		if (val == 'All')
+		{
+			$('.worker').each(function() { $(this).parents('tr:first').show(); });
+		}
+		else
+		{			
+			$('.worker').each(function() { $(this).parents('tr:first').hide(); });
+			$('.worker:contains("' + val + '")').each(function() { $(this).parents('tr:first').show(); });			
+		}
+    });
+
 });
 </script>
 <div class="contentWrapper">
 Filter Status: <select id="statusFilter"><option value="All">All</option> </select>
 Filter Worker: <select id="workerFilter"><option value="All">All</option> </select>
 
-<table style="width:100%" id="taskTable">
+<table style="width:100%;border:1px solid black;" id="taskTable">
 <thead>
 	<tr>
 		<th>name</th>
@@ -115,7 +130,7 @@ if ($status != 'Closed') {
 	$manage_link = "<a href=\"{$url}mod/tasks/manage.php?task=".$task->getGUID()."\">". $task->title ."</a>&nbsp;"; 
 	$worker = get_entity($task->assigned_to);	
 	
-	echo "<tr><td>{$manage_link}</td><td class=\"status {$status}\">{$status}</td><td class=\"worker {$worker->name}\">{$worker->name}</td><td>$type</td></tr>";
+	echo "<tr><td class=\"task_name\">{$manage_link}</td><td class=\"status {$status}\">{$status}</td><td class=\"worker {$worker->name}\">{$worker->name}</td><td>$type</td></tr>";
 }
 }
 ?>
