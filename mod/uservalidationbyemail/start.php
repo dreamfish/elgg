@@ -78,6 +78,9 @@
 			$result = notify_user($user->guid, $CONFIG->site->guid, sprintf($confirm_subject, $user->username), sprintf($confirm_body, $user->name, $link), NULL, 'email');
 			if ($result)
 				system_message(elgg_echo('uservalidationbyemail:registerok'));
+
+			forward($CONFIG->wwwroot . 'pg/pages/url/getting-started' );// Forward on success, assume everything else is an error...
+					
 				
 			return $result;
 		}
