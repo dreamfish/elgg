@@ -1,23 +1,22 @@
 <?php
-
-	/**
-	 * Elgg registration action
-	 * 
-	 * @package Elgg
-	 * @subpackage Core
-	 * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU Public License version 2
-	 * @author Curverider Ltd
-	 * @copyright Curverider Ltd 2008-2009
-	 * @link http://elgg.org/
-	 */
-
+	/**^M
+         * Elgg registration action^M
+         * ^M
+         * @package Elgg^M
+         * @subpackage Core^M
+         * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU Public License version 2^M
+         * @author Curverider Ltd^M
+         * @copyright Curverider Ltd 2008-2009^M
+         * @link http://elgg.org/^M
+         */^M
 	require_once(dirname(dirname(__FILE__)) . "/engine/start.php");
 	global $CONFIG;
 	
 	action_gatekeeper();
-
-error_log("calling REGISTER");
-
+	
+	$df_announce_list_name = 'df_announce';
+	$df_newproj_list_name  = 'df_new_projects';
+	
 	// Get variables
 		$username = get_input('username');
 		$password = get_input('password');
@@ -26,6 +25,23 @@ error_log("calling REGISTER");
 		$name = get_input('name');
 		$friend_guid = (int) get_input('friend_guid',0);
 		$invitecode = get_input('invitecode');
+		
+		//see which newsletters have been selected
+		$df_announce_list = get_input($df_announce_list_name);
+		$df_newproj_list = get_input($df_newproj_list_name);		
+		
+		$newsletters = array();
+		
+		 if ($df_announce_list != "")
+                {
+                        array_push($newsletters , $df_announce_list_name); 
+                }
+                
+                if ($df_newproj_list != "")
+                {
+                        array_push($newsletters, $df_newproj_list_name);
+                }
+
 		
 		$admin = get_input('admin');
 		if (is_array($admin)) $admin = $admin[0];
@@ -45,6 +61,14 @@ error_log("calling REGISTER");
 				) {
 					
 					$new_user = get_entity($guid);
+
+					//add dreamfish newsletter registrations to metadata
+
+					if (count($newsletters) > 0)
+                                        {                                       
+                                                $new_user->newsletters = implode(',',$newsletters);
+                                        }
+					
 					if (($guid) && ($admin))
 					{
 						admin_gatekeeper(); // Only admins can make someone an admin
@@ -61,6 +85,8 @@ error_log("calling REGISTER");
 					
 					system_message(sprintf(elgg_echo("registerok"),$CONFIG->sitename));
 				
+					forward($CONFIG->wwwroot . 'pg/page/email_confirmation' );// Forward on success, assume everything else is an error...
+					
 				} else {
 					register_error(elgg_echo("registerbad"));
 				}
