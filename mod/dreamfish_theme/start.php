@@ -63,12 +63,13 @@ function unregister_plugin_hook($hook, $entity_type, $function) {
     register_elgg_event_handler('pagesetup','system','df_pagesetup');    
 	unregister_elgg_event_handler('create','friend','relationship_notification_hook');
 	register_elgg_event_handler('create','friend','dfrelationship_notification_hook');
-	
-	// inserts dreamfish-specific form elements and JS on the registration page.
-        extend_view('account/forms/register', 'register');
 
-   
-   	   	// Extend system CSS with our own styles
+	//register_action('register', true, $CONFIG->pluginspath . "dreamfish_theme/actions/register.php");
+
+	// inserts dreamfish-specific form elements and JS on the registration page.
+        //extend_view('account/forms/register', 'forms/register');
+
+    // Extend system CSS with our own styles
 	extend_view('css','dreamfish_theme/css');
 
 		//the following tags need to be added to \engine\lib\input.php's allowedtags
@@ -191,4 +192,6 @@ function unregister_plugin_hook($hook, $entity_type, $function) {
 	}
 	register_elgg_event_handler('init','system','dreamfish_theme_init');
 	register_page_handler('page', 'dreamfish_theme_fetchpage');
+	
+	
 ?>

@@ -16,7 +16,6 @@
 	$name = get_input('n');
 
 	$admin_option = false;
-
 	if (($_SESSION['user']->admin) && ($vars['show_admin'])) 
 		$admin_option = true;
 		
@@ -27,29 +26,17 @@
 	$form_body .= "<label>" . elgg_echo('password') . "<br />" . elgg_view('input/password' , array('internalname' => 'password', 'class' => "general-textarea")) . "</label><br />";
 	$form_body .= "<label>" . elgg_echo('passwordagain') . "<br />" . elgg_view('input/password' , array('internalname' => 'password2', 'class' => "general-textarea")) . "</label><br />";
 	
-	$form_body .= "<label>" . elgg_echo('dreamfish_theme:newsletters') . "<br /></label>";
-	$form_body .= "<input type=\"checkbox\" name=\"df_announce\" class=\"input-checkboxes\" checked=\"true\"/><label>" . elgg_echo('dreamfish_theme:df_announce') . "</label><br />";
-	$form_body .= "<input type=\"checkbox\" name=\"df_new_projects\" class=\"input-checkboxes\" checked=\"true\"/><label>" . elgg_echo('dreamfish_theme:df_new_projects') . "</label><br />";
-	
- 	$form_body .= "<b><span style=\"font-size:.9em\">". elgg_echo('dreamfish_theme:accept_terms') . "</span></b><br>";
-
-	//$form_body .= elgg_view('input/checkboxes', array('internalname' => "dreamfish_yes", 'options' => array(elgg_echo('yes_dreamfish')))) . "<br />";
-
-	$form_body .= "<input type=\"checkbox\" name=\"yes_dreamfish\" class=\"input-checkboxes\" /><label>" . elgg_echo('yes_dreamfish') . "</label><br />";
-	
-	
-
 	if ($admin_option)
 		$form_body .= elgg_view('input/checkboxes', array('internalname' => "admin", 'options' => array(elgg_echo('admin_option'))));
 	
 	$form_body .= elgg_view('input/hidden', array('internalname' => 'friend_guid', 'value' => $vars['friend_guid']));
 	$form_body .= elgg_view('input/hidden', array('internalname' => 'invitecode', 'value' => $vars['invitecode']));
 	$form_body .= elgg_view('input/hidden', array('internalname' => 'action', 'value' => 'register'));
-	$form_body .= elgg_view('input/button', array('type' => 'button', 'internalname' => 'validate',  'value' => elgg_echo('dreamfish_theme:join'), 'js' => 'onclick="validateForm()"'))  . " </p>";
+	$form_body .= elgg_view('input/submit', array('internalname' => 'submit', 'value' => elgg_echo('register'))) . "</p>";
 ?>
 
 	
-	<div id="register-box" style="width:930px;">
+	<div id="register-box">
 	<h2><?php echo elgg_echo('register'); ?></h2>
-	<?php echo elgg_view('input/form', array('action' => "{$vars['url']}action/register", 'internalname' => 'regform', 'body' => $form_body)) ?>
+	<?php echo elgg_view('input/form', array('action' => "{$vars['url']}action/register", 'body' => $form_body)) ?>
 	</div>

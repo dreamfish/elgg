@@ -8,7 +8,7 @@
          * @author Curverider Ltd^M
          * @copyright Curverider Ltd 2008-2009^M
          * @link http://elgg.org/^M
-         */^M
+         */
 	require_once(dirname(dirname(__FILE__)) . "/engine/start.php");
 	global $CONFIG;
 	
