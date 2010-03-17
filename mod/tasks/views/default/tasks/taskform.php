@@ -156,7 +156,7 @@
 				<?php
 					echo elgg_view('input/pulldown', array(
 							'internalname' => 'task_type',
-							'options_values' => array( '0' => "",
+							'options_values' => array( '0' => elgg_echo('tasks:task_type_0'),
 													   '1' => elgg_echo('tasks:task_type_1'),
 													   '2' => elgg_echo('tasks:task_type_2'),
 				                                 	   '3' => elgg_echo('tasks:task_type_3'),

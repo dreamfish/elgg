@@ -66,8 +66,10 @@ function unregister_plugin_hook($hook, $entity_type, $function) {
 
 	//register_action('register', true, $CONFIG->pluginspath . "dreamfish_theme/actions/register.php");
 
+	extend_view('profile/menu/links','usermenu');
+	
 	// inserts dreamfish-specific form elements and JS on the registration page.
-        //extend_view('account/forms/register', 'forms/register');
+    //extend_view('account/forms/register', 'forms/register');
 
     // Extend system CSS with our own styles
 	extend_view('css','dreamfish_theme/css');
@@ -190,6 +192,7 @@ function unregister_plugin_hook($hook, $entity_type, $function) {
 		echo page_draw(null, $content);
 		
 	}
+	register_action('user/enable',true,$CONFIG->pluginspath . "dreamfish_theme/actions/enable.php");
 	register_elgg_event_handler('init','system','dreamfish_theme_init');
 	register_page_handler('page', 'dreamfish_theme_fetchpage');
 	

@@ -48,9 +48,14 @@
 			elseif ($status == 'assigned')
 				$area2 .= list_entities_from_metadata('status', '1', 'object','tasks',page_owner(), $limit);
 
-		}
+		}		
+
+		set_context('tasks');
+		
+		$area2.= elgg_view_entity_list($items, count($items), 0, 20, false, false, true);;
 		
 		set_context($context);
+		
 		
 	// Format page
 		$body = elgg_view_layout('two_column_left_sidebar', $area1, $area2);
