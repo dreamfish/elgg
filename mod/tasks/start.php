@@ -59,8 +59,7 @@
 				if (get_context() == "tasks") {
 					if (isloggedin()) {
 						if (page_owner()) {
-							$page_owner = page_owner_entity();
-						
+							$page_owner = page_owner_entity();							
 							add_submenu_item(sprintf(elgg_echo('tasks:read'), $page_owner->name),$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/items");
 							add_submenu_item(sprintf('open tasks', $page_owner->name),$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/items/open");			
 							add_submenu_item(sprintf('assigned tasks', $page_owner->name),$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/items/assigned");				
@@ -86,7 +85,7 @@
 				
 				if ($page_owner instanceof ElggGroup && get_context() == 'groups') {
 	    			if($page_owner->tasks_enable != "no"){
-					    add_submenu_item(sprintf(elgg_echo("tasks:group"),$page_owner->name), $CONFIG->wwwroot . "pg/tasks/" . $page_owner->username . '/items');
+					    add_submenu_item(sprintf(elgg_echo("tasks:group"),$page_owner->name), $CONFIG->wwwroot . "pg/tasks/" . $page_owner->username . '/items');					    
 				    }
 				}
 				
@@ -99,9 +98,8 @@
 		 * @return true|false Depending on success
 		 */
 		function tasks_page_handler($page) {
-			
 			// The first component of a tasks URL is the username
-			if (isset($page[0])) {
+			if (isset($page[0])) {				
 				set_input('username',$page[0]);
 			}
 			
@@ -109,26 +107,27 @@
 			if (isset($page[1])) {
 				switch($page[1]) {
 					case "read":		set_input('guid',$page[2]);
-										@include(dirname(dirname(dirname(__FILE__))) . "/entities/index.php"); return true;
+										include(dirname(dirname(dirname(__FILE__))) . "/entities/index.php"); 
 										break;
 					case "items":		
-							if (isset($page[2]))
-								set_input('status', $page[2]);
-										@include(dirname(__FILE__) . "/index.php"); return true;
+										if (isset($page[2])) 
+										{
+											set_input('status', $page[2]);
+										}
+										include(dirname(__FILE__) . "/index.php"); //return true;
 										break;
-					case "add": 		@include(dirname(__FILE__) . "/add.php"); return true;
+					case "add": 		include(dirname(__FILE__) . "/add.php"); //return true;
 										break;
-					case "manage": 		@include(dirname(__FILE__) . "/manage.php"); return true;
+					case "manage": 		include(dirname(__FILE__) . "/manage.php"); //return true;
 										break;
-				}
+					default:			include(dirname(__FILE__) . "/index.php"); //return true;
+										break;
+				}				
 			// If the URL is just 'tasks/username', or just 'tasks/', load the standard tasks index
 			} else {
-				@include(dirname(__FILE__) . "/index.php");
-				return true;
-			}
-			
-			return false;
-			
+				include(dirname(__FILE__) . "/index.php");				
+			}	
+			return true;		
 		}
 
 	/**
@@ -138,7 +137,6 @@
 	 * @return string tasked item URL
 	 */
 		function task_url($entity) {
-			
 			global $CONFIG;
 			$title = $entity->title;
 			$title = friendly_title($title);

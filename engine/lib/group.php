@@ -95,7 +95,7 @@
 		public function get($name) {
 			
 			if ($name == 'username') {
-				return 'group:' . $this->getGUID();
+				return 'group_' . $this->getGUID();
 			}
 			return parent::get($name);
 			

@@ -27,9 +27,11 @@
             	return $setpageowner;
             }
             
-	        if ($username = get_input("username")) {
-	        	if (substr_count($username,'group:')) {
-	            	preg_match('/group\:([0-9]+)/i',$username,$matches);
+	        if ($username = get_input("username")) {	        	
+	        	//if (substr_count($username,'group:')) {
+	        		if (substr_count($username,'group_')) {
+	            	//preg_match('/group\:([0-9]+)/i',$username,$matches);
+	            	preg_match('/group\_([0-9]+)/i',$username,$matches);
 	            	$guid = $matches[1];
 	            	if ($entity = get_entity($guid)) {
 	            		return $entity->getGUID();
