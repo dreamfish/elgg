@@ -621,10 +621,11 @@
 				if ((!isset($parameters['filestore'])) || (!class_exists($parameters['filestore'])))
 					throw new ClassNotFoundException(elgg_echo('ClassNotFoundException:NotFoundNotSavedWithFile'));
 					
-				$this->filestore = new $parameters['filestore']();
-
-				// Set parameters
-				$this->filestore->setParameters($parameters);
+				// if dir_root is not set, we use default filestore 
+ 	            if (isset($parameters['dir_root'])) 
+ 	            { 
+ 	               $this->filestore = new $parameters['filestore']($parameters['dir_root']); 
+ 	            } 
 			}
 			
 
