@@ -33,7 +33,7 @@ if (empty($vars['title'])) {
 <div id="navigation" class="clearpush">
 <ul class="tabnav" id="topleftnav">
 <?php if (isloggedin()) { ?>
-<li <?php echo strpos(current_page_url(),"") ? "class=\"selected\"" :"" ?>>
+<li <?php echo (current_page_url() == $vars['url']) ? "class=\"selected\"" :"" ?>>
 	<a href="<?php echo $vars['url']; ?>"><span><h4>Home</h4></span></a>
 </li>
 
