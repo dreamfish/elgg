@@ -12,16 +12,13 @@
 
 	// Start engine
 		require_once(dirname(dirname(dirname(__FILE__))) . "/engine/start.php");
-		//error_log("before");
-		error_log("getinput username : " . get_input('username'));
+		
 		$page_owner = page_owner_entity();
 		if ($page_owner === false || is_null($page_owner)) {
 			$page_owner = $_SESSION['user'];
-			//error_log("before setting page owner");
-			set_page_owner($page_owner->getGUID());
-			//error_log("after setting page owner");
+			set_page_owner($page_owner->getGUID());;
 		}
-		//error_log("after");
+		
 	// List tasks
 		$context = get_context();
 		$title = sprintf(elgg_echo('tasks:read'), $page_owner->name);
