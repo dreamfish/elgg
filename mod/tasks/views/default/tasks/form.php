@@ -9,10 +9,9 @@
 	 * @copyright Curverider Ltd 2008-2009
 	 * @link http://elgg.org/
 	 */
-
+		
 	// Have we been supplied with an entity?
 		if (isset($vars['entity'])) {
-			
 			$guid = $vars['entity']->getGUID();
 			$title = $vars['entity']->title;
 			$description = $vars['entity']->description;
@@ -36,8 +35,7 @@
 			$container = get_entity($container_id);
 
 			
-		} else {
-			
+		} else {			
 			$guid = 0;
 			$title = get_input('title',"");
 			$description = "";
@@ -48,15 +46,15 @@
 				$address = $_SERVER['HTTP_REFERER'];
 			$tags = array();
 			
-			// bootstrap the access permissions in the entity array so we can use defaults
+			// bootstrap the access permissions in the entity array so we can use defaults				
+			
 			if (defined('ACCESS_DEFAULT')) {
 				$vars['entity']->access_id = ACCESS_DEFAULT;
 				$vars['entity']->write_access_id = ACCESS_DEFAULT;
-			} else {
+			} else { 
 				$vars['entity']->access_id = 0;
 				$vars['entity']->write_access_id = 0;
 			}
-			
 			$shares = array();
 			$owner = $vars['user'];
 			
@@ -115,10 +113,14 @@
 			<label>
 				<?php 	echo elgg_echo('tasks:access'); ?>
 				<?php
-
+						$access = $access_id;
+						if (!$access) 
+						{
+							$access = ACCESS_PUBLIC;
+						} 
 						echo elgg_view('input/access',array(
 								'internalname' => 'access',
-								'value' => $access_id,
+								'value' => $access,
 						)); 
 				
 				?>
@@ -128,10 +130,14 @@
 			<label>
 				<?php 	echo elgg_echo('tasks:write_access'); ?>
 				<?php
-
+						$write_access = $write_access_id;
+						if (!$write_access) 
+						{
+							$write_access = ACCESS_LOGGED_IN;
+						} 
 						echo elgg_view('input/access',array(
 								'internalname' => 'write_access',
-								'value' => $write_access_id,
+								'value' => $write_access,
 						)); 
 				
 				?>
