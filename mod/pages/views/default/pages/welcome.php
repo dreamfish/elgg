@@ -22,7 +22,9 @@
 
 ?>
 
-<div class="contentWrapper pageswelcome"><p>Welcome to this Elgg pages plugin. This feature allows you to create pages on any topic and select who can view them and edit them.</p></div>
+<div class="contentWrapper pageswelcome">
+Create a Page for any content you would put in a document (meeting notes, a plan, an article, portfolio, Journal, lesson, etc). A page can display text, link, images, videos and more. To share, you can choose who can edit and view the page. <b>To Create a Page</b>, click on "Create a Page" link on your left sidebar. (Want to learn more? Visit the <a href="http://www.dreamfish.com/pg/pages/view/3821/">help desk</a>)
+</div>
     
 <?php
     }
