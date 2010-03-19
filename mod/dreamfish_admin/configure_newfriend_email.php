@@ -8,7 +8,7 @@ set_context('admin');
 
 set_page_owner($_SESSION['guid']);
 
-$body = elgg_view("dreamfish_admin/forms/email_confirmation");
+$body = elgg_view("dreamfish_admin/forms/newfriend_email");
 
 $title = elgg_echo('dreamfish_admin:admin_title');
 $pagetitle = elgg_view_title($title);

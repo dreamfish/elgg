@@ -12,19 +12,19 @@
 	admin_gatekeeper();
 
 	// Get fields	
-	$confirm_subj = get_input('email_confirm_subj');
-	$confirm_body = get_input('email_confirm_body');
+	$new_friend_subj = get_input('new_friend_subj');
+	$new_friend_body = get_input('new_friend_body');
 	
-	$plugin_name = "uservalidationbyemail"; 	
-                                
-	//set_new_notification_message($confirm_subject_key,$confirm_subj,$s_guid);
-	global $LANG_KEYS;
-	set_new_notification_message($LANG_KEYS->confirm_subj_key,$confirm_subj, $plugin_name);
-	set_new_notification_message($LANG_KEYS->confirm_body_key,$confirm_body, $plugin_name);
+	$plugin_name = null;
+	
+	//function elgg_echo($message_key, $language = "") {
+    global $LANG_KEYS;
+	set_new_notification_message($LANG_KEYS->newfriend_subj_key,$new_friend_subj,$plugin_name);
+	set_new_notification_message($LANG_KEYS->newfriend_body_key,$new_friend_body,$plugin_name);
 		
-	system_message(elgg_echo('dreamfish_admin:new_email_msg_ok'));
+	system_message(elgg_echo('dreamfish_admin:new_newfriend_msg_ok'));
 
-	forward($vars['url'] . "mod/dreamfish_admin/configure_email_confirmation.php");
+	forward($vars['url'] . "mod/dreamfish_admin/configure_newfriend_email.php");
 
 
 //function set_new_msg_old($message_key, $message_value,$guid) 
