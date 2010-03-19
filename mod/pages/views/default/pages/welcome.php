@@ -23,7 +23,10 @@
 ?>
 
 <div class="contentWrapper pageswelcome">
-Create a Page for any content you would put in a document (meeting notes, a plan, an article, portfolio, Journal, lesson, etc). A page can display text, link, images, videos and more. To share, you can choose who can edit and view the page. <b>To Create a Page</b>, click on "Create a Page" link on your left sidebar. (Want to learn more? Visit the <a href="http://www.dreamfish.com/pg/pages/view/3821/">help desk</a>)
+Create a Page for any content you would put in a document (meeting notes, plan, article, portfolio, lesson, etc). A page can display text, link, images, videos and more.<br>
+To share and collaborate on the Page, select Access to choose who can write or view the page. (Want to learn more? Visit the <a href="http://www.dreamfish.com/pg/pages/view/3821/">help desk</a>)<br>
+To <b>create a new page</b>, click on the link, "New Page" on your left sidebar.
+
 </div>
     
 <?php
