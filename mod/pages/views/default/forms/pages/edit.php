@@ -47,11 +47,16 @@
 	<p>
 		<label>
 			<?php echo elgg_echo("pages:{$shortname}") ?><br />
-			<?php echo elgg_view("input/{$valtype}",array(
+			<?php
+				$value = $vars['entity']->$shortname;
+				if ( ($shortname == "access_id") && ($new_page))
+					$value = ACCESS_PUBLIC;
+			    echo elgg_view("input/{$valtype}",array(
 															'internalname' => $shortname,
-															'value' => $vars['entity']->$shortname,
+															'value' => $value,
 															'disabled' => $disabled
-															)); ?>
+															));			    
+	        ?>
 		</label>
 	</p>
 
