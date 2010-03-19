@@ -10,9 +10,10 @@ set_page_owner($_SESSION['guid']);
 
 $body = elgg_view("dreamfish_admin/forms/email_confirmation");
 
-$title = elgg_view_title(elgg_echo('dreamfish_admin:admin_title'));
+$title = elgg_echo('dreamfish_admin:admin_title');
+$pagetitle = elgg_view_title($title);
 
-$body = elgg_view_layout("two_column_left_sidebar", '', $title . $body);
+$body = elgg_view_layout("two_column_left_sidebar", '', $pagetitle . $body);
 
 page_draw($title,$body);
 

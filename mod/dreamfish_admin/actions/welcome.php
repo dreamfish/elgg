@@ -10,53 +10,22 @@
 	 */
 
 	
-//	gatekeeper();
-//	set_context('pages');
+	admin_gatekeeper();
 
 	// Get fields
 	$welcome_subj = get_input('email_welcome_subj');
 	$welcome_body = get_input('email_welcome');
-	$s_guid = get_input('s_guid');
-	$b_guid = get_input('b_guid');
- 	$welcome_subject_key = "email:validate:success:subject";
-	$welcome_body_key = "email:validate:success:body";
-	//function elgg_echo($message_key, $language = "") {
+	
+	$plugin_name = "uservalidationbyemail";
                                 
-	set_new_msg($welcome_subject_key,$welcome_subj,$s_guid);
-	set_new_msg($welcome_body_key,$welcome_body,$b_guid);
+	//set_new_msg($welcome_subject_key,$welcome_subj,$s_guid);
+	global $LANG_KEYS;
+	set_new_notification_message($LANG_KEYS->welcome_subj_key,$welcome_subj,$plugin_name);
+	set_new_notification_message($LANG_KEYS->welcome_body_key,$welcome_body,$plugin_name);
 		
-	system_message("New welcome email message saved!");
+	system_message(elgg_echo('dreamfish_admin:new_welcome_msg_ok'));
 
 	forward($vars['url'] . "mod/dreamfish_admin/configure_welcome_email.php");
-
-function set_new_msg($message_key, $message_value,$guid) 
-{
-	// Load configuration
-	global $CONFIG;
-
-        $language = get_language();
-
-	$object = null;
-	if ( ($guid != 0) && ($guid != null) )
-	{
-		$object = get_entity((int)$guid);
-	}
-	else
-	{
-		$object = new ElggObject();
-		$object->subtype = "df_custom_msg";
-		$object->access_id = 1;
-		$object->title= $message_key;
-		$object->set("language",$language);
-	}
-			
-	$object->description = $message_value;
- 
-	$object->save();
-
-	update_language_file($message_key, $message_value,$language);
-}
-
 	
 	//system_message(elgg_echo("pages:saved"));
 			
@@ -66,8 +35,5 @@ function set_new_msg($message_key, $message_value,$guid)
 	//register_error(elgg_echo('pages:notsaved'));
 
 	//register_error(elgg_echo("pages:noaccess"));
-	
 
-	// Forward to the user's profile
-	//forward($page->getUrl());
 ?>
