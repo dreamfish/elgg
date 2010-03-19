@@ -106,7 +106,7 @@
 			 'tasks:task_percent_done_4'=>"80%",
 			 'tasks:task_percent_done_5'=>"100%",
 			 
-			 'tasks:access' => "Acces",
+			 'tasks:access' => "Access",
 			 'tasks:write_access' => "Write access",
 			 
 			 'tasks:tasksboard'=>"TasksBoard",
