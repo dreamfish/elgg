@@ -19,7 +19,7 @@ $('a.show_file_desc').click(function () {
 </script>
 
 <div id="filerepo_widget_layout"> 
-<h2><?php echo elgg_echo("file:group"); ?></h2>
+<h2>Files</h2>
 
 <?php
 

@@ -62,7 +62,7 @@
 		//extend some views
 		extend_view('profile/icon','groups/icon');
 		extend_view('css','groups/css');
-		
+		extend_view('dgroupsgroups/left_column','file/groupprofile_files');		
 		// Write access permissions
 		register_plugin_hook('access:collections:write', 'all', 'groups_write_acl_plugin_hook');
 		

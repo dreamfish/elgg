@@ -18,10 +18,10 @@
 			'pages' => "Pages",
 			'pages:yours' => "Your pages",
 			'pages:user' => "Pages home",
-			'pages:group' => "Project pages",
+			'pages:group' => "Pages",
 			'pages:all' => "All site pages",
 			'pages:new' => "New page",
-			'pages:groupprofile' => "Project pages",
+			'pages:groupprofile' => "Pages",
 			'pages:edit' => "Edit this page",
 			'pages:delete' => "Delete this page",
 			'pages:history' => "Page history",
@@ -34,7 +34,7 @@
 			'item:object:page_top' => 'Top-level pages',
 			'item:object:page' => 'Pages',
 			'item:object:pages_welcome' => 'Pages welcome blocks',
-			'pages:nogroup' => 'This project does not have any pages yet',
+			'pages:nogroup' => 'This does not have any pages yet',
 			'pages:more' => 'More pages',
 			
 		/**

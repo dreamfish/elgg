@@ -48,6 +48,8 @@
 		register_action("dgroups/killrequest",false,$CONFIG->pluginspath . "dgroups/actions/dgroupskillrequest.php");
 		register_action("dgroups/addtodgroup",false, $CONFIG->pluginspath . "dgroups/actions/addtodgroup.php");
 		register_action("dgroups/invite",false, $CONFIG->pluginspath . "dgroups/actions/invite.php");
+		extend_view('dgroups/menu/links', 'pages/menu'); // Add to groups context
+		extend_view('dgroups/right_column', 'pages/groupprofile_pages'); // Add to groups context
 		
 		// Use dgroup widgets
 		use_widgets('dgroups');
@@ -224,6 +226,8 @@
 				if($page_owner->forum_enable != "no"){ 
 				    add_submenu_item(elgg_echo('dgroups:forum'),$CONFIG->wwwroot . "pg/dgroups/forum/{$page_owner->getGUID()}/", '1dgroupslinks');
 			    }
+			    add_submenu_item('group pages',$CONFIG->wwwroot . "pg/pages/owned/group_{$page_owner->getGUID()}/", 'ldpageslinks');
+			    add_submenu_item('group files',$CONFIG->wwwroot . "pg/file/group_{$page_owner->getGUID()}", 'ldpageslinks');
 					
 			}
 		
