@@ -21,6 +21,8 @@
 			'logoutok' => "You have been logged out.",
 			'logouterror' => "We couldn't log you out. Please try again.",
 	
+			'loggedinrequired' => "Please log in to access this resource.",
+			'onlyadmins'  => "Only administrators can access this resource",
 		/**
 		 * Errors
 		 */
