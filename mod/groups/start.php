@@ -213,13 +213,11 @@
 						if ($page_owner->isPublicMembership())
 						{
 							add_submenu_item(elgg_echo('groups:join'),$CONFIG->wwwroot . "action/groups/join?group_guid={$page_owner->getGUID()}", '1groupsactions');		
-						}
-						else
-						{
-							add_submenu_item(elgg_echo('groups:joinrequest'),$CONFIG->wwwroot . "action/groups/joinrequest?group_guid={$page_owner->getGUID()}", '1groupsactions');		
-						}
+						}						
 					}
 				}
+				
+				add_submenu_item(elgg_echo('groups:joinrequest'),$CONFIG->wwwroot . "action/groups/joinrequest?group_guid={$page_owner->getGUID()}", '1groupsactions');	
 				
 				if($page_owner->forum_enable != "no"){ 
 				    add_submenu_item(elgg_echo('groups:forum'),$CONFIG->wwwroot . "pg/groups/forum/{$page_owner->getGUID()}/", '1groupslinks');
