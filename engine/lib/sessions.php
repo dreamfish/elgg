@@ -495,7 +495,7 @@
 			if (!isadminloggedin()) {
 				$_SESSION['last_forward_from'] = current_page_url();
 				register_error(elgg_echo('onlyadmins'));
-				forward();
+				forward("pg/page/login");
 			}
 		}
 		
