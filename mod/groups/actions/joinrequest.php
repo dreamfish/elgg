@@ -66,6 +66,10 @@
 		}
 	}
 	
-	forward($_SERVER['HTTP_REFERER']);
+	//forward($_SERVER['HTTP_REFERER']);
+	if(isset($_SESSION['last_forward_from']))
+		forward($_SESSION['last_forward_from']);
+	else
+		forward($_SERVER['HTTP_REFERER']);
 	
 ?>
