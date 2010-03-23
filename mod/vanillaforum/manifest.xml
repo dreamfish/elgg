@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin_manifest>
+        <field key="author" value="Kevin Jardine &lt;kevin@radagast.biz&gt;" />
+        <field key="version" value="0.6" />
+        <field key="description" value="Vanilla forum integration" />
+        <field key="website" value="http:/elgg.org/" />
+        <field key="copyright" value="(C) Curverider 2009" />
+        <field key="licence" value="GNU Public License version 2" />
+</plugin_manifest>

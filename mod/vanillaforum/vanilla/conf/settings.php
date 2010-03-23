@@ -1,0 +1,23 @@
+<?php
+// Application Settings
+$Configuration['SETUP_TEST'] = '1';
+$Configuration['APPLICATION_PATH'] = '/var/www/elgg/mod/vanillaforum/vanilla/';
+$Configuration['DATABASE_PATH'] = '/var/www/elgg/mod/vanillaforum/vanilla/conf/database.php';
+$Configuration['LIBRARY_PATH'] = '/var/www/elgg/mod/vanillaforum/vanilla/library/';
+$Configuration['EXTENSIONS_PATH'] = '/var/www/elgg/mod/vanillaforum/vanilla/extensions/';
+$Configuration['LANGUAGES_PATH'] = '/var/www/elgg/mod/vanillaforum/vanilla/languages/';
+$Configuration['THEME_PATH'] = '/var/www/elgg/mod/vanillaforum/vanilla/themes/vanilla/';
+$Configuration['DEFAULT_STYLE'] = '/elgg/mod/vanillaforum/vanilla/themes/vanilla/styles/default/';
+$Configuration['WEB_ROOT'] = '/elgg/mod/vanillaforum/vanilla/';
+$Configuration['BASE_URL'] = 'http://localhost/elgg/mod/vanillaforum/vanilla/';
+$Configuration['HTTP_METHOD'] = 'http://';
+$Configuration['FORWARD_VALIDATED_USER_URL'] = 'http://localhost/elgg/mod/vanillaforum/vanilla/';
+$Configuration['SUPPORT_EMAIL'] = 'holon.earth@gmail.com';
+$Configuration['SUPPORT_NAME'] = 'Fabio';
+$Configuration['APPLICATION_TITLE'] = 'Vanilla';
+$Configuration['BANNER_TITLE'] = 'Vanilla';
+$Configuration['COOKIE_DOMAIN'] = '';
+$Configuration['COOKIE_PATH'] = '/elgg/mod/vanillaforum/vanilla/';
+$Configuration['SETUP_COMPLETE'] = '1';
+$Configuration['DATABASE_VERSION'] = '2';
+$Configuration['ADDON_NOTICE'] = '0';
