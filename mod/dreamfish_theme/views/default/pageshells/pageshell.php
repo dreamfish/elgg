@@ -49,7 +49,9 @@ if (empty($vars['title'])) {
 	
 	<ul>
 	<li><a href="<?php echo $vars['url']; ?>mod/riverdashboard/">activity</a></li>
-	<li><a href="<?php echo $vars['url']; ?>mod/blogextended/group.php">labs</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/dreamfish-emails">emails</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/dreamfish-events">events</a></li>
+	<li><a href="<?php echo $vars['url']; ?>mod/blogextended/group.php">blog</a></li>
 	<li><a href="<?php echo $vars['url']; ?>pg/dgroups/world">groups</a></li>
 	</ul>
 </li>
