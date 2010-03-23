@@ -13,43 +13,82 @@
 ?>
 <script type="text/javascript">
 
+function validate_username(username)
+{
+	if (username == "") {
+		alert("<?php echo elgg_echo("dreamfish_theme:provide_username"); ?>");
+		return false;
+	}
+	
+	var invalid_chars = new Array("/","\\","\"","'","*","&"," ");
+	
+	var i = 0;
+	for (i=0; i<invalid_chars.length; i++)
+	{
+		if (is_char_in_string(invalid_chars[i],username))
+		{
+			var char = invalid_chars[i];
+			if (char == ' ')
+				char = "space";
+			alert ("<?php echo elgg_echo("dreamfish_theme:invalid_char");?>" + char);
+			return false;
+		}
+	}
+	return true;
+}
+
+function strpos (haystack, needle, offset) {
+    var i = (haystack+'').indexOf(needle, (offset ? offset : 0));
+    return i === -1 ? false : i;
+}
+
+function is_char_in_string(char, string)
+{
+	if (strpos(string,char) !== false)
+	{
+		return true;
+	}	
+	else
+	{
+		return false;
+	}
+}
+
+
 function validateForm() {
 	var ok = true;
 	var regform = document.forms.regform;
 
 
 	if ( ! (regform.yes_dreamfish.checked  ) ) {
-		alert("Please confirm that you read the terms and the guidelines!");
+		alert("<?php echo elgg_echo("dreamfish_theme:read_terms");?>");
 		ok = false;
 	}
-
-	if (regform.name.value == "") {
-		alert("Please fill in your name");
+	
+	if (regform.email.name == "") {
+		alert("<?php echo elgg_echo("dreamfish_theme:no_name");?>");
 		ok = false;
 	}
-
+	
 	if (regform.email.value == "") {
-		alert("Please provide an email address");
+		alert("<?php echo elgg_echo("dreamfish_theme:no_email");?>");
 		ok = false;
 	}
 
-	if (regform.username.value == "") {
-		alert("Please provide an username");
-		ok = false;
-	}
+	ok = validate_username(regform.username.value);
 
 	if (regform.password.value == "") {
-		alert("Password cannot be empty");
+		alert("<?php echo elgg_echo("dreamfish_theme:no_pwd");?>");
 		ok = false;
 	}
 
 	if (regform.password2.value == "") {
-		alert("Password repetition cannot be empty");
+		alert("<?php echo elgg_echo("dreamfish_theme:no_pwd2");?>");
 		ok = false;
 	}
 
 	if (regform.password.value != regform.password2.value) {
-		alert("Passwords do not match!");
+		alert("<?php echo elgg_echo("dreamfish_theme:pwd_no_match");?>");
 		ok = false;
 	}
 
@@ -60,7 +99,7 @@ function validateForm() {
 </script>
 	
 <?php
-    error_log("Using DF register form.");
+    //error_log("Using DF register form.");
 	$username = get_input('u');
 	$email = get_input('e');
 	$name = get_input('n');
