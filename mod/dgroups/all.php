@@ -43,7 +43,7 @@
 	}
 	
 	//get a dgroup count
-	$dgroup_count = get_entities("dgroup", "dgroup", 0, "", 10, 0, true, 0, null);
+	$dgroup_count = get_entities("group", "dgroup", 0, "", 10, 0, true, 0, null);
 		
 	//DISABLE find dgroups Sx: Search by tag needs to be reconstituted or removed from the left side of the people and project lists
 	//$area1 = elgg_view("dgroups/find");
