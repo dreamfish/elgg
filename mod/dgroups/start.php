@@ -362,7 +362,7 @@
 		//if (($event == 'create') && ($object_type == 'dgroup') && ($object instanceof ElggGroup))
 		//{
 			$dgroup_subtype = get_subtype_id('group','dgroup');
-			error_log("obj subtype: " . $object->subtype);
+			//error_log("obj subtype: " . $object->subtype);
 			if ($object->subtype != $dgroup_subtype)
 				return true;
 				
