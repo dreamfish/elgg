@@ -12,7 +12,7 @@
 
 		require_once(dirname(dirname(dirname(__FILE__))) . '/engine/start.php');
 
-		gatekeeper();
+		//gatekeeper();
 		
 		$content = get_input('content','');
 		$content = explode(',',$content);

@@ -14,6 +14,21 @@
  * @uses $vars['messages'] A 2d array of various message registers, passed from system_messages()
  */
 
+/**
+ * Creates the HTML portion for the community menu
+ */
+function create_community_navigation_html($vars)
+{
+	echo ("
+	<ul>
+	<li><a href=\"". $vars['url'] . "mod/riverdashboard/\">" . elgg_echo('dreamfish_theme:activity') . "</a></li>
+	<li><a href=\"". $vars['url'] . "pg/pages/url/dreamfish-emails\">" . elgg_echo('dreamfish_theme:emails') . "</a></li>
+	<li><a href=\"". $vars['url'] . "pg/pages/url/dreamfish-events\">" . elgg_echo('dreamfish_theme:events') . "</a></li>
+	<li><a href=\"". $vars['url'] . "mod/blogextended/group.php\">" . elgg_echo('dreamfish_theme:blog') . "</a></li>
+	<li><a href=\"". $vars['url'] . "pg/dgroups/world\">" . elgg_echo('dreamfish_theme:groups') . "</a></li>
+	</ul> ");
+}
+
 // Set the content type
 header("Content-type: text/html; charset=UTF-8");
 // Set title
@@ -47,13 +62,8 @@ if (empty($vars['title'])) {
 <li <?php echo strpos(current_page_url(),"community") ? "class=\"selected\"" :"" ?>>
 	<a href="<?php echo $vars['url']; ?>pg/page/community"><span><h4>Community</h4></span></a>
 	
-	<ul>
-	<li><a href="<?php echo $vars['url']; ?>mod/riverdashboard/">activity</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/dreamfish-emails">emails</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/dreamfish-events">events</a></li>
-	<li><a href="<?php echo $vars['url']; ?>mod/blogextended/group.php">blog</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/dgroups/world">groups</a></li>
-	</ul>
+	<?php create_community_navigation_html($vars); ?>
+	
 </li>
 <li <?php echo strpos(current_page_url(),"dashboard") ? "class=\"selected\"" :"" ?>>
 	<a href="<?php echo $vars['url']; ?>pg/dashboard"><span><h4>My Dreamfish</h4></span></a>
@@ -89,10 +99,14 @@ if (empty($vars['title'])) {
 <li <?php echo strpos(current_page_url(),"community") ? "class=\"selected\"" :"" ?>>
 	<a href="<?php echo $vars['url']; ?>pg/page/community"><span><h4>Community</h4></span></a>
 	
+	<?php create_community_navigation_html($vars) ?>
+	<!--
 	<ul>
 	<li><a href="<?php echo $vars['url']; ?>mod/blogextended/group.php">labs</a></li>
 	<li><a href="<?php echo $vars['url']; ?>pg/dgroups/world">groups</a></li>
 	</ul>
+	-->
+	
 </li>
 <? }  // end if(isloggedin) ?>
 

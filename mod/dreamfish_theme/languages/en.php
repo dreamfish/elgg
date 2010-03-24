@@ -16,7 +16,13 @@ read and accept the <a href=\"http://network.dreamfish.com/elgg/pg/pages/view/20
         'dreamfish_theme:pwd_no_match' => "The passwords you entered do not match!",
         'dreamfish_theme:newsletters' => "Sign up for Dreamfish Emails! You can change subscriptions at any time",
         'dreamfish_theme:df_announce' => "Dreamfish News",
-        'dreamfish_theme:df_new_projects' => "Dreamfish New Projects"
+        'dreamfish_theme:df_new_projects' => "Dreamfish New Projects",
+        
+        'dreamfish_theme:activity' => "activity",
+        'dreamfish_theme:emails' => "emails",
+        'dreamfish_theme:events' => "events",
+        'dreamfish_theme:blog' => "blog",
+        'dreamfish_theme:groups' => "groups",
 	);
  
   add_translation("en",$english);
