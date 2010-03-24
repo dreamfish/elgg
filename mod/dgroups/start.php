@@ -361,6 +361,11 @@
 	{
 		//if (($event == 'create') && ($object_type == 'dgroup') && ($object instanceof ElggGroup))
 		//{
+			$dgroup_subtype = get_subtype_id('group','dgroup');
+			error_log("obj subtype: " . $object->subtype);
+			if ($object->subtype != $dgroup_subtype)
+				return true;
+				
 			$dgroup_id = create_access_collection(elgg_echo('dgroups:dgroup') . ": " . $object->name);
 			if ($dgroup_id)
 			{
@@ -379,7 +384,7 @@
 	function dgroups_read_acl_plugin_hook($hook, $entity_type, $returnvalue, $params)
 	{
 		
-		//error_log("READ: " . var_export($returnvalue));
+		error_log("READ: " . var_export($returnvalue));
 		$user = $_SESSION['user'];
 		if ($user)
 		{
@@ -404,7 +409,7 @@
 		if ($page_owner instanceof ElggGroup)
 		{
 			if (can_write_to_container())
-			{
+			{				
 				$returnvalue[$page_owner->dgroup_acl] = elgg_echo('dgroups:dgroup') . ": " . $page_owner->name;
 			
 				return $returnvalue;
@@ -526,10 +531,10 @@
 	register_extender_url_handler('dgroup_topicpost_url','annotation', 'dgroup_topic_post');
 	
 	// Register a handler for create dgroups
-	register_elgg_event_handler('create', 'dgroup', 'dgroups_create_event_listener');
+	register_elgg_event_handler('create', 'group', 'dgroups_create_event_listener');
 
 	// Register a handler for delete dgroups
-	register_elgg_event_handler('delete', 'dgroup', 'dgroups_delete_event_listener');
+	register_elgg_event_handler('delete', 'group', 'dgroups_delete_event_listener');
 	
 	// Make sure the dgroups initialisation function is called on initialisation
 	register_elgg_event_handler('init','system','dgroups_init');
