@@ -166,7 +166,7 @@ if (isset($UserID)) {
 
 </ul> 
 </div> 
-!-->
+-->
 <?php } ?>
 <!-- main contents -->
 
@@ -185,7 +185,10 @@ if (isset($UserID)) {
 <div id="footer">
 
 </div>
-</div><!-- /#layout_canvas -->
+</div> 
+-->
+<!-- layout_canvas -->
+<!--
 <?       if ($vars['user']->admin || $vars['user']->siteadmin) { ?>
  <a href="<?php echo $wwwroot ?>pg/admin/" class="usersettings"><?php //echo elgg_echo("admin"); ?></a> | 
  <a href="<?php echo $wwwroot ?>mod/pages/" class="usersettings">Maintain Pages</a>
