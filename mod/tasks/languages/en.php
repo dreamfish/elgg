@@ -86,9 +86,9 @@
 			 'tasks:task_type_0'=>"Dev",
 			 'tasks:task_type_1'=>"Design",
 			 'tasks:task_type_2'=>"Research",
-			 'tasks:task_type_3'=>"Other2",
-			 'tasks:task_type_4'=>"Other3",
-			 'tasks:task_type_5'=>"Other4",
+			 'tasks:task_type_3'=>"Plan",
+			 'tasks:task_type_4'=>"Create",
+			 'tasks:task_type_5'=>"Contact",
 			 
 			 'tasks:task_status_'=>"",
 			 'tasks:task_status_0'=>"Open",
