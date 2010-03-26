@@ -46,7 +46,7 @@
 		
 	access_show_hidden_entities($access_status);
 	
-	forward();
+	forward("pg/page/login");
 	exit;
 
 ?>
