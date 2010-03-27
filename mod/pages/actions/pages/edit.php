@@ -57,7 +57,12 @@
 		if (sizeof($input) > 0)
 		{
 			foreach($input as $shortname => $value) {
+/*
 				if ((!$pages_guid) || (($pages_guid) && ($shortname != 'title')))
+					$page->$shortname = $value;
+			
+*/
+//				if ($pages_guid)
 					$page->$shortname = $value;
 			}
 		}
@@ -71,14 +76,10 @@
 			forward($_SERVER['HTTP_REFERER']);
 			exit;
 		}
-	$container = get_entity($page->container_guid);
-	if (strpos($page->title, 'DF_')==0 or isadmin() or ($container instanceof ElggGroup and $container->name == 'Community Guides')) {
-		$page->description = get_input('description', '', false);
-	}
-
+		
 		// Access ids
 		$page->access_id = (int)get_input('access_id', ACCESS_PRIVATE);
-		$page->slug = get_input('slug', '');
+		
 		// Write access id
 		$page->write_access_id = (int)get_input('write_access_id', ACCESS_PRIVATE);
 		

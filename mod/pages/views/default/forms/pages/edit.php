@@ -36,44 +36,21 @@
 	if (is_array($vars['config']->pages) && sizeof($vars['config']->pages) > 0)
 		foreach($vars['config']->pages as $shortname => $valtype) {
 			
-			$disabled = "";
-			
-			if (!$new_page && ($shortname == 'title'))
-			{
-				$disabled = true;
-			}
 ?>
 
 	<p>
 		<label>
 			<?php echo elgg_echo("pages:{$shortname}") ?><br />
-			<?php
-				$value = $vars['entity']->$shortname;
-				if ( ($shortname == "access_id") && ($new_page))
-					$value = ACCESS_PUBLIC;
-			    echo elgg_view("input/{$valtype}",array(
+			<?php echo elgg_view("input/{$valtype}",array(
 															'internalname' => $shortname,
-															'value' => $value,
-															'disabled' => $disabled
-															));			    
-	        ?>
+															'value' => $vars['entity']->$shortname
+															)); ?>
 		</label>
 	</p>
 
 <?php
 			
 		}
-?>
-	<p>
-		<label>
-			Slug<br />
-			<?php echo elgg_view("input/text",array(
-															'internalname' => 'slug',
-															'value' => $vars['entity']->slug,
-															)); ?>
-		</label>
-	</p>
-<?php 
 		$cats = elgg_view('categories',$vars);
 		if (!empty($cats)) {
 			
