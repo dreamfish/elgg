@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin_manifest>
+	<field key="author" value="Ethan Jucovy" />
+	<field key="version" value="0.1" />
+	<field key="description" value="Provides custom elgg event triggers for the first time a user performs certain actions" />
+	<field key="website" value="http://community.elgg.org" />
+	<field key="licence" value="GNU Public License v3" />
+</plugin_manifest>

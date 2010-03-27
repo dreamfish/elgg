@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin_manifest>
+	<field key="author" value="Ethan Jucovy" />
+	<field key="version" value="0.1" />
+	<field key="description" value="Redirect users after first login only" />
+	<field key="website" value="community.elgg.org" />
+	<field key="licence" value="GNU Public License version 3" />
+</plugin_manifest>
+
+<!--
+
+forked from LoginRedirector 2.0 plugin by jeroen dalsem
+ http://community.elgg.org/pg/plugins/jdalsem/read/163302/loginredirector
+
+-->
