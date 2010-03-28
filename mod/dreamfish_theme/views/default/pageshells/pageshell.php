@@ -43,6 +43,7 @@ if (empty($vars['title'])) {
 ?>
 
 <?php echo elgg_view('page_elements/header', $vars); ?>
+<?php if ($_GET["notheme"] == "") { ?>
 <?php echo elgg_view('page_elements/header_contents', $vars); ?>
 
 <div id="navigation" class="clearpush">
@@ -156,7 +157,7 @@ echo elgg_view("navigation/topbar_tools");
 !-->
 <?php } ?>
 <!-- main contents -->
-
+<?php } ?>
 <!-- display any system messages -->
 <?php echo elgg_view('messages/list', array('object' => $vars['sysmessages'])); ?>
 

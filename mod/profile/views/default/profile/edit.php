@@ -16,7 +16,6 @@
 ?>
 <div class="contentWrapper">
 <form action="<?php echo $vars['url']; ?>action/profile/edit" method="post">
-
 <?php
 
 	//var_export($vars['profile']);
@@ -39,9 +38,7 @@
 				$access_id = ACCESS_DEFAULT;
 			}
 
-?>
-
-	<p>
+?>	<p>
 		<label>
 			<?php echo elgg_echo("profile:{$shortname}") ?><br />
 			<?php echo elgg_view("input/{$valtype}",array(
