@@ -18,28 +18,9 @@
 
 ?>
 
-<script type="text/javascript">
-    var GB_ROOT_DIR = "<?php echo $vars['url']?>mod/profile_manager/views/greybox/";
-</script>
-<script type="text/javascript" src="<?php echo $vars['url']?>mod/profile_manager/views/greybox/AJS.js"></script>
-<script type="text/javascript" src="<?php echo $vars['url']?>mod/profile_manager/views/greybox/AJS_fx.js"></script>
-<script type="text/javascript" src="<?php echo $vars['url']?>mod/profile_manager/views/greybox/gb_scripts.js"></script>
-<link href="<?php echo $vars['url']?>mod/profile_manager/views/greybox/gb_styles.css" rel="stylesheet" type="text/css" />
 <div class="contentWrapper">
 <form id="profile_edit_form" action="<?php echo $vars['url']; ?>action/profile/edit" method="post">
-<h3>Profile Picture</h3>
-<div>
 
-	<?php 
-		
-		$user_avatar = $_SESSION['user']->getIcon('medium');//$vars['url'] . "pg/icon/" . $_SESSION['user']->username . "/medium/" . $_SESSION['user']->icontime . ".jpg";
-		echo "<img src=\"{$user_avatar}\" alt=\"avatar\" />";
-
-	?>
-
-</div>
-
-<a href="<?php echo $vars['url']?>mod/profile/editicon.php?notheme=true" title="Edit My Profile Picture" rel="gb_page_center[800, 500]">Edit My Profile Picture</a><br>(Note: Your picture will not refresh after the popup closes. Don't worry, it will be saved though).
 <?php
 	
 	// Build fields

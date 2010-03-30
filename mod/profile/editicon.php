@@ -28,10 +28,8 @@
 		
 	// Get the form and correct canvas area
 		$body = elgg_view_layout("two_column_left_sidebar", '', $area2);
-				
+		
 	// Draw the page
-	if ($_GET["notheme"])
-		page_draw(elgg_echo("profile:editicon"),$area2);
-	else
 		page_draw(elgg_echo("profile:editicon"),$body);
+
 ?>
