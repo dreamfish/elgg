@@ -29,19 +29,23 @@
 			$rel = 'friend';
 		
 		if (!$banned) {
-			$skills = get_metadata_byname($vars['entity']->guid, "skills");
-			$wants = get_metadata_byname($vars['entity']->guid, "wants");
+			$meta = get_metadata_for_entity($vars['entity']->guid);
 			$wants_str = '';
-			foreach($wants as $md) {
-				if (!empty($wants_str)) $wants_str .= ', ';
-				$wants_str .= $md->value;				
-			}
 			$skills_str = '';
-			foreach($skills as $md) {
-				if (!empty($skills_str)) $skills_str .= ', ';
-				$skills_str .= $md->value;				
+			foreach($meta as $md)
+			{
+				if ($md->name == 'skills')
+				{
+					if (!empty($skills_str)) $skills_str .= ', ';
+					$skills_str .= $md->value;	
+				}
+				else if ($md->name == 'wants') 
+				{
+					if (!empty($wants_str)) $wants_str .= ', ';
+					$wants_str .= $md->value;		
+				}
 			}
-						
+				
 			$info .= "<p><b><a href=\"" . $vars['entity']->getUrl() . "\" rel=\"$rel\">" . $vars['entity']->name . "</a></b></p>";
 			if ($skills_str != '' || $wants_str != '') {
 				if ($skills_str != '') 
