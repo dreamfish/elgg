@@ -300,6 +300,7 @@ To remove a widget drag it back to the <b>Widget gallery</b>.",
 		 */
 	
 			'profile:saved' => "Your profile was successfully saved.",
+			'profile:saved-update-image' => "Your profile was successfully saved. Please change your profile picture next.",
 			'profile:icon:uploaded' => "Your profile picture was successfully uploaded.",
 	
 		/**
