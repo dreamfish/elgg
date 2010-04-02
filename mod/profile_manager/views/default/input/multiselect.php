@@ -33,7 +33,7 @@
     	//$("#<?php echo $internal_id;?>").dropdownchecklist({ width: 200});
     });
 </script>
-<p>(hold ctrl to select multiple)</p>
+<p>[To select multiple items, hold down the Control key or Command key (on a mac)]</p>
 <p style="display:inline;">
 	<select id="<?php echo $internal_id;?>" name="<?php echo $vars['internalname'];?>[]" multiple="multiple"> 
 	<?php	

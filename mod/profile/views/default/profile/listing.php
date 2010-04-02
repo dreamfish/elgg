@@ -49,12 +49,12 @@
 			$info .= "<p><b><a href=\"" . $vars['entity']->getUrl() . "\" rel=\"$rel\">" . $vars['entity']->name . "</a></b></p>";
 			if ($skills_str != '' || $wants_str != '') {
 				if ($skills_str != '') 
-					$skills_str = '<b>I offer: </b><br>' . $skills_str . '';
+					$skills_str = '<b>offers: </b><br>' . $skills_str . '';
 				else
 					$skills_str = '&nbsp;';
 					
 				if ($wants_str != '') 
-					$wants_str = '<b>I need: </b><br>' . $wants_str . '';
+					$wants_str = '<b>wants: </b><br>' . $wants_str . '';
 				else
 					$wants_str = '&nbsp;';
 			
