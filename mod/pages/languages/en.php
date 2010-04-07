@@ -57,7 +57,7 @@
 			'pages:title' => 'Pages Title',
 			'pages:description' => 'Your page entry',
 			'pages:tags' => 'Tags',	
-			'pages:access_id' => 'Access',
+			'pages:access_id' => 'Read access',
 			'pages:write_access_id' => 'Write access',
 		
 		/**
