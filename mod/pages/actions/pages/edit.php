@@ -79,6 +79,10 @@
 		
 		// Access ids
 		$page->access_id = (int)get_input('access_id', ACCESS_PRIVATE);
+		
+		if (strpos($page->title, 'DF_')==0 or isadmin() or ($container instanceof ElggGroup and $container->name == 'Community Guides')) {
+			$page->description = get_input('description', '', false); 	
+		}
 		$page->slug = get_input('slug', '');		
 		
 		// Write access id
