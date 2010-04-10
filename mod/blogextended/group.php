@@ -31,7 +31,7 @@
 
 
 
-	$area2 = $toptext .  list_entities_from_metadata_multi(array("content_owner"=>$group, "blog_type"=>$type), "object","blog",0, 10, false,false,false);
+	$area2 = $toptext .  list_entities_from_metadata_multi(array("content_owner"=>$group, "blog_type"=>$type), "object","blog",0, 10, false,false,true);
 
     //search_for_group
     $objects = get_entities("group", "", 0, "", 10, 0, 0, 0, null);
