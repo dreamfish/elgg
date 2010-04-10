@@ -65,6 +65,9 @@
 		}
 
 ?>
+<p><label>Slug (http://www.dreamfish.com/pg/pages/url/....)</label><br />
+<?php echo elgg_view("input/text",array('internalname' => 'slug','value' => $vars['entity']->slug)); ?>
+</p>
 	<p>
 		<?php
 			if (!$new_page)

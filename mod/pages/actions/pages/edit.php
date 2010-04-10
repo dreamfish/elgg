@@ -79,6 +79,7 @@
 		
 		// Access ids
 		$page->access_id = (int)get_input('access_id', ACCESS_PRIVATE);
+		$page->slug = get_input('slug', '');		
 		
 		// Write access id
 		$page->write_access_id = (int)get_input('write_access_id', ACCESS_PRIVATE);
