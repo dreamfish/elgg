@@ -294,7 +294,13 @@
     					set_input('username',$page[1]);
     					
     				include($CONFIG->pluginspath . "groups/membership.php");	
-    			break;    				
+    			break;  
+    			case "mine" :
+    				// User is a member of
+					set_input('username', $_SESSION['user']->username);
+    					
+    				include($CONFIG->pluginspath . "groups/membership.php");	
+    			break;     				
     			default:
     				set_input('group_guid', $page[0]);
     				include($CONFIG->pluginspath . "groups/groupprofile.php");
