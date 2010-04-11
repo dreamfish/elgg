@@ -2780,25 +2780,30 @@ ul#frontcopy li.dfvideo {
 }
 
 ul#frontcopy li.dfcopy a.facebook,
+ul#frontcopy li.dfcopy a.flickr,
 ul#frontcopy li.dfcopy a.twitter,
 ul#frontcopy li.dfcopy a.vimeo {
 	margin: 0 5px;
 	padding: 0;
-	width: 20px;
-	height: 20px;
+	width: 16px;
+	height: 16px;
 	display: block;
 	float: left;
 	text-decoration: none;
 }
 
 ul#frontcopy li.dfcopy a.facebook {
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/facebook.png') top left no-repeat;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/facebook_16.png') top left no-repeat;
+}
+
+ul#frontcopy li.dfcopy a.flickr {
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/flickr_16.png') top left no-repeat;
 }
 
 ul#frontcopy li.dfcopy a.twitter {
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/twitter.png') top left no-repeat;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/twitter_16.png') top left no-repeat;
 }
 
 ul#frontcopy li.dfcopy a.vimeo {
-	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/vimeo.png') top left no-repeat;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/vimeo_16.png') top left no-repeat;
 }
