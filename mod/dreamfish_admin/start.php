@@ -97,6 +97,15 @@ function set_new_notification_message($message_key, $message_value,$plugin_name)
 	
 	$language_file = $root . "languages/" . $language . ".php";
 	
+	if (! file_exists($language_file)) {
+		error_log(elgg_echo('dreamfish_admin:file_not_saved'));
+		error_log(elgg_echo('dreamfish_admin:lang_not_found'));
+		register_error(elgg_echo('dreamfish_admin:file_not_saved'));
+		register_error(elgg_echo('dreamfish_admin:lang_not_found'));
+		forward($_SERVER['HTTP_REFERER']);
+		return false;
+	}
+	
 	//read the file into a string
 	$content = file_get_contents($language_file, FILE_TEXT);
 	//the message value shall not contain undesired characters	
