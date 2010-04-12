@@ -6,26 +6,27 @@
 		 * Menu items and titles
 		 */
 	
-			'thewire' => "The wire",
-			'thewire:user' => "%s's wire",
-			'thewire:posttitle' => "%s's notes on the wire: %s",
-			'thewire:everyone' => "All wire posts",
+			'thewire' => "The stream",
+			'thewire:user' => "%s's stream",
+			'thewire:posttitle' => "%s's notes in the stream: %s",
+			'thewire:everyone' => "All stream posts",
+			'thewire:replies' => 'Replies to me',
 	
-			'thewire:read' => "Wire posts",
+			'thewire:read' => "Stream posts",
 			
 			'thewire:strapline' => "%s",
 	
-			'thewire:add' => "Post to the wire",
-		    'thewire:text' => "A note on the wire",
+			'thewire:add' => "Post to the stream",
+		    'thewire:text' => "A note in the stream",
 			'thewire:reply' => "Reply",
 			'thewire:via' => "via",
-			'thewire:wired' => "Posted to the wire",
+			'thewire:wired' => "Posted to the stream",
 			'thewire:charleft' => "characters left",
-			'item:object:thewire' => "Wire posts",
+			'item:object:thewire' => "Stream posts",
 			'thewire:notedeleted' => "note deleted",
-			'thewire:doing' => "What are you doing? Tell everyone on the wire:",
-			'thewire:newpost' => 'New wire post',
-			'thewire:addpost' => 'Post to the wire',
+			'thewire:doing' => "What are you doing? Tell everyone in the stream:",
+			'thewire:newpost' => 'New stream post',
+			'thewire:addpost' => 'Post to the stream',
 
 	
         /**
@@ -36,16 +37,16 @@
 	        'thewire:river:created' => "%s posted",
 	        
 	        //these get inserted into the river links to take the user to the entity
-	        'thewire:river:create' => "on the wire.",
+	        'thewire:river:create' => "in the stream.",
 	        
 	    /**
 	     * Wire widget
 	     **/
 	     
-	        'thewire:sitedesc' => 'This widget shows the latest site notes posted to the wire',
-	        'thewire:yourdesc' => 'This widget shows your latest notes posted to the wire',
-	        'thewire:friendsdesc' => 'This widget will show the latest from your friends on the wire',
-	        'thewire:friends' => 'Your friends on the wire',
+	        'thewire:sitedesc' => 'This widget shows the latest site notes posted to the stream',
+	        'thewire:yourdesc' => 'This widget shows your latest notes posted to the stream',
+	        'thewire:friendsdesc' => 'This widget will show the latest from your friends in the stream',
+	        'thewire:friends' => 'Your friends in the stream',
 	        'thewire:num' => 'Number of items to display',
 	        
 	        
@@ -54,7 +55,7 @@
 		 * Status messages
 		 */
 	
-			'thewire:posted' => "Your message was successfully posted to the wire.",
+			'thewire:posted' => "Your message was successfully posted to the stream.",
 			'thewire:deleted' => "Your note was successfully deleted.",
 	
 		/**
