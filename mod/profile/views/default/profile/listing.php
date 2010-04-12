@@ -29,7 +29,37 @@
 			$rel = 'friend';
 		
 		if (!$banned) {
+			$meta = get_metadata_for_entity($vars['entity']->guid);
+			$wants_str = '';
+			$skills_str = '';
+			foreach($meta as $md)
+			{
+				if ($md->name == 'skills')
+				{
+					if (!empty($skills_str)) $skills_str .= ', ';
+					$skills_str .= $md->value;	
+				}
+				else if ($md->name == 'wants') 
+				{
+					if (!empty($wants_str)) $wants_str .= ', ';
+					$wants_str .= $md->value;		
+				}
+			}
+				
 			$info .= "<p><b><a href=\"" . $vars['entity']->getUrl() . "\" rel=\"$rel\">" . $vars['entity']->name . "</a></b></p>";
+			if ($skills_str != '' || $wants_str != '') {
+				if ($skills_str != '') 
+					$skills_str = '<b>offers: </b><br>' . $skills_str . '';
+				else
+					$skills_str = '&nbsp;';
+					
+				if ($wants_str != '') 
+					$wants_str = '<b>wants: </b><br>' . $wants_str . '';
+				else
+					$wants_str = '&nbsp;';
+			
+				$info .= "<table width='100%'><tr><td width='50%'>" . $skills_str . "</td><td width='50%'>" . $wants_str . "</td></tr></table>";
+			}
 			//create a view that a status plugin could extend - in the default case, this is the wire
 	 		$info .= elgg_view("profile/status", array("entity" => $vars['entity']));
 

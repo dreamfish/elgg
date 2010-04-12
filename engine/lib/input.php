@@ -307,6 +307,7 @@
 		'div' => array(
 			'align' => array (),
 			'class' => array (),
+			'id' => array(),
 			'dir' => array (),
 			'lang' => array(),
 			'style' => array (),
@@ -482,6 +483,7 @@
 		'tt' => array(),
 		'u' => array(),
 		'ul' => array (
+			'id' => array(),
 			'class' => array (),
 			'style' => array (),
 			'type' => array ()),

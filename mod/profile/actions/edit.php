@@ -61,16 +61,25 @@
 				}
 			$user->save();
 
-			// Notify of profile update
-			trigger_elgg_event('profileupdate',$user->type,$user);
 			
 			//add to river
 			add_to_river('river/user/default/profileupdate','update',$_SESSION['user']->guid,$_SESSION['user']->guid);
 			
-			system_message(elgg_echo("profile:saved"));
+			$user_avatar = $_SESSION['user']->getIcon('medium');
 			
-			// Forward to the user's profile
-			forward($user->getUrl());
+			if (preg_match('/default/', $user_avatar)) {			
+				system_message(elgg_echo("profile:saved-update-image"));				
+				forward($CONFIG->wwwroot . '/mod/profile/editicon.php');
+			}
+			else {
+				// Notify of profile update
+				trigger_elgg_event('profileupdate',$user->type,$user);
+				
+				system_message(elgg_echo("profile:saved"));
+			
+				// Forward to the user's profile
+				forward($user->getUrl());
+			}
 
 		} else {
 	// If we can't, display an error
