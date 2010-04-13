@@ -49,15 +49,29 @@ if (empty($vars['title'])) {
 <ul class="tabnav" id="topleftnav">
 <?php if (isloggedin()) { ?>
 <li <?php echo (current_page_url() == $vars['url']) ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>"><span><h4>Home</h4></span></a>
+	<a href="<?php echo $vars['url']; ?>pg/pages/url/meeting/"><span><h4>Meeting</h4></span></a>
+	
+	<ul>
+	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/events/">events</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/chat/">chat cafe</a></li>
+	<li><a href="http://ietherpad.com/ep/pad/newpad">meeting pad</a></li>
+	</ul>
 </li>
 
 <li <?php echo strpos(current_page_url(),"mod/members") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>mod/members"><span><h4>People</h4></span></a>
+	<a href="<?php echo $vars['url']; ?>mod/members"><span><h4>Marketplace</h4></span></a>
 </li>
 	
 <li <?php echo strpos(current_page_url(),"groups") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/groups/world"><span><h4>Projects</h4></span></a>
+	<a href="<?php echo $vars['url']; ?>pg/groups/world"><span><h4>Project Hub</h4></span></a>
+	
+	<ul>
+	<li>
+	<?php
+	echo "<a href=\"{$vars['url']}pg/groups/member/{$_SESSION['user']->username}\">my projects</a>";
+	?>
+	</li>
+	</ul>
 </li>
 <li <?php echo strpos(current_page_url(),"community") ? "class=\"selected\"" :"" ?>>
 	<a href="<?php echo $vars['url']; ?>pg/page/community"><span><h4>Community</h4></span></a>
@@ -86,15 +100,21 @@ if (empty($vars['title'])) {
 	<a href="<?php echo $vars['url']; ?>mod/messages"><span><h4><span class="mail"></span></h4></span></a>
 </li>
 <? } else { ?>
-<li <?php echo current_page_url() == $vars['url'] ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>"><span><h4>Home</h4></span></a>
+<li <?php echo (current_page_url() == $vars['url']) ? "class=\"selected\"" :"" ?>>
+	<a href="<?php echo $vars['url']; ?>pg/pages/url/meeting/"><span><h4>Meeting</h4></span></a>
+	
+	<ul>
+	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/events/">events</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/chat/">chat cafe</a></li>
+	<li><a href="<?php echo $vars['url']; ?>ep/pad/newpad">meeting pad</a></li>
+	</ul>
 </li>
 
 <li <?php echo strpos(current_page_url(),"mod/members") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>mod/members"><span><h4>People</h4></span></a>
+	<a href="<?php echo $vars['url']; ?>mod/members"><span><h4>Marketplace</h4></span></a>
 </li>
 <li <?php echo strpos(current_page_url(),"groups") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/groups/world"><span><h4>Projects</h4></span></a>
+	<a href="<?php echo $vars['url']; ?>pg/groups/world"><span><h4>Project Hub</h4></span></a>
 </li>
 <li <?php echo strpos(current_page_url(),"community") ? "class=\"selected\"" :"" ?>>
 	<a href="<?php echo $vars['url']; ?>pg/page/community"><span><h4>Community</h4></span></a>
