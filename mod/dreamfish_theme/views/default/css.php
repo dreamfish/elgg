@@ -2807,3 +2807,59 @@ ul#frontcopy li.dfcopy a.twitter {
 ul#frontcopy li.dfcopy a.vimeo {
 	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/vimeo_16.png') top left no-repeat;
 }
+
+/* footer links */
+
+.dflogo {
+	margin-left: 20px;
+	width: 72px;
+	height: 72px;
+	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/dflogo.png') top left no-repeat;
+}
+
+ul.footerlinkies {
+	margin: 0 auto;
+	padding: 15px 0;
+	//width: 900px;
+	list-style-type: none;
+	font-size: 12px;
+	line-height: 21px;
+	font-family: AvantGarde, Verdana;
+}
+
+ul.footerlinkies li.footercols {
+	padding: 0 1%;
+	width: 18%;
+	float: left;
+}
+
+ul.footerlinkies li.footercols span.footerh3 {
+	font-weight: bold;
+	font-size: 14px;
+	text-decoration: underline;
+}
+
+ul.footerlinkies li.footercols ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+ul.footerlinkies a {
+	text-decoration: none;
+}
+
+ul.footerlinkies a:visited,
+ul.footerlinkies a:link {
+	color: #fff;
+}
+
+ul.footerlinkies a:hover {
+	text-decoration: underline;
+	color: rgb(151,225,248);
+}
+
+ul.footerlinkies a:active {
+	text-decoration: underline;
+	color: #000;
+}

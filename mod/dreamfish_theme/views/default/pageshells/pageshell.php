@@ -49,15 +49,29 @@ if (empty($vars['title'])) {
 <ul class="tabnav" id="topleftnav">
 <?php if (isloggedin()) { ?>
 <li <?php echo (current_page_url() == $vars['url']) ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>"><span><h4>Home</h4></span></a>
+	<a href="<?php echo $vars['url']; ?>pg/pages/url/meeting/"><span><h4>Meeting</h4></span></a>
+	
+	<ul>
+	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/events/">events</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/chat/">chat cafe</a></li>
+	<li><a href="<?php echo $vars['url']; ?>ep/pad/newpad">meeting pad</a></li>
+	</ul>
 </li>
 
 <li <?php echo strpos(current_page_url(),"mod/members") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>mod/members"><span><h4>People</h4></span></a>
+	<a href="<?php echo $vars['url']; ?>mod/members"><span><h4>Marketplace</h4></span></a>
 </li>
 	
 <li <?php echo strpos(current_page_url(),"groups") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/groups/world"><span><h4>Projects</h4></span></a>
+	<a href="<?php echo $vars['url']; ?>pg/groups/world"><span><h4>Project Hub</h4></span></a>
+	
+	<ul>
+	<li>
+	<?php
+	echo "<a href=\"{$vars['url']}pg/groups/member/{$_SESSION['user']->username}\">my projects</a>";
+	?>
+	</li>
+	</ul>
 </li>
 <li <?php echo strpos(current_page_url(),"community") ? "class=\"selected\"" :"" ?>>
 	<a href="<?php echo $vars['url']; ?>pg/page/community"><span><h4>Community</h4></span></a>
@@ -86,15 +100,21 @@ if (empty($vars['title'])) {
 	<a href="<?php echo $vars['url']; ?>mod/messages"><span><h4><span class="mail"></span></h4></span></a>
 </li>
 <? } else { ?>
-<li <?php echo current_page_url() == $vars['url'] ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>"><span><h4>Home</h4></span></a>
+<li <?php echo (current_page_url() == $vars['url']) ? "class=\"selected\"" :"" ?>>
+	<a href="<?php echo $vars['url']; ?>pg/pages/url/meeting/"><span><h4>Meeting</h4></span></a>
+	
+	<ul>
+	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/events/">events</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/chat/">chat cafe</a></li>
+	<li><a href="<?php echo $vars['url']; ?>ep/pad/newpad">meeting pad</a></li>
+	</ul>
 </li>
 
 <li <?php echo strpos(current_page_url(),"mod/members") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>mod/members"><span><h4>People</h4></span></a>
+	<a href="<?php echo $vars['url']; ?>mod/members"><span><h4>Marketplace</h4></span></a>
 </li>
 <li <?php echo strpos(current_page_url(),"groups") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/groups/world"><span><h4>Projects</h4></span></a>
+	<a href="<?php echo $vars['url']; ?>pg/groups/world"><span><h4>Project Hub</h4></span></a>
 </li>
 <li <?php echo strpos(current_page_url(),"community") ? "class=\"selected\"" :"" ?>>
 	<a href="<?php echo $vars['url']; ?>pg/page/community"><span><h4>Community</h4></span></a>
@@ -173,6 +193,114 @@ echo elgg_view("navigation/topbar_tools");
 
 </div>
 </div><!-- /#layout_canvas -->
+
+<ul class="footerlinkies">
+<li class="footercols">
+<div class="dflogo">&nbsp;</div>
+<p>
+This work is licensed under a Creative Commons Attribution-Share Alike 3.0 unported <a href="<?php echo $vars['url']; ?>pg/pages/view/1191/">license</a></p>
+<ul>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/view/3821/">Help
+</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/view/319/">Press</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/view/6122/">Terms</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/view/6116/">Privacy</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/view/3821/">Contact us</a></li>
+</ul>
+</li>
+<li class="footercols">
+<span class="footerh3">Membership</span>
+<ul>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/what-is-dreamfish">
+What is Dreamfish</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/view/114/">Become a member</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/membership-guidelines">Membership guidelines
+</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/membership-services">Membership services
+</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/service-tracking">Service tracking
+</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/making-a-payment">Making a payment</a></li>
+</ul>
+</li>
+<li class="footercols">
+<span class="footerh3">How Dreamfish Works</span>
+<ul>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/how-dreamfish-works">Overview
+</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/learning">Learning</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/selling">Selling</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/hiring">Hiring
+</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/collaborating">Colllaborating
+</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/creating-value">Creating value
+</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/paying-a-worker">Paying a worker</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/getting-started">Getting Started</a></li>
+</ul>
+</li>
+<li class="footercols">
+<span class="footerh3">Get involved</span>
+<ul>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/getting-involved">Getting involved
+</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/dreamfish-fellows">Dreamfish Fellows</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/investing/">Investing
+</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/dgroups/1859/facilitators-team/">Facilitating</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/dgroups/4854/member-success-team/">Documenting</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/dgroups/6103/marketing-team/">Marketing</a><a href="<?php echo $vars['url']; ?>pg/dgroups/6103/marketing-team/"> </a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/dgroups/4854/member-success-team/">Designing
+</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/groups/27/dreamfish-network-v10/">Developers
+</a></li>
+</ul>
+<li class="footercols">
+<span class="footerh3">About Dreamfish</span>
+<ul>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/humanifesto">Humanifesto</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/view/3263/">Dreamfish Quotes
+</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/dreamfish-story">Dreamfish Story</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/diversity-statement">Diversity Statement</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/leadership-and-governance">Leadership and Governance</a></li>
+</ul>
+</li>
+</ul>
+
 <?       if ($vars['user']->admin || $vars['user']->siteadmin) { ?>
  <a href="<?php echo $vars['url']; ?>pg/admin/" class="usersettings"><?php echo elgg_echo("admin"); ?></a> | 
  <a href="<?php echo $vars['url']; ?>mod/pages/" class="usersettings">Maintain Pages</a>
@@ -187,5 +315,6 @@ try {
 var pageTracker = _gat._getTracker("UA-4959867-1");
 pageTracker._trackPageview();
 } catch(err) {}</script>
+
 </body>
 </html>
