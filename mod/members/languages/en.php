@@ -6,7 +6,7 @@
 		 * Site info details
 		 */
 		
-		'members:members' => "Dreamfish members",
+		'members:members' => "Offer and Find",
 	    'members:online' => "Members active now",
 	    'members:active' => "Dreamfish members",
 	    'members:searchtag' => "Member search via tag",
