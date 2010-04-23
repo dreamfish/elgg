@@ -53,8 +53,8 @@ if (empty($vars['title'])) {
 	
 	<ul>
 	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/events/">events</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/chat/">chat cafe</a></li>
-	<li><a href="http://ietherpad.com/ep/pad/newpad">meeting pad</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/chat/" target="_blank">chat cafe</a></li>
+	<li><a href="http://ietherpad.com/ep/pad/newpad" target="_blank">meeting pad</a></li>
 	</ul>
 </li>
 
@@ -94,7 +94,7 @@ if (empty($vars['title'])) {
 </li>
 -->
 <li <?php echo strpos(current_page_url(),"chat") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/chat"><span><h4><span class="chat"></span></h4></span></a>
+	<a href="<?php echo $vars['url']; ?>pg/chat" target="_blank"><span><h4><span class="chat"></span></h4></span></a>
 </li>
 <li <?php echo strpos(current_page_url(),"messages") ? "class=\"selected\"" :"" ?>>
 	<a href="<?php echo $vars['url']; ?>mod/messages"><span><h4><span class="mail"></span></h4></span></a>
@@ -105,8 +105,8 @@ if (empty($vars['title'])) {
 	
 	<ul>
 	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/events/">events</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/chat/">chat cafe</a></li>
-	<li><a href="http://ietherpad.com/ep/pad/newpad">meeting pad</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/chat/" target="_blank">chat cafe</a></li>
+	<li><a href="http://ietherpad.com/ep/pad/newpad" target="_blank">meeting pad</a></li>
 	</ul>
 </li>
 
