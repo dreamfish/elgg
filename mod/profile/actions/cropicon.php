@@ -65,7 +65,8 @@
 			
 	    //forward the user back to the upload page to crop
 	    
-	    $url = $vars['url'] . "mod/profile/editicon.php";
+	    //$url = $vars['url'] . "mod/profile/editicon.php";
+	    $url = $vars['url'] . "pg/dashboard";
 			
 		if (isloggedin()) forward($url);
 
