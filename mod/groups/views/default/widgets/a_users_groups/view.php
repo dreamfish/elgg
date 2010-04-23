@@ -7,7 +7,7 @@
     //the number of groups to display
 	$number = (int) $vars['entity']->num_display;
 	if (!$number)
-		$number = 4;
+		$number = 5;
 		
     //the page owner
 	$owner = $vars['entity']->owner_guid;
@@ -29,7 +29,7 @@
 								  )
 				);
 				
-			echo "<div class=\"contentWrapper\">" . $icon . " <div class='search_listing_info'><p><span>" . $group->name . "</span><br />";
+			echo "<div class=\"contentWrapper\">" . $icon . " <div class='search_listing_info'><p><span><a href='" . $group->getURL() . "'>" . $group->name . "</a></span><br />";
 			echo $group->briefdescription . "</p></div><div class=\"clearfloat\"></div></div>";
 			
 		}
