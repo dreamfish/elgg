@@ -20,7 +20,7 @@
 								  )
 				);
 				
-			echo "<div class=\"contentWrapper\">" . $icon . " <p><span>" . $dgroup->name . "</span><br />";
+			echo "<div class=\"contentWrapper\">" . $icon . " <p><span><a href='" . $dgroup->getURL() . "'>" . $dgroup->name . "</a></span><br />";
 			echo $dgroup->briefdescription . "</p><div class=\"clearfloat\"></div></div>";
 			
 		}
