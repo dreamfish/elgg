@@ -192,7 +192,7 @@ echo elgg_view("navigation/topbar_tools");
 
 </div>
 </div><!-- /#layout_canvas -->
-
+<!--
 <ul class="footerlinkies">
 <li class="footercols">
 <div class="dflogo">&nbsp;</div>
@@ -299,6 +299,7 @@ What is Dreamfish</a></li>
 </ul>
 </li>
 </ul>
+!-->
 
 <?       if ($vars['user']->admin || $vars['user']->siteadmin) { ?>
  <a href="<?php echo $vars['url']; ?>pg/admin/" class="usersettings"><?php echo elgg_echo("admin"); ?></a> | 
