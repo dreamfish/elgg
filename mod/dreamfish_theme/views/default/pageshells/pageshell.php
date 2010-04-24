@@ -23,7 +23,6 @@ function create_community_navigation_html($vars)
 	<ul>
 	<li><a href=\"". $vars['url'] . "mod/riverdashboard/\">" . elgg_echo('dreamfish_theme:activity') . "</a></li>
 	<li><a href=\"". $vars['url'] . "pg/pages/url/dreamfish-emails\">" . elgg_echo('dreamfish_theme:emails') . "</a></li>
-	<li><a href=\"". $vars['url'] . "pg/pages/url/dreamfish-events\">" . elgg_echo('dreamfish_theme:events') . "</a></li>
 	<li><a href=\"". $vars['url'] . "mod/blogextended/group.php\">" . elgg_echo('dreamfish_theme:blog') . "</a></li>
 	<li><a href=\"". $vars['url'] . "pg/dgroups/world\">" . elgg_echo('dreamfish_theme:groups') . "</a></li>
 	</ul> ");
@@ -54,7 +53,7 @@ if (empty($vars['title'])) {
 	<ul>
 	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/events/">events</a></li>
 	<li><a href="<?php echo $vars['url']; ?>pg/chat/" target="_blank">chat cafe</a></li>
-	<li><a href="http://ietherpad.com/ep/pad/newpad" target="_blank">meeting pad</a></li>
+	<li><a href="http://meetingwords.com/ep/pad/newpad" target="_blank">meeting pad</a></li>
 	</ul>
 </li>
 
@@ -106,7 +105,7 @@ if (empty($vars['title'])) {
 	<ul>
 	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/events/">events</a></li>
 	<li><a href="<?php echo $vars['url']; ?>pg/chat/" target="_blank">chat cafe</a></li>
-	<li><a href="http://ietherpad.com/ep/pad/newpad" target="_blank">meeting pad</a></li>
+	<li><a href="http://meetingwords.com/ep/pad/newpad" target="_blank">meeting pad</a></li>
 	</ul>
 </li>
 
