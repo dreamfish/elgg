@@ -23,6 +23,7 @@ function create_community_navigation_html($vars)
 	<ul>
 	<li><a href=\"". $vars['url'] . "mod/riverdashboard/\">" . elgg_echo('dreamfish_theme:activity') . "</a></li>
 	<li><a href=\"". $vars['url'] . "pg/pages/url/dreamfish-emails\">" . elgg_echo('dreamfish_theme:emails') . "</a></li>
+	<li><a href=\"". $vars['url'] . "pg/pages/url/dreamfish-events\">" . elgg_echo('dreamfish_theme:events') . "</a></li>
 	<li><a href=\"". $vars['url'] . "mod/blogextended/group.php\">" . elgg_echo('dreamfish_theme:blog') . "</a></li>
 	<li><a href=\"". $vars['url'] . "pg/dgroups/world\">" . elgg_echo('dreamfish_theme:groups') . "</a></li>
 	</ul> ");
@@ -52,8 +53,8 @@ if (empty($vars['title'])) {
 	
 	<ul>
 	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/events/">events</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/chat/" target="_blank">chat cafe</a></li>
-	<li><a href="http://meetingwords.com/ep/pad/newpad" target="_blank">meeting pad</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/chat/">chat cafe</a></li>
+	<li><a href="<?php echo $vars['url']; ?>ep/pad/newpad">meeting pad</a></li>
 	</ul>
 </li>
 
@@ -73,7 +74,7 @@ if (empty($vars['title'])) {
 	</ul>
 </li>
 <li <?php echo strpos(current_page_url(),"community") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/pages/url/df-community"><span><h4>Community</h4></span></a>
+	<a href="<?php echo $vars['url']; ?>pg/page/community"><span><h4>Community</h4></span></a>
 	
 	<?php create_community_navigation_html($vars); ?>
 	
@@ -93,7 +94,7 @@ if (empty($vars['title'])) {
 </li>
 -->
 <li <?php echo strpos(current_page_url(),"chat") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/chat" target="_blank"><span><h4><span class="chat"></span></h4></span></a>
+	<a href="<?php echo $vars['url']; ?>pg/chat"><span><h4><span class="chat"></span></h4></span></a>
 </li>
 <li <?php echo strpos(current_page_url(),"messages") ? "class=\"selected\"" :"" ?>>
 	<a href="<?php echo $vars['url']; ?>mod/messages"><span><h4><span class="mail"></span></h4></span></a>
@@ -104,8 +105,8 @@ if (empty($vars['title'])) {
 	
 	<ul>
 	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/events/">events</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/chat/" target="_blank">chat cafe</a></li>
-	<li><a href="http://meetingwords.com/ep/pad/newpad" target="_blank">meeting pad</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/chat/">chat cafe</a></li>
+	<li><a href="<?php echo $vars['url']; ?>ep/pad/newpad">meeting pad</a></li>
 	</ul>
 </li>
 
@@ -192,15 +193,16 @@ echo elgg_view("navigation/topbar_tools");
 
 </div>
 </div><!-- /#layout_canvas -->
-<!--
+
 <ul class="footerlinkies">
 <li class="footercols">
 <div class="dflogo">&nbsp;</div>
-<p>
-This work is licensed under a Creative Commons Attribution-Share Alike 3.0 unported <a href="<?php echo $vars['url']; ?>pg/pages/view/1191/">license</a></p>
 <ul>
 <li>
 <a href="<?php echo $vars['url']; ?>pg/pages/view/3821/">Help
+</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>mod/blogextended/group.php">News
 </a></li>
 <li>
 <a href="<?php echo $vars['url']; ?>pg/pages/view/319/">Press</a></li>
@@ -209,8 +211,12 @@ This work is licensed under a Creative Commons Attribution-Share Alike 3.0 unpor
 <li>
 <a href="<?php echo $vars['url']; ?>pg/pages/view/6116/">Privacy</a></li>
 <li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/copyright-policy">Copyright</a></li>
+<li>
 <a href="<?php echo $vars['url']; ?>pg/pages/view/3821/">Contact us</a></li>
 </ul>
+<p>
+This work is licensed under a Creative Commons Attribution-Share Alike 3.0 unported <a href="<?php echo $vars['url']; ?>pg/pages/view/1191/">license</a></p>
 </li>
 <li class="footercols">
 <span class="footerh3">Membership</span>
@@ -225,9 +231,6 @@ What is Dreamfish</a></li>
 </a></li>
 <li>
 <a href="<?php echo $vars['url']; ?>pg/pages/url/membership-services">Membership services
-</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/service-tracking">Service tracking
 </a></li>
 <li>
 <a href="<?php echo $vars['url']; ?>pg/pages/url/making-a-payment">Making a payment</a></li>
@@ -255,7 +258,7 @@ What is Dreamfish</a></li>
 <li>
 <a href="<?php echo $vars['url']; ?>pg/pages/url/paying-a-worker">Paying a worker</a></li>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/getting-started">Getting Started</a></li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/getting-started">Getting started</a></li>
 </ul>
 </li>
 <li class="footercols">
@@ -267,19 +270,22 @@ What is Dreamfish</a></li>
 <li>
 <a href="<?php echo $vars['url']; ?>pg/pages/url/dreamfish-fellows">Dreamfish Fellows</a></li>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/investing/">Investing
+<a href="<?php echo $vars['url']; ?>pg/dgroups/6904/capital-team/"> Capital Team
 </a></li>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/dgroups/1859/facilitators-team/">Facilitating</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/dgroups/4854/member-success-team/">Documenting</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/dgroups/6103/marketing-team/">Marketing</a><a href="<?php echo $vars['url']; ?>pg/dgroups/6103/marketing-team/"> </a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/dgroups/4854/member-success-team/">Designing
+<a href="<?php echo $vars['url']; ?>pg/dgroups/1859/community-team/"> Community Team
 </a></li>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/groups/27/dreamfish-network-v10/">Developers
+<a href="<?php echo $vars['url']; ?>pg/dgroups/6763/content-production-team/">Content Production Team</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/dgroups/3119/cooperative-operations-team/">Cooperative Ops Team
+</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/groups/27/dreamfish-network-v10/"> Developers Group </a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/dgroups/4854/member-success-team/">Member Success Team</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/dgroups/6103/marketing-team/">Spread Dreamfish...
 </a></li>
 </ul>
 <li class="footercols">
@@ -299,7 +305,12 @@ What is Dreamfish</a></li>
 </ul>
 </li>
 </ul>
-!-->
+
+<hr class="clearrule" />
+
+<div id="poweredby">
+Dreamfish is co-owned by <a href="<?php echo $vars['url']; ?>/mod/members">Dreamfish members</a> and built by <a href="<?php echo $vars['url']; ?>pg/pages/view/1852/">Dreamfish service members</a>. Powered by <a href="http://elgg.org/">Elgg</a> | <a href="http://www.gnu.org/software/mailman/index.html">Mailman</a> | <a href="http://www.vanillaforums.org/">Vanilla Forums</a> | <a href="http://etherpad.org/">Etherpad</a>
+</div>
 
 <?       if ($vars['user']->admin || $vars['user']->siteadmin) { ?>
  <a href="<?php echo $vars['url']; ?>pg/admin/" class="usersettings"><?php echo elgg_echo("admin"); ?></a> | 
