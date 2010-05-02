@@ -304,7 +304,7 @@ What is Dreamfish</a></li>
 <a href="<?php echo $vars['url']; ?>pg/pages/url/leadership-and-governance">Leadership and Governance</a></li>
 </ul>
 <p>
-This work is licensed under a Creative Commons Attribution-Share Alike 3.0 unported <a href="<?php echo $vars['url']; ?>pg/pages/view/1191/">license</a></p>
+This work is licensed under a Creative Commons Attribution-Share Alike 3.0 unported <a href="<?php echo $vars['url']; ?>pg/pages/url/copyright-policy">license</a></p>
 </li>
 </ul>
 
