@@ -233,7 +233,7 @@ What is Dreamfish</a></li>
 <li>
 <a href="<?php echo $vars['url']; ?>pg/pages/url/making-a-payment">Making a payment</a></li>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/making-a-payment">Success stories</a></li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/success-stories">Success stories</a></li>
 </ul>
 </li>
 <li class="footercols">
@@ -311,7 +311,7 @@ This work is licensed under a Creative Commons Attribution-Share Alike 3.0 unpor
 <hr class="clearrule" />
 
 <div id="poweredby">
-Dreamfish is co-owned and built by <a href="<?php echo $vars['url']; ?>/mod/members">Dreamfish members</a>. Powered by <a href="http://elgg.org/">Elgg</a> | <a href="http://www.gnu.org/software/mailman/index.html">Mailman</a> | <a href="http://www.vanillaforums.org/">Vanilla Forums</a> | <a href="http://etherpad.org/">Etherpad</a>
+Dreamfish is co-owned and built by <a href="<?php echo $vars['url']; ?>pg/pages/url/leadership-and-governance">Dreamfish members</a>. Powered by <a href="http://elgg.org/">Elgg</a> | <a href="http://www.gnu.org/software/mailman/index.html">Mailman</a> | <a href="http://www.vanillaforums.org/">Vanilla Forums</a> | <a href="http://etherpad.org/">Etherpad</a>
 </div>
 
 <?       if ($vars['user']->admin || $vars['user']->siteadmin) { ?>
