@@ -199,24 +199,22 @@ echo elgg_view("navigation/topbar_tools");
 <div class="dflogo">&nbsp;</div>
 <ul>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/pages/view/3821/">Help
+<a href="<?php echo $vars['url']; ?>pg/pages/url/help">Help
 </a></li>
 <li>
 <a href="<?php echo $vars['url']; ?>mod/blogextended/group.php">News
 </a></li>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/pages/view/319/">Press</a></li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/press">Press</a></li>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/pages/view/6122/">Terms</a></li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/terms">Terms</a></li>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/pages/view/6116/">Privacy</a></li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/privacy">Privacy</a></li>
 <li>
 <a href="<?php echo $vars['url']; ?>pg/pages/url/copyright-policy">Copyright</a></li>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/pages/view/3821/">Contact us</a></li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/contact">Contact us</a></li>
 </ul>
-<p>
-This work is licensed under a Creative Commons Attribution-Share Alike 3.0 unported <a href="<?php echo $vars['url']; ?>pg/pages/view/1191/">license</a></p>
 </li>
 <li class="footercols">
 <span class="footerh3">Membership</span>
@@ -225,7 +223,7 @@ This work is licensed under a Creative Commons Attribution-Share Alike 3.0 unpor
 <a href="<?php echo $vars['url']; ?>pg/pages/url/what-is-dreamfish">
 What is Dreamfish</a></li>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/pages/view/114/">Become a member</a></li>
+<a href="<?php echo $vars['url']; ?>pg/page/become_a_member">Become a member</a></li>
 <li>
 <a href="<?php echo $vars['url']; ?>pg/pages/url/membership-guidelines">Membership guidelines
 </a></li>
@@ -234,6 +232,8 @@ What is Dreamfish</a></li>
 </a></li>
 <li>
 <a href="<?php echo $vars['url']; ?>pg/pages/url/making-a-payment">Making a payment</a></li>
+<li>
+<a href="<?php echo $vars['url']; ?>pg/pages/url/making-a-payment">Success stories</a></li>
 </ul>
 </li>
 <li class="footercols">
@@ -262,7 +262,7 @@ What is Dreamfish</a></li>
 </ul>
 </li>
 <li class="footercols">
-<span class="footerh3">Get involved</span>
+<span class="footerh3">Get Involved</span>
 <ul>
 <li>
 <a href="<?php echo $vars['url']; ?>pg/pages/url/getting-involved">Getting involved
@@ -281,11 +281,11 @@ What is Dreamfish</a></li>
 <a href="<?php echo $vars['url']; ?>pg/dgroups/3119/cooperative-operations-team/">Cooperative Ops Team
 </a></li>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/groups/27/dreamfish-network-v10/"> Developers Group </a></li>
+<a href="<?php echo $vars['url']; ?>pg/groups/27/dreamfish-network-v10/"> Developers</a></li>
 <li>
 <a href="<?php echo $vars['url']; ?>pg/dgroups/4854/member-success-team/">Member Success Team</a></li>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/dgroups/6103/marketing-team/">Spread Dreamfish...
+<a href="<?php echo $vars['url']; ?>pg/dgroups/6103/spread-dreamfish-team/">Spread Dreamfish...
 </a></li>
 </ul>
 <li class="footercols">
@@ -294,7 +294,7 @@ What is Dreamfish</a></li>
 <li>
 <a href="<?php echo $vars['url']; ?>pg/pages/url/humanifesto">Humanifesto</a></li>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/pages/view/3263/">Dreamfish Quotes
+<a href="<?php echo $vars['url']; ?>pg/pages/url/labs">Dreamfish Labs
 </a></li>
 <li>
 <a href="<?php echo $vars['url']; ?>pg/pages/url/dreamfish-story">Dreamfish Story</a></li>
@@ -303,13 +303,15 @@ What is Dreamfish</a></li>
 <li>
 <a href="<?php echo $vars['url']; ?>pg/pages/url/leadership-and-governance">Leadership and Governance</a></li>
 </ul>
+<p>
+This work is licensed under a Creative Commons Attribution-Share Alike 3.0 unported <a href="<?php echo $vars['url']; ?>pg/pages/view/1191/">license</a></p>
 </li>
 </ul>
 
 <hr class="clearrule" />
 
 <div id="poweredby">
-Dreamfish is co-owned by <a href="<?php echo $vars['url']; ?>/mod/members">Dreamfish members</a> and built by <a href="<?php echo $vars['url']; ?>pg/pages/view/1852/">Dreamfish service members</a>. Powered by <a href="http://elgg.org/">Elgg</a> | <a href="http://www.gnu.org/software/mailman/index.html">Mailman</a> | <a href="http://www.vanillaforums.org/">Vanilla Forums</a> | <a href="http://etherpad.org/">Etherpad</a>
+Dreamfish is co-owned and built by <a href="<?php echo $vars['url']; ?>/mod/members">Dreamfish members</a>. Powered by <a href="http://elgg.org/">Elgg</a> | <a href="http://www.gnu.org/software/mailman/index.html">Mailman</a> | <a href="http://www.vanillaforums.org/">Vanilla Forums</a> | <a href="http://etherpad.org/">Etherpad</a>
 </div>
 
 <?       if ($vars['user']->admin || $vars['user']->siteadmin) { ?>
