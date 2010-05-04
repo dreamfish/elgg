@@ -117,7 +117,7 @@ if (empty($vars['title'])) {
 	<a href="<?php echo $vars['url']; ?>pg/groups/world"><span><h4>Project Hub</h4></span></a>
 </li>
 <li <?php echo strpos(current_page_url(),"community") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/page/community"><span><h4>Community</h4></span></a>
+	<a href="<?php echo $vars['url']; ?>pg/pages/url/df-community"><span><h4>Community</h4></span></a>
 	
 	<?php create_community_navigation_html($vars) ?>
 	<!--
