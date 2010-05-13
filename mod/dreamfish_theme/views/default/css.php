@@ -2811,9 +2811,7 @@ ul#frontcopy li.dfcopy a.vimeo {
 /* footer links */
 
 .dflogo {
-	margin-left: 20px;
-	width: 72px;
-	height: 72px;
+	height: 21px;
 	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/dflogo.png') top left no-repeat;
 }
 
@@ -2836,7 +2834,7 @@ ul.footerlinkies li.footercols {
 ul.footerlinkies li.footercols span.footerh3 {
 	font-weight: bold;
 	font-size: 14px;
-	text-decoration: underline;
+	color: #999;
 }
 
 ul.footerlinkies li.footercols ul {
@@ -2845,21 +2843,43 @@ ul.footerlinkies li.footercols ul {
 	list-style-type: none;
 }
 
-ul.footerlinkies a {
+ul.footerlinkies a,
+#poweredby a {
 	text-decoration: none;
 }
 
 ul.footerlinkies a:visited,
-ul.footerlinkies a:link {
+ul.footerlinkies a:link,
+#poweredby a:visited,
+#poweredby a:link {
 	color: #fff;
 }
 
-ul.footerlinkies a:hover {
-	text-decoration: underline;
+ul.footerlinkies a:hover,
+#poweredby a:hover {
 	color: rgb(151,225,248);
 }
 
-ul.footerlinkies a:active {
+ul.footerlinkies a:active,
+#poweredby a:active {
 	text-decoration: underline;
 	color: #000;
+}
+
+ul.footerlinkies p {
+	font-size: 10px;
+}
+
+hr.clearrule {
+	color: #600;
+	background-color: #600;
+	height: 1px;
+	border: 0;
+	clear: both;
+}
+
+#poweredby {
+	font-family: AvantGarde, Verdana;
+	font-size: 12px;
+	line-height: 24px;
 }
