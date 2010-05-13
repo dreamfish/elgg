@@ -132,6 +132,16 @@ if (empty($vars['title'])) {
 
 </ul>
 <ul class="tabnav"  id="toprightnav">
+<li><a href="<?php echo $vars['url']; ?>pg/pages/url/what-is-dreamfish"><span><h4>about</h4></span></a>
+
+<ul>
+	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/what-is-dreamfish">What is Dreamfish</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/how-dreamfish-works">How Dreamfish Works</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/getting-involved">Our Cooperative</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/become_a_member">Become a member</a></li>
+</ul>
+
+</li>
 
 <?php if (isloggedin()) { ?>
 <li><a href="<?php echo $vars['url']; ?>action/logout"><span><h4><?php echo elgg_echo('logout'); ?></h4></span></a>
