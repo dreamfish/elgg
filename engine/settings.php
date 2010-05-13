@@ -24,7 +24,8 @@
 	 */
 		
 		// Database username
-			$CONFIG->dbuser = 'root';
+			$CONFIG->community_group_guid = 103;
+      $CONFIG->dbuser = 'root';
 			
 		// Database password
 			$CONFIG->dbpass = 'root';
