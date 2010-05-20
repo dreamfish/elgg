@@ -59,6 +59,13 @@
 	// For now, just try and register the user
 	
 			try {
+
+                               $valid = true;
+ if (empty($_SESSION['captcha']) || trim(strtolower($_REQUEST['captcha'])) != $_SESSION['captcha']) {
+        register_error("Invalid captcha " . $_REQUEST['captcha'] . ' ' . $_SESSION['captcha']);
+        $valid = false;
+}
+
 				if (
 					(
 						(trim($password)!="") &&
