@@ -62,7 +62,7 @@
 
                                $valid = true;
  if (empty($_SESSION['captcha']) || trim(strtolower($_REQUEST['captcha'])) != $_SESSION['captcha']) {
-        register_error("Invalid captcha " . $_REQUEST['captcha'] . ' ' . $_SESSION['captcha']);
+        register_error("Invalid captcha");
         $valid = false;
 }
 
