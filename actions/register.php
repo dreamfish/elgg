@@ -67,7 +67,7 @@
 }
 
 				if (
-					(
+					(	$valid &&
 						(trim($password)!="") &&
 						(strcmp($password, $password2)==0) 
 					) &&
