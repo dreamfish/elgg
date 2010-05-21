@@ -26,6 +26,7 @@
 	
 	$admin = get_input('admin');
 	if (is_array($admin)) $admin = $admin[0];
+
 	
 	// For now, just try and register the user
 	try {
