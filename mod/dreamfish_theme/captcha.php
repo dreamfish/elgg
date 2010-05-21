@@ -11,7 +11,9 @@
  */
 
 
-session_start();
+require_once(dirname(dirname(__FILE__)) . "/../engine/start.php");
+
+//session_start();
 
 
 
@@ -36,7 +38,6 @@ if (!empty($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
     }
 }
 */
-
 
 
 // Image generation
