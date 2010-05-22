@@ -44,7 +44,7 @@ if (empty($vars['title'])) {
 
 <?php echo elgg_view('page_elements/header', $vars); ?>
 <?php echo elgg_view('page_elements/header_contents', $vars); ?>
-
+<link REL="SHORTCUT ICON" HREF="<?$php echo vars['url'];?>favicon.ico">
 <div id="navigation" class="clearpush">
 <ul class="tabnav" id="topleftnav">
 <?php if (isloggedin()) { ?>
