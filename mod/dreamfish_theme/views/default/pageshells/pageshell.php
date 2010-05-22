@@ -54,7 +54,7 @@ if (empty($vars['title'])) {
 	<ul>
 	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/events/">events</a></li>
 	<li><a href="<?php echo $vars['url']; ?>pg/chat/">chat cafe</a></li>
-	<li><a href="http://pads.dreamfish.com">meeting pad</a></li>
+	<li><a href="http://pads.dreamfish.com/ep/pad/newpad">meeting pad</a></li>
 	</ul>
 </li>
 
@@ -106,7 +106,7 @@ if (empty($vars['title'])) {
 	<ul>
 	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/events/">events</a></li>
 	<li><a href="<?php echo $vars['url']; ?>pg/chat/">chat cafe</a></li>
-	<li><a href="http://pads.dreamfish.com">meeting pad</a></li>
+	<li><a href="http://pads.dreamfish.com/ep/pad/newpad">meeting pad</a></li>
 	</ul>
 </li>
 
