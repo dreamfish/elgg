@@ -63,12 +63,12 @@
                                $valid = true;
  if (empty($_SESSION['captcha']) || trim(strtolower($_REQUEST['_captcha'])) != $_SESSION['captcha']) {
         register_error("Invalid captcha");
-        error_log("INVALID CAPTCHA");
+        error_log("ACCOUNT: INVALID CAPTCHA");
         $valid = false;
 }
 if (!empty($_REQUEST['spam'])) {
         register_error("that field wasn't supposed to be filled out!");
-        error_log("SPAM FIELD FILLED OUT");
+        error_log("ACCOUNT: SPAM FIELD FILLED OUT");
         $valid = false;
 }
 
@@ -79,6 +79,8 @@ if (!empty($_REQUEST['spam'])) {
 					) &&
 					($guid = register_user($username, $password, $name, $email, false, $friend_guid, $invitecode))
 				) {
+					
+					error_log("ACCOUNT: REGISTERING " . $username);
 					
 					$new_user = get_entity($guid);
 					
