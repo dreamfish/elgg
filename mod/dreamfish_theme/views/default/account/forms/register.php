@@ -135,7 +135,8 @@ function validateForm() {
 	$form_body .= elgg_view('input/hidden', array('internalname' => 'invitecode', 'value' => $vars['invitecode']));
 	$form_body .= elgg_view('input/hidden', array('internalname' => 'action', 'value' => 'register'));
 	$form_body .= '<img src="' . $vars['url'] . '/mod/dreamfish_theme/captcha.php" id="captcha" /><br/><a href="#" onclick="document.getElementById(\'captcha\').src=\'' . $vars['url'] . '/mod/dreamfish_theme/captcha.php?\'+Math.random();document.getElementById(\'captcha-form\').focus();" id="change-image">Not readable? Change text.</a><br/><br/>';
-	$form_body .= '<input type="text" name="captcha" id="captcha-form" /><br/>';
+	$form_body .= '<input type="text" name="_captcha" id="captcha-form" /><br/>';
+	$form_body .= '<input type="text" name="spam" id="spam" style="display:none"/><br/>';
 	$form_body .= elgg_view('input/button', array('type' => 'button', 'internalname' => 'validate',  'value' => elgg_echo('dreamfish_theme:join'), 'js' => 'onclick="validateForm()"'))  . " </p>";
 ?>
 

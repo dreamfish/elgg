@@ -61,8 +61,14 @@
 			try {
 
                                $valid = true;
- if (empty($_SESSION['captcha']) || trim(strtolower($_REQUEST['captcha'])) != $_SESSION['captcha']) {
+ if (empty($_SESSION['captcha']) || trim(strtolower($_REQUEST['_captcha'])) != $_SESSION['captcha']) {
         register_error("Invalid captcha");
+        error_log("INVALID CAPTCHA");
+        $valid = false;
+}
+if (!empty($_REQUEST['spam'])) {
+        register_error("that field wasn't supposed to be filled out!");
+        error_log("SPAM FIELD FILLED OUT");
         $valid = false;
 }
 
