@@ -84,7 +84,7 @@
 			if (($user) && ($user->language))
 				$language = $user->language;
 
-			if ((!$language) && ($CONFIG->language))
+			if (((!$language) && isset($CONFIG->language)) && ($CONFIG->language))
 				$language = $CONFIG->language;
 				
 			if ($language) {
