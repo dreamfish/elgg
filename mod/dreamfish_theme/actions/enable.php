@@ -13,8 +13,15 @@
 	
 	// Get variables
 	if (isadminloggedin()) { 
-		set_user_validation_status(get_input('guid'), true, 'admin');
-		system_message('user validated');
+		if (get_input("disable") == "true") {
+			set_user_validation_status(get_input('guid'), false, 'admin');
+			system_message('user invalidated');
+		} else {
+			set_user_validation_status(get_input('guid'), true, 'admin');
+			system_message('user validated');
+		}
+		
+		
 		forward("/");
 	}
 

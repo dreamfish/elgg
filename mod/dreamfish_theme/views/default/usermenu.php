@@ -24,7 +24,9 @@ if (!$user->validated) {
 }
 
 else { ?>
-<p>User enabled</p>
+<p>
+		<a href="<?php echo $vars['url']; ?>action/user/enable?guid=<?php echo $vars['entity']->guid; ?>&disable=true">Disable User</a>	
+</p>
 <? } 
 
 }?>
