@@ -22,6 +22,7 @@
 	
 	if ( ($obj instanceof ElggUser) && ($obj->canEdit()))
 	{
+		set_user_validation_status($guid, false, 'admin');
 		// Now actually disable it
 		if ($obj->ban('banned')) {
 			system_message(elgg_echo('admin:user:ban:yes'));
