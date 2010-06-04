@@ -52,7 +52,12 @@
 	//get the correct view based on filter
 		switch($filter){
 			case "newest":
-			$content = list_entities("user","",0,10,false);
+			if (!isadminloggedin()) {
+				$content .= list_entities_from_metadata("validated", "1", "user", "", "", 10, false, false);
+			}
+			else {
+				$content = list_entities("user","",0,10,false);
+			}
 			break;
 			case "pop":
 			$content = list_entities_by_relationship_count('friend', true);

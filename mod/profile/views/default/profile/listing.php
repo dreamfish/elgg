@@ -20,7 +20,7 @@
 			);
 			
 		$banned = $vars['entity']->isBanned();
-	
+		
 		// Simple XFN
 		$rel = "";
 		if (page_owner() == $vars['entity']->guid)
@@ -32,6 +32,7 @@
 			$meta = get_metadata_for_entity($vars['entity']->guid);
 			$wants_str = '';
 			$skills_str = '';
+			$validated = "1";
 			foreach($meta as $md)
 			{
 				if ($md->name == 'skills')
@@ -44,9 +45,15 @@
 					if (!empty($wants_str)) $wants_str .= ', ';
 					$wants_str .= $md->value;		
 				}
+				else if ($md->name == 'validated') {
+					$validated = $md->value;
+				}
 			}
-				
-			$info .= "<p><b><a href=\"" . $vars['entity']->getUrl() . "\" rel=\"$rel\">" . $vars['entity']->name . "</a></b></p>";
+			$pstyle = "";
+			if ($validated=="0" && isadminloggedin()) {
+				$pstyle="style=\"background:yellow;\"";
+			}
+			$info .= "<p ".$pstyle ."><b><a href=\"" . $vars['entity']->getUrl() . "\" rel=\"$rel\">" . $vars['entity']->name . "</a></b></p>";
 			if ($skills_str != '' || $wants_str != '') {
 				if ($skills_str != '') 
 					$skills_str = '<b>offers: </b><br>' . $skills_str . '';
