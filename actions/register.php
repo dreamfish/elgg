@@ -72,6 +72,13 @@ if (!empty($_REQUEST['spam'])) {
         $valid = false;
 }
 
+$name = trim($name);
+$pos = strpos($name, " ");
+if ($pos == false) {
+   $valid = false;
+	error_log("ACCOUNT: NAME FIELD DOES NOT CONTAIN SPACE --> IDENTIFIED AS BOT");
+}
+
 				if (
 					(	$valid &&
 						(trim($password)!="") &&
