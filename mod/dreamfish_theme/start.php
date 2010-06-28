@@ -9,69 +9,19 @@
 	 * @copyright dreamfish.com 2010
 	 */
 	
-	/*
-	 function unregister_elgg_event_handler($event, $object_type, $function) {
-	 global $CONFIG;
-	 foreach($CONFIG->events[$event][$object_type] as $key => $event_function) {
-	 if (strcmp($event_function, $function) == 0) {
-	 unset($CONFIG->events[$event][$object_type][$key]);
-	 }
-	 }
-	 }
-	
-	 function unregister_plugin_hook($hook, $entity_type, $function) {
-	 global $CONFIG;
-	 foreach($CONFIG->hooks[$hook][$entity_type] as $key => $hook_function) {
-	 if (strcmp($hook_function, $function) == 0) {
-	 unset($CONFIG->hooks[$hook][$entity_type][$key]);
-	 }
-	 }
-	 }
-	 */
-	
-	
-	/**
-	 * An event listener which will notify users based on certain events.
-	 *
-	 * @param unknown_type $event
-	 * @param unknown_type $object_type
-	 * @param unknown_type $object
-	 */
-	/*
-	 function dfrelationship_notification_hook($event, $object_type, $object)
-	 {
-	 global $CONFIG;
-	
-	 error_log("SENDING DFFRIEND MESSAGE");
-	 if (
-	 ($object instanceof ElggRelationship) &&
-	 ($event == 'create') &&
-	 ($object_type == 'friend')
-	 )
-	 {
-	 $user_one = get_entity($object->guid_one);
-	 $user_two = get_entity($object->guid_two);
-	 	
-	 // Notify target user
-	 return notify_user($object->guid_two, $object->guid_one, sprintf(elgg_echo('friend:newfriend:subject'), $user_one->name),
-	 sprintf(elgg_echo("friend:newfriend:body"), $user_one->name, $CONFIG->site->url . "pg/profile/" . $user_one->username)
-	 );
-	 }
-	 }
-	 */
-	
-	
 	function dreamfish_theme_init() {
-	
 		register_plugin_hook('index','system','new_index');
 		register_page_handler('dashboard','new_dashboard');
 		register_plugin_hook('permissions_check', 'all', 'dreamfish_permissions_check');
 		add_group_tool_option('blogposts','Enable Blog Posts',true);
 		register_elgg_event_handler('pagesetup','system','df_pagesetup');
 	
+		// register plugin hook for user registration since this is modified by this module
+		register_plugin_hook('action', 'register', 'registration_hook')
+		register_elgg_event_handler('create','user','user_created_handler');	
+		
 		//unregister_elgg_event_handler('create','friend','relationship_notification_hook');
 		//register_elgg_event_handler('create','friend','dfrelationship_notification_hook');
-	
 		//register_action('register', true, $CONFIG->pluginspath . "dreamfish_theme/actions/register.php");
 	
 		extend_view('profile/menu/links','usermenu');
@@ -92,10 +42,6 @@
 	
 		//the following modification was required to messages/send.php
 		//$friends = get_entities('user', '', 0, 'name', 9999);
-	
-		// register plugin hook for user registration since this is modified by this module
-		register_plugin_hook("action", "register", "registration_hook")
-	
 	}
 	
 	function df_pagesetup() {
@@ -147,10 +93,6 @@
 				foreach($area1widgets as $widget) {
 					//TODO: figure out a way to clear out widgets for non-admin users. this works, but doesn't seem safe
 					$res = delete_data("DELETE from {$CONFIG->dbprefix}entities where guid={$widget->get('guid')}");
-						
-					//this only works for admin users
-					//$widget->delete();
-						
 				}
 	
 				$area1widgets = get_widgets(page_owner(),'dashboard',1);
@@ -169,7 +111,6 @@
 				foreach($area1widgets as $widget) {
 					$body .= elgg_view_entity($widget);
 				}
-				//$body = elgg_view_layout('widgets',"","",'foo');
 				break;
 			default:
 				$pages = search_for_object('DF_'.$page[0]);
@@ -179,8 +120,6 @@
 				{
 					$body = $page[0] . ' does not exist';
 				}
-	
-	
 		}
 		$content = elgg_view_layout('one_column', $body);
 		echo page_draw(null, $content);
@@ -189,7 +128,34 @@
 	
 	// Hook handlers
 	
+	/**
+	 * This hook extends the register action with Dreamfish-specific registration validation
+	 * 
+	 * @param $hook
+	 * @param $entity_type
+	 * @param $return_value
+	 * @param $params
+	 */
 	function registration_hook($hook, $entity_type, $return_value, $params) {
+		if (empty($_SESSION['captcha']) || trim(strtolower($_REQUEST['_captcha'])) != $_SESSION['captcha']) {
+			register_error("Invalid captcha");
+			error_log("ACCOUNT: INVALID CAPTCHA");
+			return false;
+		}
+		
+		if (!empty($_REQUEST['spam'])) {
+			register_error("that field wasn't supposed to be filled out!");
+			error_log("ACCOUNT: SPAM FIELD FILLED OUT");
+			return false;
+		}
+		
+		$name = trim(get_input('name'));
+		$pos = strpos($name, " ");
+		if ($pos == false) {
+			error_log("ACCOUNT: NAME FIELD DOES NOT CONTAIN SPACE --> IDENTIFIED AS BOT");
+			return false;
+		}
+
 		return true;
 	}
 	
@@ -211,10 +177,42 @@
 		return null;
 	}
 		
+	// event handlers
+	/**
+	 * This event handler updates the newly created user with Dreamfish-specific properties; 
+	 * in the current implementation, it adds newsletter regsitration metadata to the new user.
+	 *
+	 * @param $event='create'
+	 * @param $object_type='user'
+	 * @param $new_user
+	 */
+	function user_created_handler($event, $object_type, $new_user) {
+		switch($event){
+			case 'create':
+				//see which newsletters have been selected
+				$announce_key = 'df_announce';
+				$new_proj_key  = 'df_new_projects';
+				$df_announce_list = get_input($announce_key);
+				$df_newproj_list = get_input($new_proj_key);
+				$newsletters = array();
+
+				if ($df_announce_list != '')
+					array_push($newsletters , $announce_key);
+				if ($df_newproj_list != '')
+					array_push($newsletters, $new_proj_key);
+				
+				if (count($newsletters) > 0)
+ 					$new_user->set('newsletters', implode(',',$newsletters));
+ 				
+				return true;
+			default:
+				return false;
+		}
+
+	}
 	
 	register_action('user/enable',true,$CONFIG->pluginspath . "dreamfish_theme/actions/enable.php");
 	register_elgg_event_handler('init','system','dreamfish_theme_init');
 	register_page_handler('page', 'dreamfish_theme_fetchpage');
-	
 	
 ?>
