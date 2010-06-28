@@ -15,9 +15,6 @@
 	global $CONFIG;
 	
 	action_gatekeeper();
-	
-	$df_announce_list_name = 'df_announce';
-	$df_newproj_list_name  = 'df_new_projects';
 
 	// Get variables
 		$username = get_input('username');
@@ -28,28 +25,6 @@
 		$friend_guid = (int) get_input('friend_guid',0);
 		$invitecode = get_input('invitecode');
 		
-		//Dreamfish hack:
-		$df_announce_list = get_input('df_announce');
-		$df_newproj_list = get_input('df_new_projects');
-		
-		//DF: see which newsletters have been selected
-		$df_announce_list = get_input($df_announce_list_name);
-		$df_newproj_list = get_input($df_newproj_list_name);		
-		
-		$newsletters = array();
-		
-		if ($df_announce_list != "")
-		{
-			array_push($newsletters , $df_announce_list_name); 
-		}
-		
-		if ($df_newproj_list != "")
-		{
-			array_push($newsletters, $df_newproj_list_name);
-		}
-		
-		
-		
 		$admin = get_input('admin');
 		if (is_array($admin)) $admin = $admin[0];
 		
@@ -59,44 +34,15 @@
 	// For now, just try and register the user
 	
 			try {
-
-                               $valid = true;
- if (empty($_SESSION['captcha']) || trim(strtolower($_REQUEST['_captcha'])) != $_SESSION['captcha']) {
-        register_error("Invalid captcha");
-        error_log("ACCOUNT: INVALID CAPTCHA");
-        $valid = false;
-}
-if (!empty($_REQUEST['spam'])) {
-        register_error("that field wasn't supposed to be filled out!");
-        error_log("ACCOUNT: SPAM FIELD FILLED OUT");
-        $valid = false;
-}
-
-$name = trim($name);
-$pos = strpos($name, " ");
-if ($pos == false) {
-   $valid = false;
-	error_log("ACCOUNT: NAME FIELD DOES NOT CONTAIN SPACE --> IDENTIFIED AS BOT");
-}
-
 				if (
-					(	$valid &&
+					(
 						(trim($password)!="") &&
 						(strcmp($password, $password2)==0) 
 					) &&
 					($guid = register_user($username, $password, $name, $email, false, $friend_guid, $invitecode))
 				) {
 					
-					error_log("ACCOUNT: REGISTERING " . $username);
-					
 					$new_user = get_entity($guid);
-					
-					//add dreamfish newsletter registrations to metadata:
-					if (count($newsletters) > 0)
-					{					
-						$new_user->newsletters = implode(',',$newsletters);
-					}
-					
 					if (($guid) && ($admin))
 					{
 						admin_gatekeeper(); // Only admins can make someone an admin
@@ -112,7 +58,8 @@ if ($pos == false) {
 						$new_user->disable('new_user');	// Now disable if not an admin
 					
 					system_message(sprintf(elgg_echo("registerok"),$CONFIG->sitename));
-				
+					
+					forward(); // Forward on success, assume everything else is an error...
 				} else {
 					register_error(elgg_echo("registerbad"));
 				}
