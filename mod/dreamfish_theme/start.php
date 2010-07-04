@@ -17,31 +17,12 @@
 		register_elgg_event_handler('pagesetup','system','df_pagesetup');
 	
 		// register plugin hook for user registration since this is modified by this module
-		register_plugin_hook('action', 'register', 'registration_hook')
+		register_plugin_hook('action', 'register', 'registration_hook');
 		register_elgg_event_handler('create','user','user_created_handler');	
-		
-		//unregister_elgg_event_handler('create','friend','relationship_notification_hook');
-		//register_elgg_event_handler('create','friend','dfrelationship_notification_hook');
-		//register_action('register', true, $CONFIG->pluginspath . "dreamfish_theme/actions/register.php");
 	
 		extend_view('profile/menu/links','usermenu');
-	
-		// inserts dreamfish-specific form elements and JS on the registration page.
-		//extend_view('account/forms/register', 'forms/register');
-	
 		// Extend system CSS with our own styles
 		extend_view('css','dreamfish_theme/css');
-	
-		//the following tags need to be added to \engine\lib\input.php's allowedtags
-		/*
-		'object' => array('height'=>array(), 'width'=>array()),
-		'param' => array('name'=>array(), 'value'=>array()),
-		'embed' => array('allowfullscreen'=>array(), 'allowscriptaccess'=>array(),
-		'height'=>array(), 'src' => array(), 'type'=>array(), 'width'=>array()))
-		*/
-	
-		//the following modification was required to messages/send.php
-		//$friends = get_entities('user', '', 0, 'name', 9999);
 	}
 	
 	function df_pagesetup() {
@@ -65,8 +46,6 @@
 	}
 	
 	function new_index() {
-		//if (!@include_once(dirname(dirname(__FILE__))) . "/dreamfish_theme/index.php") return false;
-		//return true;
 		dreamfish_theme_fetchpage(array('Home'));
 		return true;
 	}
@@ -129,7 +108,8 @@
 	// Hook handlers
 	
 	/**
-	 * This hook extends the register action with Dreamfish-specific registration validation
+	 * This hook extends the register action with Dreamfish-specific 
+	 * registration validation
 	 * 
 	 * @param $hook
 	 * @param $entity_type
@@ -137,22 +117,25 @@
 	 * @param $params
 	 */
 	function registration_hook($hook, $entity_type, $return_value, $params) {
+		error_log('DEBUG: executing registration_hook');
+		
 		if (empty($_SESSION['captcha']) || trim(strtolower($_REQUEST['_captcha'])) != $_SESSION['captcha']) {
-			register_error("Invalid captcha");
 			error_log("ACCOUNT: INVALID CAPTCHA");
+			register_error(elgg_echo('dreamfish_theme:register:captchafail')); //"Invalid captcha"
 			return false;
 		}
 		
 		if (!empty($_REQUEST['spam'])) {
-			register_error("that field wasn't supposed to be filled out!");
 			error_log("ACCOUNT: SPAM FIELD FILLED OUT");
+			register_error(elgg_echo('dreamfish_theme:register:spamfail')); //"that field wasn't supposed to be filled out!"
 			return false;
 		}
 		
 		$name = trim(get_input('name'));
-		$pos = strpos($name, " ");
+		$pos = strpos($name, ' ');
 		if ($pos == false) {
 			error_log("ACCOUNT: NAME FIELD DOES NOT CONTAIN SPACE --> IDENTIFIED AS BOT");
+			register_error(elgg_echo('dreamfish_theme:register:namefail'));
 			return false;
 		}
 
@@ -171,27 +154,29 @@
 				{
 					return true;
 				}
-			}
-	
+			}	
 		}
 		return null;
 	}
 		
 	// event handlers
 	/**
-	 * This event handler updates the newly created user with Dreamfish-specific properties; 
-	 * in the current implementation, it adds newsletter regsitration metadata to the new user.
+	 * This event handler updates the newly created user with 
+	 * Dreamfish-specific properties; in the current implementation, 
+	 * it adds newsletter regsitration metadata to the new user.
 	 *
 	 * @param $event='create'
 	 * @param $object_type='user'
 	 * @param $new_user
 	 */
 	function user_created_handler($event, $object_type, $new_user) {
+		error_log('DEBUG: executing user created handler');
 		switch($event){
 			case 'create':
+				error_log('DEBUG: Adding meta data and sending mail');
 				//see which newsletters have been selected
 				$announce_key = 'df_announce';
-				$new_proj_key  = 'df_new_projects';
+				$new_proj_key = 'df_new_projects';
 				$df_announce_list = get_input($announce_key);
 				$df_newproj_list = get_input($new_proj_key);
 				$newsletters = array();
@@ -202,17 +187,50 @@
 					array_push($newsletters, $new_proj_key);
 				
 				if (count($newsletters) > 0)
- 					$new_user->set('newsletters', implode(',',$newsletters));
- 				
-				return true;
+ 					$new_user->set('newsletters', implode(',',$newsletters)); 					
+ 					
+				return _send_user_registered_msg($new_user);
 			default:
 				return false;
 		}
 
 	}
 	
-	register_action('user/enable',true,$CONFIG->pluginspath . "dreamfish_theme/actions/enable.php");
-	register_elgg_event_handler('init','system','dreamfish_theme_init');
+	function _send_user_registered_msg($new_user)
+	{
+		$to = 'community-admin@dreamfish.com';
+		$from = 'noreply@dreamfish.com';
+		$sitename = 'Dreamfish';
+		$header_eol = "\r\n";
+		
+		if ((isset($CONFIG->broken_mta)) && ($CONFIG->broken_mta))
+			$header_eol = "\n"; // non-RFC 2822 mail headers for broken MTAs	
+		$from_email = "\"$sitename\" <$from>";
+		if (strcasecmp(substr(PHP_OS, 0 , 3), 'WIN')) 
+			$from_email = "$from"; // diff format for broken Windows
+			
+		$headers = "From: $from_email{$header_eol}"
+			. "Content-Type: text/plain; charset=UTF-8; format=flowed{$header_eol}"
+    		. "MIME-Version: 1.0{$header_eol}"
+    		. "Content-Transfer-Encoding: 8bit{$header_eol}";
+
+    	if (is_callable('mb_encode_mimeheader')) {
+			$subject = mb_encode_mimeheader($subject,"UTF-8", "B");
+    	}
+    	
+    	$message = "A new user: $new_user->name ($new_user->email) has been registered.";
+    	
+		// Format message
+    	$message = strip_tags($message); // Strip tags from message
+    	$message = preg_replace("/(\r\n|\r)/", "\n", $message); // Convert to unix line endings in body
+    	$message = preg_replace("/^From/", ">From", $message); // Change lines starting with From to >From  	
+    		
+		return mail($to, $subject, wordwrap($message), $headers);
+		
+	}
+	
+	register_action('user/enable', true, $CONFIG->pluginspath . "dreamfish_theme/actions/enable.php");
+	register_elgg_event_handler('init', 'system', 'dreamfish_theme_init');
 	register_page_handler('page', 'dreamfish_theme_fetchpage');
 	
 ?>
