@@ -58,7 +58,7 @@
 	                	// Trigger action event TODO: This is only called before the primary action is called. We need to rethink actions for 1.5
 	                	$event_result = true;
 	                	$event_result = trigger_plugin_hook('action', $action, null, $event_result);
-	                  $event_result = true;            	
+	                //  $event_result = true;            	
                     // Include action
 	                	if ($event_result) // Event_result being false doesn't produce an error - since i assume this will be handled in the hook itself. TODO make this better!
 	                	{
