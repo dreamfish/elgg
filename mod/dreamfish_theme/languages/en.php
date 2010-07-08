@@ -4,7 +4,7 @@
 	/* added by Fabio Barone: accept membership guidelines and terms of membership */
         'dreamfish_theme:accept_terms' => "By checking the box below, I declare that I have
 read and accept the <a href=\"http://network.dreamfish.com/elgg/pg/pages/view/205/\">Dreamfish membership guidelines</a> and the <a href=\"http://network.dreamfish.com/elgg/pg/pages/view/204/\">Terms of membership</a>.",
-                        'yes_dreamfish' => "Yes, I want to Dreamfish!",
+        'yes_dreamfish' => "Yes, I want to Dreamfish!",
         'dreamfish_theme:join' => "Join",
         'dreamfish_theme:provide_username' => "Please provide a username.",
         'dreamfish_theme:invalid_char' => "Invalid character in chosen username: ",
@@ -23,6 +23,10 @@ read and accept the <a href=\"http://network.dreamfish.com/elgg/pg/pages/view/20
         'dreamfish_theme:events' => "events",
         'dreamfish_theme:blog' => "blog",
         'dreamfish_theme:groups' => "groups",
+  		
+  		'dreamfish_theme:register:error:captcha' => "Invalid captcha",
+  		'dreamfish_theme:register:error:spamfield' => "that field wasn't supposed to be filled out!",
+  		'dreamfish_theme:register:error:namespace' => "Please add a space between your first and last names",
 	);
  
   add_translation("en",$english);
