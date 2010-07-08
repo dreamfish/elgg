@@ -121,13 +121,13 @@
 		
 		if (empty($_SESSION['captcha']) || trim(strtolower($_REQUEST['_captcha'])) != $_SESSION['captcha']) {
 			error_log("ACCOUNT: INVALID CAPTCHA");
-			register_error(elgg_echo('dreamfish_theme:register:captchafail')); //"Invalid captcha"
+			register_error(elgg_echo('dreamfish_theme:register:error:captcha'));
 			return false;
 		}
 		
 		if (!empty($_REQUEST['spam'])) {
 			error_log("ACCOUNT: SPAM FIELD FILLED OUT");
-			register_error(elgg_echo('dreamfish_theme:register:spamfail')); //"that field wasn't supposed to be filled out!"
+			register_error(elgg_echo('dreamfish_theme:register:error:spamfield'));
 			return false;
 		}
 		
@@ -135,7 +135,7 @@
 		$pos = strpos($name, ' ');
 		if ($pos == false) {
 			error_log("ACCOUNT: NAME FIELD DOES NOT CONTAIN SPACE --> IDENTIFIED AS BOT");
-			register_error(elgg_echo('dreamfish_theme:register:namefail'));
+			register_error(elgg_echo('dreamfish_theme:register:error:namespace'));
 			return false;
 		}
 
