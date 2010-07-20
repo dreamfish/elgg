@@ -26,7 +26,7 @@
 		global $CONFIG;
 		include($CONFIG->pluginspath . "recaptcha/lib/recaptchalib.php");
 
-		$privatekey = "6LdQTrsSAAAAAIF7itBW36LSuM4wf7iivZlEJec_";
+		$privatekey = get_plugin_setting('privatekey', 'recaptcha');
 		$resp = recaptcha_check_answer($privatekey,
 									   $_SERVER["REMOTE_ADDR"],
 									   $_POST["recaptcha_challenge_field"],

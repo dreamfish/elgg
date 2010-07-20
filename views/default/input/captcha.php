@@ -12,7 +12,7 @@
 	global $CONFIG;
 	require_once($CONFIG->pluginspath . "recaptcha/lib/recaptchalib.php");
 
-	$publickey = "6LdQTrsSAAAAABsWJY0YCsvzlUgVNqPftPfGaoCa";	
+	$publickey = get_plugin_setting('publickey', 'recaptcha');	
 ?>
 <div id="recaptcha_div">
 	<?php echo recaptcha_get_html($publickey, $error); ?>
