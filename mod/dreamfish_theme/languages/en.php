@@ -24,7 +24,7 @@ read and accept the <a href=\"http://network.dreamfish.com/elgg/pg/pages/view/20
         'dreamfish_theme:blog' => "blog",
         'dreamfish_theme:groups' => "groups",
   		
-  		'dreamfish_theme:register:error:captcha' => "Invalid captcha",
+  		'captcha:captchafail' => "Invalid captcha",
   		'dreamfish_theme:register:error:spamfield' => "that field wasn't supposed to be filled out!",
   		'dreamfish_theme:register:error:namespace' => "Please add a space between your first and last names",
 	);

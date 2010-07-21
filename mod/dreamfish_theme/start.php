@@ -119,12 +119,6 @@
 	function registration_hook($hook, $entity_type, $return_value, $params) {
 		error_log('DEBUG: executing registration_hook');
 		
-		if (empty($_SESSION['captcha']) || trim(strtolower($_REQUEST['_captcha'])) != $_SESSION['captcha']) {
-			error_log("ACCOUNT: INVALID CAPTCHA");
-			register_error(elgg_echo('dreamfish_theme:register:error:captcha'));
-			return false;
-		}
-		
 		if (!empty($_REQUEST['spam'])) {
 			error_log("ACCOUNT: SPAM FIELD FILLED OUT");
 			register_error(elgg_echo('dreamfish_theme:register:error:spamfield'));
