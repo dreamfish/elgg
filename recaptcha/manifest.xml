@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin_manifest>
+	<field key="author" value="Emmanuel Okyere" />
+	<field key="version" value="0.1" />
+	<field key="description" value="Elgg recaptcha plugin - stops spam and password cracking attempts." />
+	<field key="website" value="http://www.hutspace.net" />
+	<field key="copyright" value="Copyright (c) Emmanuel Okyere 2010" />
+	<field key="licence" value="Apache License, Version 2.0" />
+	<field key="elgg_version" value="2009031301" />
+</plugin_manifest>
