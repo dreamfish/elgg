@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin_manifest>
+	<field key="author" value="Trinity Rolling" />
+	<field key="version" value="1.0" />
+	<field key="description" value="Provides reCAPTCHA support (Requires the reCAPTCHA API Keys)." />
+	<field key="website" value="https://sourceforge.net/projects/elggrecaptcha/" />
+	<field key="copyright" value="(C) Trinity Rolling 2010" />
+	<field key="licence" value="GNU Public License version 2" />
+	<field key="elgg_version" value="2009050801" />
+</plugin_manifest>
