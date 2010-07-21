@@ -2,8 +2,8 @@
 <div align="center">
 
 <?php
-$channelname = "elgg_irc_chat";
-echo "<iframe src='http://webchat.freenode.net/?nick=".$_SESSION['user']->username."...&channels=".$channelname."' width='900' height='400'></iframe>";
+$channelname = "dreamfish";
+echo "<iframe src='http://webchat.freenode.net/?&nick=".$_SESSION['user']->username."&channels=".$channelname."&uio=d4' width='900' height='400'></iframe>";
 ?>
 
 
