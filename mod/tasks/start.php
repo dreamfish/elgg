@@ -60,16 +60,9 @@
 					if (isloggedin()) {
 						if (page_owner()) {
 							$page_owner = page_owner_entity();
-						
-							//add_submenu_item('table of tasks',$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/table");
 							
-							add_submenu_item(sprintf(elgg_echo('tasks:read'), $page_owner->name),$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/table");//$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/items");
-							/*add_submenu_item(sprintf('open tasks', $page_owner->name),$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/items/open");			
-							add_submenu_item(sprintf('assigned tasks', $page_owner->name),$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/items/assigned");				
-							add_submenu_item(sprintf('need more info tasks', $page_owner->name),$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/items/info");				
-							add_submenu_item(sprintf('in progress tasks', $page_owner->name),$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/items/progress");
-							add_submenu_item(sprintf('ready for testing tasks', $page_owner->name),$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/items/testing");
-							add_submenu_item(sprintf('closed tasks', $page_owner->name),$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/items/closed");*/
+							add_submenu_item(sprintf(elgg_echo('tasks:read'), $page_owner->name),$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/table");
+              add_submenu_item('Old style List',$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/items");
 						}
 					}					
 					if(!$page_owner instanceof ElggGroup)
