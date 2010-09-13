@@ -13,8 +13,11 @@
 	gatekeeper();
 	action_gatekeeper();
 
-
+		$title = get_input('title');
 		$guid = get_input('entity_guid',0);
+		$description = get_input('description');
+		$access = get_input('access');
+		$shares = get_input('shares',array());
 		
 		$start_date=get_input('start_date');
 		$end_date=get_input('end_date');
@@ -38,6 +41,11 @@
 			forward("pg/tasks");
 		}
 
+		$entity->title = $title;
+		$entity->description = $description;
+		$entity->access_id = $access;
+		$entity->tags = $tagarray;
+		
 		$entity->start_date = $start_date;
 		$entity->end_date = $end_date;
 		$entity->task_type = $task_type;
@@ -46,8 +54,6 @@
 		$entity->percent_done = $percent_done;
 		$entity->work_remaining = $work_remaining;
 		$entity->write_access_id = $write_access;
-		$entity->description = get_input('description');
-		$entity->title = get_input('title');
 		if ($entity->save()) {
 			
 			system_message(elgg_echo('tasks:save:success'));

@@ -108,17 +108,19 @@ Array.prototype.unique =
   };
   
 $(function() { 
-
-
-  
 	$('#taskTable').tablesorter({widgets: ['zebra']}); 
 	var status = $.map($('.status'), function(item) { return $(item).text(); }).unique();
-	var workers = $.map($('.worker'), function(item) { return $(item).text(); }).unique()
-	$.each(status, function(idx, item) { $('#statusFilter').append(
+	var workers = $.map($('.worker'), function(item) { return $(item).text(); }).unique();
+  var types = $.map($('.type'), function(item) { return $(item).text(); }).unique();
+	  $.each(status, function(idx, item) { $('#statusFilter').append(
 			$('<option></option>').val(item).html(item)
 		)
     });
     $.each(workers, function(idx, item) { $('#workerFilter').append(
+			$('<option></option>').val(item).html(item)
+		)
+    });
+    $.each(types, function(idx, item) { $('#typeFilter').append(
 			$('<option></option>').val(item).html(item)
 		)
     });
@@ -149,11 +151,26 @@ $(function() {
 		}
     });
 
+	$('#typeFilter').change(function() {
+		val = $(this).val();
+		if (val == 'All')
+		{
+			$('.type').each(function() { $(this).parents('tr:first').show(); });
+		}
+		else
+		{			
+			$('.type').each(function() { $(this).parents('tr:first').hide(); });
+			$('.type:contains("' + val + '")').each(function() { $(this).parents('tr:first').show(); });			
+		}
+    });
+
+
 });
 </script>
 <div class="contentWrapper">
 Filter Status: <select id="statusFilter"><option value="All">All</option> </select>
 Filter Worker: <select id="workerFilter"><option value="All">All</option> </select>
+Filter Status: <select id="typeFilter"><option value="All">All</option> </select>
 
 <table style="width:100%;" id="taskTable">
 <thead>
@@ -176,19 +193,19 @@ foreach($metadata as $meta) {
 $type = elgg_echo("tasks:task_type_{$task->task_type}");
 $status = elgg_echo("tasks:task_status_{$task->status}");
 if ($status == '')
-	$status = 'Open';
+	$status = elgg_echo('tasks:task_status_0');
 if ($type == '')
-	$type = 'Dev';
+	$type = elgg_echo('tasks:task_type_5');
 		
-if ($status != 'Closed') {
-	$manage_link = "<a href=\"{$url}mod/tasks/manage.php?task=".$task->getGUID()."\">". $task->title ."</a>&nbsp;"; 
+if ($status != elgg_echo('tasks:task_status_4')) {
+
+	$task_link = "<a href=\"{$url}mod/tasks/manage.php?task=".$task->getGUID()."\">". $task->title ."</a>&nbsp;"; 
 	$worker = get_entity($task->assigned_to);	
 	
-	echo "<tr><td class=\"task_name\">{$manage_link}</td><td class=\"status {$status}\">{$status}</td><td class=\"worker {$worker->name}\">{$worker->name}</td><td>$type</td></tr>";
+	echo "<tr><td class=\"task_name\">{$task_link}</td><td class=\"status {$status}\">{$status}</td><td class=\"worker {$worker->name}\">{$worker->name}</td><td class=\"type $type\">$type</td></tr>";
 }
 }
 ?>
 </tbody>
 </table>
-	
 </div>

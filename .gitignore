@@ -1,8 +1,6 @@
-<<<<<<< HEAD:.gitignore
+*.*~
 .project
 engine/settings.php
 .htaccess
-=======
 .DS_Store
 tmp/
->>>>>>> 73b59c66b090757cd6090a2086ab4aee7dae5573:.gitignore

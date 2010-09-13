@@ -34,10 +34,10 @@
 	
 			'item:object:tasks' => 'tasked items',
 	
-			'tasks:group' => 'Project tasks',
-			'tasks:nogroup' => 'This project does not have any tasks yet',
+			'tasks:group' => 'Workspace tasks',
+			'tasks:nogroup' => 'This workspace does not have any tasks yet',
 
-			'tasks:enabletasks' => 'Enable project tasks',
+			'tasks:enabletasks' => 'Enable workspace tasks',
 	
 	
 		/**
@@ -83,20 +83,21 @@
 			 'tasks:assigned_to' => 'Worker',
 			 
 			 'tasks:task_type_'=>"",
-			 'tasks:task_type_0'=>"Dev",
-			 'tasks:task_type_1'=>"Design",
+			 'tasks:task_type_0'=>"Contact",
+			 'tasks:task_type_1'=>"Plan",
 			 'tasks:task_type_2'=>"Research",
-			 'tasks:task_type_3'=>"Plan",
+			 'tasks:task_type_3'=>"Design",
 			 'tasks:task_type_4'=>"Create",
-			 'tasks:task_type_5'=>"Contact",
+			 'tasks:task_type_5'=>"Develop",
+       'tasks:task_type_6'=>"Evaluate",
+       'tasks:task_type_7'=>"Give",
 			 
 			 'tasks:task_status_'=>"",
 			 'tasks:task_status_0'=>"Open",
 			 'tasks:task_status_1'=>"Assigned",
 			 'tasks:task_status_2'=>"In progress",
 			 'tasks:task_status_3'=>"Ready for Testing",
-			 'tasks:task_status_4'=>"Need more Info",
-			 'tasks:task_status_5'=>"Closed",
+			 'tasks:task_status_4'=>"Go live",
 			 
 			 'tasks:task_percent_done_'=>"0%",
 			 'tasks:task_percent_done_0'=>"0%",

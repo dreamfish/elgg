@@ -60,7 +60,6 @@
 		}
 		
 		$entity->title = $title;
-		//$entity->address = $address;
 		$entity->description = $description;
 		$entity->access_id = $access;
 		$entity->tags = $tagarray;

@@ -91,30 +91,69 @@
 		</h2>
 		<br/>
 		<?php echo elgg_view('tasks/taskform',$vars); ?>
+		<p>
+			<label>
+				<?php echo elgg_echo('tasks:access'); ?>
+				<?php
+						$access = $access_id;
+						if (!$access) 
+						{
+							$access = ACCESS_PUBLIC;
+						} 
+						echo elgg_view('input/access',array(
+								'internalname' => 'access',
+								'value' => $access,
+						)); 
+				
+				?>
+			</label>
+		</p>
+		<p>
+			<label>
+				<?php echo elgg_echo('tasks:write_access'); ?>
+				<?php
+						$write_access = $write_access_id;
+						if (!$write_access) 
+						{
+							$write_access = ACCESS_LOGGED_IN;
+						} 
+						echo elgg_view('input/access',array(
+								'internalname' => 'write_access',
+								'value' => $write_access,
+						)); 
+				
+				?>
+			</label>
+		</p>
 		<p class="longtext_editarea">
 			<label>
-				<?php 	echo elgg_echo('description'); ?>
+				<?php echo elgg_echo('description'); ?>
 				<br />
 				<?php
-				
-				 echo elgg_view('input/longtext',array(
+
+						echo elgg_view('input/longtext',array(
 								'internalname' => 'description',
 								'value' => $description,
 								
 						)); 
-				 
-				 ?>
+				
+				?>
 			</label>
 		</p>
-		</div>
-		<?php
-				echo elgg_view_comments($vars['entity']);
-		?>
-		<!--<p>
-			<?php echo $vars['container_guid'] ? elgg_view('input/hidden', array('internalname' => 'container_guid', 'value' => $vars['container_guid'])) : ""; ?>
-			<input type="hidden" name="task_guid" value="<?php echo $guid; ?>" />
-			
+		<p>
+			<label>
+				<?php echo elgg_echo('tags'); ?>
+				<?php
+
+						echo elgg_view('input/tags',array(
+								'internalname' => 'tags',
+								'value' => $tags,
+						)); 
+				
+				?>
+			</label>
 		</p>
-		-->
-	
+	  <input type="submit" value="<?php echo elgg_echo('save'); ?>" />
+		</div>
+		<?php echo elgg_view_comments($vars['entity']);	?>
 	</form>

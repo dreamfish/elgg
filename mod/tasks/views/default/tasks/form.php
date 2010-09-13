@@ -81,34 +81,6 @@
 			</label>
 		</p>
 		<?php echo elgg_view('tasks/taskform'); ?>
-		<p class="longtext_editarea">
-			<label>
-				<?php 	echo elgg_echo('description'); ?>
-				<br />
-				<?php
-
-						echo elgg_view('input/longtext',array(
-								'internalname' => 'description',
-								'value' => $description,
-								
-						)); 
-				
-				?>
-			</label>
-		</p>
-		<p>
-			<label>
-				<?php 	echo elgg_echo('tags'); ?>
-				<?php
-
-						echo elgg_view('input/tags',array(
-								'internalname' => 'tags',
-								'value' => $tags,
-						)); 
-				
-				?>
-			</label>
-		</p>
 		<p>
 			<label>
 				<?php 	echo elgg_echo('tasks:access'); ?>
@@ -138,6 +110,34 @@
 						echo elgg_view('input/access',array(
 								'internalname' => 'write_access',
 								'value' => $write_access,
+						)); 
+				
+				?>
+			</label>
+		</p>
+		<p class="longtext_editarea">
+			<label>
+				<?php 	echo elgg_echo('description'); ?>
+				<br />
+				<?php
+
+						echo elgg_view('input/longtext',array(
+								'internalname' => 'description',
+								'value' => $description,
+								
+						)); 
+				
+				?>
+			</label>
+		</p>
+		<p>
+			<label>
+				<?php 	echo elgg_echo('tags'); ?>
+				<?php
+
+						echo elgg_view('input/tags',array(
+								'internalname' => 'tags',
+								'value' => $tags,
 						)); 
 				
 				?>

@@ -124,13 +124,14 @@
 						<?php
 							echo elgg_view('input/pulldown', array(
 									'internalname' => 'percent_done',
-									'options_values' => array( '0' => elgg_echo('tasks:task_percent_done_0'),
+									'options_values' => array(
+                                 '0' => elgg_echo('tasks:task_percent_done_0'),
 															   '1' => elgg_echo('tasks:task_percent_done_1'),
 															   '2' => elgg_echo('tasks:task_percent_done_2'),
-						                                 	   '3' => elgg_echo('tasks:task_percent_done_3'),
-									                           '4' => elgg_echo('tasks:task_percent_done_4'),
-									                           '5' => elgg_echo('tasks:task_percent_done_5'),
-									                         ),
+                             	   '3' => elgg_echo('tasks:task_percent_done_3'),
+			                           '4' => elgg_echo('tasks:task_percent_done_4'),
+			                           '5' => elgg_echo('tasks:task_percent_done_5')
+                  ),
 									'value' => $percent_done
 								));
 						?>
@@ -156,13 +157,16 @@
 				<?php
 					echo elgg_view('input/pulldown', array(
 							'internalname' => 'task_type',
-							'options_values' => array( '0' => elgg_echo('tasks:task_type_0'),
+							'options_values' => array(
+                             '0' => elgg_echo('tasks:task_type_0'),
 													   '1' => elgg_echo('tasks:task_type_1'),
 													   '2' => elgg_echo('tasks:task_type_2'),
-				                                 	   '3' => elgg_echo('tasks:task_type_3'),
-							                           '4' => elgg_echo('tasks:task_type_4'),
-							                           '5' => elgg_echo('tasks:task_type_5'),
-							                         ),
+				                     '3' => elgg_echo('tasks:task_type_3'),
+	                           '4' => elgg_echo('tasks:task_type_4'),
+	                           '5' => elgg_echo('tasks:task_type_5'),
+	                           '6' => elgg_echo('tasks:task_type_6'),
+	                           '7' => elgg_echo('tasks:task_type_7')
+              ),
 							'value' => $task_type
 						));
 				?>
@@ -174,13 +178,13 @@
 				<?php
 						echo elgg_view('input/pulldown', array(
 							'internalname' => 'status',
-							'options_values' => array( '0' => "Open",
+							'options_values' => array(
+                             '0' => elgg_echo('tasks:task_status_0'),
 													   '1' => elgg_echo('tasks:task_status_1'),
 													   '2' => elgg_echo('tasks:task_status_2'),
-				                                 	   '3' => elgg_echo('tasks:task_status_3'),
-				                                 	   '4' => elgg_echo('tasks:task_status_4'),
-							                           '5' => elgg_echo('tasks:task_status_5'),
-							                         ),
+                         	   '3' => elgg_echo('tasks:task_status_3'),
+                         	   '4' => elgg_echo('tasks:task_status_4')
+              ),
 							'value' => $status
 						));
 				?>
