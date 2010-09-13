@@ -278,6 +278,7 @@ What is Dreamfish</a></li>
 <a href="<?php echo $vars['url']; ?>pg/groups/177/dreamfish-investing-circle">Dreamfish Investing Circle</a></li>
 <li>
 <a href="<?php echo $vars['url']; ?>pg/groups/27/dreamfish-network-v10/">Dreamfish Service Team</a></li>
+</ul>
 <li class="footercols">
 <span class="footerh3">About Dreamfish</span>
 <ul>
