@@ -6,17 +6,13 @@
 ?>
 				<table width="100%" class="tasks" >
 					<tr>
-						<td>
+						<td colspan="2" width="66%">
 			  				<b><a href="<?php echo $vars['entity']->getURL(); ?>"><?php echo $vars['entity']->title; ?></a></b>
 						</td>
-						<td style="text-align: right;">
+						<td width="33%" style="text-align: right;">
 							<a href="<?php echo $vars['url']; ?>pg/tasks/<?php echo $container->username; ?>"><?php echo $container->name; ?></a>&nbsp;<?php echo $friendlytime; ?>
 						</td>
 					</tr>
-				</table>
-	
-				
-				<table width="100%" class="tasks" >
 					<tr>
 						<td width="33%">
 						<b><?php echo elgg_echo('tasks:task_type'); ?></b>
@@ -33,17 +29,10 @@
             <?php } ?>
 						</td>
 					</tr>
-				</table>
-				
-				<table width="100%" class="tasks">
 					<tr>
 						<td width="33%">
-						<b><?php 	echo elgg_echo('tasks:start_date'); ?></b>
-						<?php   echo elgg_view('output/text',array('value' => $vars['entity']->start_date)); ?>
 						</td>
 						<td width="33%">
-						<b><?php 	echo elgg_echo('tasks:end_date'); ?></b>
-						<?php   echo elgg_view('output/text',array('value' => $vars['entity']->end_date)); ?>
 						</td>
 						<td width="33%" style="text-align: right;">
 						<?php   echo elgg_view('output/text',array('value' => elgg_echo("tasks:task_percent_done_{$vars['entity']->percent_done}"))); ?>

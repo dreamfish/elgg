@@ -8,7 +8,38 @@
 	 * @author Curverider <info@elgg.com>
 	 * @copyright Curverider Ltd 2008-2009
 	 * @link http://elgg.org/
+   *
+   * Modified by Jillian Burrows von Dreamfish
 	 */
+
+  function sksort(&$array, $subkey="id", $sort_ascending=false) {
+
+    if (count($array))
+        $temp_array[key($array)] = array_shift($array);
+
+      foreach($array as $key => $val){
+        $offset = 0;
+        $found = false;
+        foreach($temp_array as $tmp_key => $tmp_val)
+          {
+            if(!$found and strtolower($val[$subkey]) > strtolower($tmp_val[$subkey]))
+              {
+                $temp_array = array_merge(
+                  (array)array_slice($temp_array,0,$offset),
+                  array($key => $val),
+                  array_slice($temp_array,$offset)
+                );
+                $found = true;
+              }
+            $offset++;
+          }
+        if(!$found) $temp_array = array_merge($temp_array, array($key => $val));
+      }
+
+    if ($sort_ascending) $array = array_reverse($temp_array);
+
+    else $array = $temp_array;
+  }
 
 	// Start engine
 		require_once(dirname(dirname(dirname(__FILE__))) . "/engine/start.php");
@@ -16,47 +47,28 @@
 		$page_owner = page_owner_entity();
 		if ($page_owner === false || is_null($page_owner)) {
 			$page_owner = $_SESSION['user'];
-			set_page_owner($page_owner->getGUID());;
+			set_page_owner($page_owner->getGUID());
 		}
-		
+
 	// List tasks
 		$context = get_context();
 		$title = sprintf(elgg_echo('tasks:read'), $page_owner->name);
 		$area2 = elgg_view_title($title);
-		set_context('search');
-		$limit = 10;
-		$status = get_input('status');
-			
-		if ($status == '') {
-			  $area2 .= list_entities('object','tasks', page_owner(), $limit, false);
-		}
-		else
-		{			 
-			if ($status == 'open')
-				$area2 .= list_entities_from_metadata('status', '0', 'object','tasks',page_owner(),$limit);
-			elseif ($status == 'closed')
-				$area2 .= list_entities_from_metadata('status', '5', 'object','tasks',page_owner(), $limit);
-			elseif ($status == 'info')
-				$area2 .= list_entities_from_metadata('status', '4', 'object','tasks',page_owner(), $limit);
-			elseif ($status == 'testing')
-				$area2 .= list_entities_from_metadata('status', '3', 'object','tasks',page_owner(), $limit);
-			elseif ($status == 'progress')
-				$area2 .= list_entities_from_metadata('status', '2', 'object','tasks',page_owner(), $limit);
-			elseif ($status == 'assigned')
-				$area2 .= list_entities_from_metadata('status', '1', 'object','tasks',page_owner(), $limit);
-
-		}		
-
+    $area2 .= elgg_view('tasks/sorter', array());
 		set_context('tasks');
-		
-		$area2.= elgg_view_entity_list($items, count($items), 0, 20, false, false, true);;
-		
+
+		$items = get_entities('object','tasks',page_owner(),'', 1000);
+		sksort($items, "title", true);
+
+    foreach ($items as $item) {
+  		$area2 .= elgg_view('tasks/tasksresume.php', $item);
+    }
+
 		set_context($context);
-		
-		
+
 	// Format page
 		$body = elgg_view_layout('two_column_left_sidebar', $area1, $area2);
-		
+
 	// Draw it
 		echo page_draw($title,$body);
 

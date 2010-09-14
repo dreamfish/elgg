@@ -8,7 +8,7 @@
 	
 			'tasks' => "Tasks",
 			'tasks:add' => "task something",
-			'tasks:read' => "%s's tasks",
+			'tasks:read' => "%s tasks",
 			'tasks:friends' => "Friends' tasks",
 			'tasks:everyone' => "All site tasks",
 			'tasks:this' => "Task this",
