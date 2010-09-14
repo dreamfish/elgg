@@ -61,7 +61,7 @@
 		sksort($items, "title", true);
 
     foreach ($items as $item) {
-  		$area2 .= elgg_view('tasks/tasksresume.php', $item);
+  		$area2 .= elgg_view('tasks/tasksresume.php', array('entity' => $item));
     }
 
 		set_context($context);
