@@ -6,13 +6,13 @@
 		 * Menu items and titles
 		 */
 	
-			'tasks' => "tasks",
+			'tasks' => "Tasks",
 			'tasks:add' => "task something",
-			'tasks:read' => "%s's tasked items",
+			'tasks:read' => "%s's tasks",
 			'tasks:friends' => "Friends' tasks",
 			'tasks:everyone' => "All site tasks",
-			'tasks:this' => "task this",
-			'tasks:this:group' => "task in %s",
+			'tasks:this' => "Task this",
+			'tasks:this:group' => "Task in %s",
 
 			'tasks:more' => "More",
 			'tasks:shareditem' => "Task",
@@ -20,7 +20,7 @@
 			'tasks:new' => "A new tasked item",
 			'tasks:via' => "via tasks",
 	
-			'tasks:delete:confirm' => "Are you sure you want to delete this resource?",
+			'tasks:delete:confirm' => "Are you sure you want to delete this task?",
 	
 			'tasks:numbertodisplay' => 'Number of tasked items to display',
 	
@@ -34,10 +34,10 @@
 	
 			'item:object:tasks' => 'tasked items',
 	
-			'tasks:group' => 'Workspace tasks',
-			'tasks:nogroup' => 'This workspace does not have any tasks yet',
+			'tasks:group' => 'Project tasks',
+			'tasks:nogroup' => 'This project does not have any tasks yet',
 
-			'tasks:enabletasks' => 'Enable workspace tasks',
+			'tasks:enabletasks' => 'Enable project tasks',
 	
 	
 		/**
@@ -96,7 +96,7 @@
 			 'tasks:task_status_0'=>"Open",
 			 'tasks:task_status_1'=>"Assigned",
 			 'tasks:task_status_2'=>"In progress",
-			 'tasks:task_status_3'=>"Ready for Testing",
+			 'tasks:task_status_3'=>"Ready for testing",
 			 'tasks:task_status_4'=>"Go live",
 			 
 			 'tasks:task_percent_done_'=>"0%",
@@ -107,8 +107,8 @@
 			 'tasks:task_percent_done_4'=>"80%",
 			 'tasks:task_percent_done_5'=>"100%",
 			 
-			 'tasks:access' => "Access",
-			 'tasks:write_access' => "Write access",
+			 'tasks:access' => "Privacy",
+			 'tasks:write_access' => "Who can edit",
 			 
 			 'tasks:tasksboard'=>"TasksBoard",
 			 'tasks:tasksmanage'=>"Manage",

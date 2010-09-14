@@ -48,9 +48,6 @@
 						<td width="33%" style="text-align: right;">
 						<?php   echo elgg_view('output/text',array('value' => elgg_echo("tasks:task_percent_done_{$vars['entity']->percent_done}"))); ?>
 						<b><?php 	echo elgg_echo('tasks:percent_done'); ?></b>
-					
-						<b><?php 	echo elgg_echo('tasks:work_remaining'); ?></b>
-						<?php   echo elgg_view('output/text',array('value' => $vars['entity']->work_remaining)); ?>
 						</td>
 					</tr>
 				</table>

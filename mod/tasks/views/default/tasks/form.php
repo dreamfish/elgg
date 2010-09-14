@@ -15,7 +15,6 @@
 			$guid = $vars['entity']->getGUID();
 			$title = $vars['entity']->title;
 			$description = $vars['entity']->description;
-			
 			$tags = $vars['entity']->tags;
 			$access_id = $vars['entity']->access_id;
 			
@@ -28,7 +27,6 @@
 			$status = $vars['entity']->status;
 			$assigned_to = $vars['entity']->assigned_to;
 			$percent_done = $vars['entity']->percent_done;
-			$work_remaining = $vars['entity']->work_remaining;
 			$write_access_id = $vars['entity']->write_access_id;
 			
 			$container_id = $vars['entity']->getContainer();
@@ -39,7 +37,6 @@
 			$guid = 0;
 			$title = get_input('title',"");
 			$description = "";
-			//$address = get_input('address',"");
 			$highlight = 'all';
 			
 			if ($address == "previous")
@@ -81,43 +78,47 @@
 			</label>
 		</p>
 		<?php echo elgg_view('tasks/taskform'); ?>
-		<p>
-			<label>
-				<?php 	echo elgg_echo('tasks:access'); ?>
-				<?php
-						$access = $access_id;
-						if (!$access) 
-						{
-							$access = ACCESS_PUBLIC;
-						} 
-						echo elgg_view('input/access',array(
-								'internalname' => 'access',
-								'value' => $access,
-						)); 
-				
-				?>
-			</label>
-		</p>
-		<p>
-			<label>
-				<?php 	echo elgg_echo('tasks:write_access'); ?>
-				<?php
-						$write_access = $write_access_id;
-						if (!$write_access) 
-						{
-							$write_access = ACCESS_LOGGED_IN;
-						} 
-						echo elgg_view('input/access',array(
-								'internalname' => 'write_access',
-								'value' => $write_access,
-						)); 
-				
-				?>
-			</label>
-		</p>
+		<table class="tasks" width="100%">
+			<tr>
+				<td width="33%">
+					<label>
+						<?php echo elgg_echo('tasks:access'); ?>
+						<?php
+								$access = $access_id;
+								if (!$access) 
+								{
+									$access = ACCESS_PUBLIC;
+								} 
+								echo elgg_view('input/access',array(
+										'internalname' => 'access',
+										'value' => $access,
+								)); 
+						?>
+					</label>
+				</td>
+				<td width="33%">
+					<label>
+						<?php echo elgg_echo('tasks:write_access'); ?>
+						<?php
+								$write_access = $write_access_id;
+								if (!$write_access) 
+								{
+									$write_access = ACCESS_LOGGED_IN;
+								} 
+								echo elgg_view('input/access',array(
+										'internalname' => 'write_access',
+										'value' => $write_access,
+								)); 
+						?>
+					</label>
+				</td>
+				<td width="30%">
+				</td>
+			</tr>
+		</table>
 		<p class="longtext_editarea">
 			<label>
-				<?php 	echo elgg_echo('description'); ?>
+				<?php echo elgg_echo('description'); ?>
 				<br />
 				<?php
 
@@ -132,7 +133,7 @@
 		</p>
 		<p>
 			<label>
-				<?php 	echo elgg_echo('tags'); ?>
+				<?php echo elgg_echo('tags'); ?>
 				<?php
 
 						echo elgg_view('input/tags',array(

@@ -61,8 +61,8 @@
 						if (page_owner()) {
 							$page_owner = page_owner_entity();
 							
-							add_submenu_item(sprintf(elgg_echo('tasks:read'), $page_owner->name),$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/table");
-              add_submenu_item('Old style List',$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/items");
+							//add_submenu_item(sprintf(elgg_echo('tasks'), $page_owner->name),$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/table");
+              add_submenu_item(sprintf(elgg_echo('tasks'), $page_owner->name),$CONFIG->wwwroot."pg/tasks/" . $page_owner->username . "/items");
 						}
 					}					
 					if(!$page_owner instanceof ElggGroup)

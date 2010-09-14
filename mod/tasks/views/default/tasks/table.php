@@ -199,10 +199,13 @@ if ($type == '')
 		
 if ($status != elgg_echo('tasks:task_status_4')) {
 
-	$task_link = "<a href=\"{$url}mod/tasks/manage.php?task=".$task->getGUID()."\">". $task->title ."</a>&nbsp;"; 
+	$task_link = "
+  //"<a href=\"{$url}mod/tasks/manage.php?task=".$task->getGUID()."\">". $task->title ."</a>&nbsp;"; 
 	$worker = get_entity($task->assigned_to);	
 	
-	echo "<tr><td class=\"task_name\">{$task_link}</td><td class=\"status {$status}\">{$status}</td><td class=\"worker {$worker->name}\">{$worker->name}</td><td class=\"type $type\">$type</td></tr>";
+	echo "<tr><td class=\"task_name\">";
+?> <a href="<?php echo $vars['entity']->getURL(); ?>"><?php echo $vars['entity']->title; ?></a> <?
+  echo "</td><td class=\"status {$status}\">{$status}</td><td class=\"worker {$worker->name}\">{$worker->name}</td><td class=\"type $type\">$type</td></tr>";
 }
 }
 ?>

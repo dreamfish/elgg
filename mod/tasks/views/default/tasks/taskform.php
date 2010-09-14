@@ -29,7 +29,6 @@
 			$status = $vars['entity']->status;
 			$assigned_to = $vars['entity']->assigned_to;
 			$percent_done = $vars['entity']->percent_done;
-			$work_remaining = $vars['entity']->work_remaining;
 			$write_access_id = $vars['entity']->write_access_id;
 			
 			$container_id = $vars['entity']->getContainer();
@@ -134,18 +133,6 @@
                   ),
 									'value' => $percent_done
 								));
-						?>
-					</label>
-					<label>
-						<?php 	echo elgg_echo('tasks:work_remaining'); ?>
-						<?php
-		
-								echo elgg_view('input/text',array(
-										'internalname' => 'work_remaining',
-										'value' => $work_remaining,
-										'class' => 'number',
-								)); 
-						
 						?>
 					</label>
 					</td>

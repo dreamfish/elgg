@@ -63,11 +63,11 @@ if (empty($vars['title'])) {
 </li>
 	
 <li <?php echo strpos(current_page_url(),"groups") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/groups/world"><span><h4>workspace Hub</h4></span></a>
+	<a href="<?php echo $vars['url']; ?>pg/groups/world"><span><h4>project hub</h4></span></a>
 	
 	<ul>
 	<li>
-	  <a href="<?php echo $vars['url'];?>pg/groups/member/<?php echo $_SESSION['user']->username; ?>">my workspaces</a>
+	  <a href="<?php echo $vars['url'];?>pg/groups/member/<?php echo $_SESSION['user']->username; ?>">my projects</a>
 	</li>
 	</ul>
 </li>
@@ -112,7 +112,7 @@ if (empty($vars['title'])) {
 	<a href="<?php echo $vars['url']; ?>mod/members"><span><h4>marketplace</h4></span></a>
 </li>
 <li <?php echo strpos(current_page_url(),"groups") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/groups/world"><span><h4>workspace Hub</h4></span></a>
+	<a href="<?php echo $vars['url']; ?>pg/groups/world"><span><h4>project hub</h4></span></a>
 </li>
 <li <?php echo strpos(current_page_url(),"community") ? "class=\"selected\"" :"" ?>>
 	<a href="<?php echo $vars['url']; ?>pg/pages/url/df-community"><span><h4>community</h4></span></a>
