@@ -57,16 +57,19 @@
     $area2 .= elgg_view('tasks/sorter', array());
 		set_context('tasks');
 
+
 		$items = get_entities('object','tasks',page_owner(),'', 1000);
-		sksort($items, "title", true);
 
-    foreach ($items as $item) {
-  		$area2 .= "<div class=\"contentWrapper task\">";
-      $area2 .= elgg_view('tasks/tasksresume', array('entity' => $item));
-      $area2 .= "<a href=\"/mod/tasks/manage.php?task=".$item->getGUID()."\">".elgg_echo('tasks:tasksmanage')."</a>";
-      $area2 .="</div>";
+    if ($items) { 
+		  sksort($items, "title", true);
+
+      foreach ($items as $item) {
+    		$area2 .= "<div class=\"contentWrapper task\">";
+        $area2 .= elgg_view('tasks/tasksresume', array('entity' => $item));
+        $area2 .= "<a href=\"/mod/tasks/manage.php?task=".$item->getGUID()."\">".elgg_echo('tasks:tasksmanage')."</a>";
+        $area2 .="</div>";
+      }
     }
-
 		set_context($context);
 
 	// Format page
