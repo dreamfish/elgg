@@ -199,8 +199,7 @@ if ($type == '')
 		
 if ($status != elgg_echo('tasks:task_status_4')) {
 
-	$task_link = "
-  //"<a href=\"{$url}mod/tasks/manage.php?task=".$task->getGUID()."\">". $task->title ."</a>&nbsp;"; 
+	$task_link = "<a href=\"{$url}mod/tasks/manage.php?task=".$task->getGUID()."\">". $task->title ."</a>&nbsp;"; 
 	$worker = get_entity($task->assigned_to);	
 	
 	echo "<tr><td class=\"task_name\">";

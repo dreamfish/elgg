@@ -89,6 +89,7 @@
 		</h2>
 		<br/>
 		<?php echo elgg_view('tasks/taskform',$vars); ?>
+		<p>
 		<table class="tasks" width="100%">
 			<tr>
 				<td width="33%">
@@ -127,6 +128,7 @@
 				</td>
 			</tr>
 		</table>
+		</p>
 		<p class="longtext_editarea">
 			<label>
 				<?php echo elgg_echo('description'); ?>

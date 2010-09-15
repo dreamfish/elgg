@@ -36,12 +36,12 @@ $(function() {
 		val = $(this).val();
 		if (val == 'All')
 		{
-			$('.status').each(function() { $(this).parents('table:first').show(); });
+			$('.status').each(function() { $(this).parents('.task:first').show(); });
 		}
 		else
 		{			
-			$('.status').each(function() { $(this).parents('table:first').hide(); });
-			$('.status:contains("' + val + '")').each(function() { $(this).parents('table:first').show(); });			
+			$('.status').each(function() { $(this).parents('.task:first').hide(); });
+			$('.status:contains("' + val + '")').each(function() { $(this).parents('.task:first').show(); });			
 		}
     });
     
@@ -49,12 +49,12 @@ $(function() {
 		val = $(this).val();
 		if (val == 'All')
 		{
-			$('.worker').each(function() { $(this).parents('table:first').show(); });
+			$('.worker').each(function() { $(this).parents('.task:first').show(); });
 		}
 		else
 		{			
-			$('.worker').each(function() { $(this).parents('table:first').hide(); });
-			$('.worker:contains("' + val + '")').each(function() { $(this).parents('table:first').show(); });			
+			$('.worker').each(function() { $(this).parents('.task:first').hide(); });
+			$('.worker:contains("' + val + '")').each(function() { $(this).parents('.task:first').show(); });			
 		}
     });
 
@@ -62,12 +62,12 @@ $(function() {
 		val = $(this).val();
 		if (val == 'All')
 		{
-			$('.type').each(function() { $(this).parents('table:first').show(); });
+			$('.type').each(function() { $(this).parents('.task:first').show(); });
 		}
 		else
 		{			
-			$('.type').each(function() { $(this).parents('table:first').hide(); });
-			$('.type:contains("' + val + '")').each(function() { $(this).parents('table:first').show(); });			
+			$('.type').each(function() { $(this).parents('.task:first').hide(); });
+			$('.type:contains("' + val + '")').each(function() { $(this).parents('.task:first').show(); });			
 		}
     });
 
@@ -78,4 +78,4 @@ $(function() {
 Filter Status: <select id="statusFilter"><option value="All">All</option> </select>
 Filter Worker: <select id="workerFilter"><option value="All">All</option> </select>
 Filter Type: <select id="typeFilter"><option value="All">All</option> </select>
-
+</div>

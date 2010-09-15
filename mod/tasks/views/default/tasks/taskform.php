@@ -87,14 +87,13 @@
  <?php echo elgg_view('input/securitytoken'); ?>
 
 		<table class="tasks" width="100%">
-				<tr>
+		  <tr>
 				<td width="33%">
-				<label>
-				<?php echo elgg_echo('tasks:task_type'); ?>	
-				<?php
-					echo elgg_view('input/pulldown', array(
-							'internalname' => 'task_type',
-							'options_values' => array(
+		  		<label>
+			  	<?php echo elgg_echo('tasks:task_type'); ?>	
+			  	<?php echo elgg_view('input/pulldown', array(
+						'internalname' => 'task_type',
+						'options_values' => array(
                              '0' => elgg_echo('tasks:task_type_0'),
 													   '1' => elgg_echo('tasks:task_type_1'),
 													   '2' => elgg_echo('tasks:task_type_2'),
@@ -102,79 +101,66 @@
 	                           '4' => elgg_echo('tasks:task_type_4'),
 	                           '5' => elgg_echo('tasks:task_type_5'),
 	                           '6' => elgg_echo('tasks:task_type_6'),
-	                           '7' => elgg_echo('tasks:task_type_7')
-              ),
+	                           '7' => elgg_echo('tasks:task_type_7'),
+	                           '8' => elgg_echo('tasks:task_type_8')
+             ),
 							'value' => $task_type
-						));
-				?>
-				</label>
+					)); ?>
+				  </label>
 				</td>
 				<td width="33%">
-				<label>
-				<?php echo elgg_echo('tasks:status'); ?>	
-				<?php
-						echo elgg_view('input/pulldown', array(
+				  <label>
+				  <?php echo elgg_echo('tasks:status'); ?>	
+				  <?php echo elgg_view('input/pulldown', array(
 							'internalname' => 'status',
 							'options_values' => array(
                              '0' => elgg_echo('tasks:task_status_0'),
 													   '1' => elgg_echo('tasks:task_status_1'),
 													   '2' => elgg_echo('tasks:task_status_2'),
                          	   '3' => elgg_echo('tasks:task_status_3'),
-                         	   '4' => elgg_echo('tasks:task_status_4')
+                         	   '4' => elgg_echo('tasks:task_status_4'),
+                         	   '5' => elgg_echo('tasks:task_status_5')
               ),
 							'value' => $status
-						));
-				?>
-				</label>
+				  )); ?>
+				  </label>
 				</td>
-				<td width="30%">
-				<label>
-				<?php echo elgg_echo('tasks:assigned_to'); ?>	
-				<?php
-					echo elgg_view('input/pulldown', array(
+				<td width="33%">
+				  <label>
+				  <?php echo elgg_echo('tasks:assigned_to'); ?>	
+				  <?php echo elgg_view('input/pulldown', array(
 							'internalname' => 'assigned_to',
 							'options_values' => $assign_list,
 							'value' => $assigned_to
-						));
-				?>
-				</label>
-			</td>
+				  )); ?>
+				  </label>
+			  </td>
 			</tr>
 			<tr>
 				<td width="33%">
 					<label>
-						<?php 	echo elgg_echo('tasks:start_date'); ?>
-						<?php
-		
-								echo elgg_view('input/text',array(
+					<?php echo elgg_echo('tasks:start_date'); ?>
+					<?php echo elgg_view('input/text',array(
 										'internalname' => 'start_date',
 										'value' => $start_date,
-										'class' => 'tiny date',
-								)); 
-						
-						?>
+										'class' => 'tiny date'
+					)); ?>
 					</label>
-					</td>
-					<td width="33%">
-					<label>
-						<?php 	echo elgg_echo('tasks:end_date'); ?>
-						<?php
-		
-								echo elgg_view('input/text',array(
+				</td>
+				<td width="33%">
+				  <label>
+					<?php echo elgg_echo('tasks:end_date'); ?>
+					<?php echo elgg_view('input/text',array(
 										'internalname' => 'end_date',
 										'value' => $end_date,
-										'class' => 'tiny date',
-		
-								)); 
-						
-						?>
+										'class' => 'tiny date'
+					)); ?>
 					</label>
-					</td>
-					<td width="30%">
+				</td>
+				<td width="33%">
 					<label>
-						<?php 	echo elgg_echo('tasks:percent_done'); ?>
-						<?php
-							echo elgg_view('input/pulldown', array(
+					<?php echo elgg_echo('tasks:percent_done'); ?>
+					<?php echo elgg_view('input/pulldown', array(
 									'internalname' => 'percent_done',
 									'options_values' => array(
                                  '0' => elgg_echo('tasks:task_percent_done_0'),
@@ -185,8 +171,7 @@
 			                           '5' => elgg_echo('tasks:task_percent_done_5')
                   ),
 									'value' => $percent_done
-								));
-						?>
+					)); ?>
 					</label>
 					</td>
 				</tr>
