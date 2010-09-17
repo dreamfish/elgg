@@ -94,15 +94,16 @@
 			  	<?php echo elgg_view('input/pulldown', array(
 						'internalname' => 'task_type',
 						'options_values' => array(
-                             '0' => elgg_echo('tasks:task_type_0'),
-													   '1' => elgg_echo('tasks:task_type_1'),
-													   '2' => elgg_echo('tasks:task_type_2'),
-				                     '3' => elgg_echo('tasks:task_type_3'),
-	                           '4' => elgg_echo('tasks:task_type_4'),
-	                           '5' => elgg_echo('tasks:task_type_5'),
-	                           '6' => elgg_echo('tasks:task_type_6'),
-	                           '7' => elgg_echo('tasks:task_type_7'),
-	                           '8' => elgg_echo('tasks:task_type_8')
+                             '0' => elgg_echo('tasks:task_type_'),
+                             '1' => elgg_echo('tasks:task_type_0'),
+													   '2' => elgg_echo('tasks:task_type_1'),
+													   '3' => elgg_echo('tasks:task_type_2'),
+				                     '4' => elgg_echo('tasks:task_type_3'),
+	                           '5' => elgg_echo('tasks:task_type_4'),
+	                           '6' => elgg_echo('tasks:task_type_5'),
+	                           '7' => elgg_echo('tasks:task_type_6'),
+	                           '8' => elgg_echo('tasks:task_type_7'),
+	                           '9' => elgg_echo('tasks:task_type_8')
              ),
 							'value' => $task_type
 					)); ?>
@@ -118,8 +119,7 @@
 													   '1' => elgg_echo('tasks:task_status_1'),
 													   '2' => elgg_echo('tasks:task_status_2'),
                          	   '3' => elgg_echo('tasks:task_status_3'),
-                         	   '4' => elgg_echo('tasks:task_status_4'),
-                         	   '5' => elgg_echo('tasks:task_status_5')
+                         	   '4' => elgg_echo('tasks:task_status_4')
               ),
 							'value' => $status
 				  )); ?>
