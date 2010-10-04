@@ -168,9 +168,10 @@ $(function() {
 });
 </script>
 <div class="contentWrapper">
+Filter Type: <select id="typeFilter"><option value="All">All</option> </select>
 Filter Status: <select id="statusFilter"><option value="All">All</option> </select>
 Filter Worker: <select id="workerFilter"><option value="All">All</option> </select>
-Filter Type: <select id="typeFilter"><option value="All">All</option> </select>
+
 
 <table style="width:100%;" id="taskTable">
 <thead>
