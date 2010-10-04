@@ -102,8 +102,7 @@
 	                           '5' => elgg_echo('tasks:task_type_4'),
 	                           '6' => elgg_echo('tasks:task_type_5'),
 	                           '7' => elgg_echo('tasks:task_type_6'),
-	                           '8' => elgg_echo('tasks:task_type_7'),
-	                           '9' => elgg_echo('tasks:task_type_8')
+	                           '8' => elgg_echo('tasks:task_type_7')
              ),
 							'value' => $task_type
 					)); ?>
