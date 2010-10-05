@@ -19,11 +19,48 @@
 		// register plugin hook for user registration since this is modified by this module
 		register_plugin_hook('action', 'register', 'registration_hook');
 		register_elgg_event_handler('create','user','user_created_handler');	
+		register_elgg_event_handler('create','annotation','annotate_handler');	
 	
 		extend_view('profile/menu/links','usermenu');
 		// Extend system CSS with our own styles
 		extend_view('css','dreamfish_theme/css');
 	}
+	
+	
+	function annotate_handler($event, $object_type, $object)
+	{		
+		global $CONFIG;
+		$entity = get_entity($object->entity_guid);
+		
+		if ($entity->getSubtype() != 'tasks')
+			return true;
+			
+		$container = get_entity($entity->container_guid);
+		
+		$annotations = get_annotations($entity->guid);
+		$commenters = array_unique(array_map(
+			create_function('$comment', 'return $comment->owner_guid;'),
+			$annotations
+		));
+		
+		$task_title = $entity->title;
+		$task_guid = $entity->guid;
+		$comment_text = $object->value;
+		$comment_poster = get_entity($object->owner_guid);
+		
+		$body = "{$comment_poster->name} posted the following comment on {$task_title} in {$container->name} <br><br>{$comment_text}<br><br>{$CONFIG->url}pg/tasks/a/read/{$task_guid}<br>";
+		
+		$subject = "Comment posted on {$task_title} in {$container->name}";
+		
+		foreach($commenters as $commenter)
+		{
+			notify_user($commenter, $comment_poster, $subject, $body);
+			//enable this if we'd rather send it as a dreamfish email -> don't want to clog that up though?
+			//$result = messages_send($subject,$body,$commenter,$comment_poster,0, true, false);
+		}	
+		return true;		
+	}
+	
 	
 	function df_pagesetup() {
 		global $CONFIG;
