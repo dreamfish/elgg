@@ -83,6 +83,13 @@
 					add_entity_relationship($entity->getGUID(),'share',$share);
 				}
 			}
+			
+			$container = get_entity($entity->container_guid);
+			$subject = "Assigned task {$title} on {$container->name}";
+			$body = "{$_SESSION['user']->name} assigned you to {$title} in {$container->name} <br><br>{$comment_text}<br><br>{$CONFIG->url}pg/tasks/a/read/{$entity->guid}<br>";
+			
+			notify_user($entity->assigned_to, $_SESSION['user']->guid, $subject, $body);
+			
 			system_message(elgg_echo('tasks:save:success'));
 			//add to river
 			add_to_river('river/object/tasks/create','create',$_SESSION['user']->guid,$entity->guid);
