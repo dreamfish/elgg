@@ -71,7 +71,7 @@
 			
 			if ($reassigned) {
 				$container = get_entity($entity->container_guid);
-				$subject = 'Assigned task {$title} on {$container->name}';
+				$subject = "Assigned task {$title} on {$container->name}";
 				$body = "{$_SESSION['user']->name} assigned you to {$title} in {$container->name} <br><br>{$comment_text}<br><br>{$CONFIG->url}pg/tasks/a/read/{$entity->guid}<br>";
 				
 				notify_user($entity->assigned_to, $_SESSION['user']->guid, $subject, $body);
