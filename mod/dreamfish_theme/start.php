@@ -48,7 +48,7 @@
 		$comment_text = $object->value;
 		$comment_poster = get_entity($object->owner_guid);
 		
-		$body = "{$comment_poster->name} posted the following comment on {$task_title} in {$container->name} <br><br>{$comment_text}<br><br>{$CONFIG->url}pg/tasks/a/read/{$task_guid}<br>";
+		$body = "{$comment_poster->name} posted the following comment on {$task_title} in {$container->name} <br><br>{$comment_text}\n\n<br><br> {$CONFIG->url}pg/tasks/a/read/{$task_guid}<br>";
 		
 		$subject = "Comment posted on {$task_title} in {$container->name}";
 		
