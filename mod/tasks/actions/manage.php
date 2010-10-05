@@ -13,6 +13,8 @@
 	gatekeeper();
 	action_gatekeeper();
 
+	global $CONFIG;
+	
 		$title = get_input('title');
 		$guid = get_input('entity_guid',0);
 		$description = get_input('description');
@@ -50,6 +52,13 @@
 		$entity->end_date = $end_date;
 		$entity->task_type = $task_type;
 		$entity->status = $status;
+		
+		$reassigned = false;
+		if ($entity->assigned_to != $assigned_to ) {
+			$reassigned = true;
+		}
+		
+		
 		$entity->assigned_to = $assigned_to;
 		$entity->percent_done = $percent_done;
 		$entity->work_remaining = $work_remaining;
@@ -59,6 +68,14 @@
 			system_message(elgg_echo('tasks:save:success'));
 			//add to river
 			add_to_river('river/object/tasks/create','create',$_SESSION['user']->guid,$entity->guid);
+			
+			if ($reassigned) {
+				$container = get_entity($entity->container_guid);
+				$subject = 'Assigned task {$title} on {$container->name}';
+				$body = "{$_SESSION['user']->name} assigned you to {$title} in {$container->name} <br><br>{$comment_text}<br><br>{$CONFIG->url}pg/tasks/a/read/{$entity->guid}<br>";
+				
+				notify_user($entity->assigned_to, $_SESSION['user']->guid, $subject, $body);
+			}
 			
 			$comment_text = get_input('generic_comment');
 
