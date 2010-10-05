@@ -43,6 +43,7 @@
 
 	// Start engine
 		require_once(dirname(dirname(dirname(__FILE__))) . "/engine/start.php");
+		global $CONFIG;
 		$url = $CONFIG->wwwroot;
 		$page_owner = page_owner_entity();
 		if ($page_owner === false || is_null($page_owner)) {
@@ -63,7 +64,7 @@
     foreach ($items as $item) {
   		$area2 .= "<div class=\"contentWrapper task\">";
       $area2 .= elgg_view('tasks/tasksresume', array('entity' => $item));
-      $area2 .= "<a href=\"/mod/tasks/manage.php?task=".$item->getGUID()."\">".elgg_echo('tasks:tasksmanage')."</a>";
+      $area2 .= "<a href=\"{$url}mod/tasks/manage.php?task=".$item->getGUID()."\">".elgg_echo('tasks:tasksmanage')."</a>";
       $area2 .="</div>";
     }
 
