@@ -117,7 +117,8 @@
 													   '1' => elgg_echo('tasks:task_status_1'),
 													   '2' => elgg_echo('tasks:task_status_2'),
                          	   '3' => elgg_echo('tasks:task_status_3'),
-                         	   '4' => elgg_echo('tasks:task_status_4')
+                         	   '4' => elgg_echo('tasks:task_status_4'),
+                         	   '5' => elgg_echo('tasks:task_status_5')
               ),
 							'value' => $status
 				  )); ?>

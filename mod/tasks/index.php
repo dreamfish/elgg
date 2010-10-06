@@ -64,11 +64,16 @@
     if ($items) { 
 		  sksort($items, "title", true);
     }
+    
+    $status = get_input('status', '');
+
     foreach ($items as $item) {
-  		$area2 .= "<div class=\"contentWrapper task\">";
-      $area2 .= elgg_view('tasks/tasksresume', array('entity' => $item));
-      $area2 .= "<a href=\"{$url}mod/tasks/manage.php?task=".$item->getGUID()."\">".elgg_echo('tasks:tasksmanage')."</a>";
-      $area2 .="</div>";
+		if (($status == '' && $item->status != '5') || ($status=='closed' && $item->status=='5')) {
+				$area2 .= "<div class=\"contentWrapper task\">";
+				$area2 .= elgg_view('tasks/tasksresume', array('entity' => $item));
+				$area2 .= "<a href=\"{$url}mod/tasks/manage.php?task=".$item->getGUID()."\">".elgg_echo('tasks:tasksmanage')."</a>";
+				$area2 .="</div>";
+		}
     }
 		set_context($context);
 
