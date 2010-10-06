@@ -98,6 +98,7 @@
 			 'tasks:task_status_2'=>"In progress",
 			 'tasks:task_status_3'=>"Ready for testing",
 			 'tasks:task_status_4'=>"Go live",
+			 'tasks:task_status_5'=>""
 			 
 			 'tasks:task_percent_done_'=>"0%",
 			 'tasks:task_percent_done_0'=>"0%",
