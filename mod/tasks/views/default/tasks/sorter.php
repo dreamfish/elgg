@@ -49,11 +49,11 @@ $(function() {
 		val = $(this).val();
 		if (val == 'All')
 		{
-			$('.worker').each(function() { $(this).parents('.task:first').show(); });
+			$('.worker').each(function() { $('.task').show(); });
 		}
 		else
 		{			
-			$('.worker').each(function() { $(this).parents('.task:first').hide(); });
+			$('.worker').each(function() { $('.task').hide(); });
 			$('.worker:contains("' + val + '")').each(function() { $(this).parents('.task:first').show(); });			
 		}
     });
