@@ -72,13 +72,14 @@ if (empty($vars['title'])) {
 <li <?php echo strpos(current_page_url(),"mod/members") ? "class=\"selected\"" :"" ?>>
 	<a href="<?php echo $vars['url']; ?>pg/pages/view/18685/"><span><h4>Community</h4></span></a>
 </li>
+<li><a href="<?php echo $vars['url']; ?>pg/chat"><span><h4><span class="chat"></span></h4></span></a></li>
 
 <li><a href=""><span><h4 style="color:#AAACAF">+</h4></span></a>
 	<ul>
 	<li><a href="http://pads.dreamfish.com/ep/pad/newpad">Pad</a></li>	
 	</ul>
 </li>
-<li><a href="<?php echo $vars['url']; ?>pg/chat"><span><h4><span  class="chat"></span></h4></span></a></li>
+
 <?php if (isloggedin()) { ?>
 <li <?php echo strpos(current_page_url(),"dashboard") ? "class=\"selected\"" :"" ?>>
 	<a href="<?php echo $vars['url']; ?>pg/profile"><span><h4>My Dreamfish</h4></span></a>
