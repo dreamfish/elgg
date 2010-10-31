@@ -172,93 +172,68 @@ echo elgg_view("navigation/topbar_tools");
 <div class="dflogo">&nbsp;</div>
 <ul>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/help">Help
+<a href="<?php echo $vars['url']; ?>pg/pages/view/18784/">Help
 </a></li>
 <li>
 <a href="<?php echo $vars['url']; ?>mod/blogextended/group.php">News
 </a></li>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/press">Press</a></li>
+<a href="<?php echo $vars['url']; ?>pg/pages/view/18661/">Press</a></li>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/terms">Terms</a></li>
+<a href="<?php echo $vars['url']; ?>pg/pages/view/18785/">Terms</a></li>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/privacy">Privacy</a></li>
+<a href="<?php echo $vars['url']; ?>pg/pages/view/6116/">Privacy</a></li>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/copyright-policy">Copyright</a></li>
+<a href="<?php echo $vars['url']; ?>pg/pages/view/6121/">Copyright</a></li>
 <li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/contact">Contact us</a></li>
+<a href="<?php echo $vars['url']; ?>pg/pages/view/18784/">Contact us</a></li>
 </ul>
 </li>
 <li class="footercols">
 <span class="footerh3">Membership</span>
 <ul>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/what-is-dreamfish">
-What is Dreamfish</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/page/become_a_member">Become a member</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/membership-guidelines">Membership guidelines
-</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/membership-services">Membership services
-</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/making-a-payment">Making a payment</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/success-stories">Success stories</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18665/">Membership Benefits</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18787/">Hiring Managers</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18694/">Job Seekers</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18669/">Independent Freelancers</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18668/">Entrepreneurs</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18667/">Professionals</a></li>
 </ul>
 </li>
 <li class="footercols">
-<span class="footerh3">How Dreamfish Works</span>
+<span class="footerh3">About</span>
 <ul>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/how-dreamfish-works">Overview
-</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/learning">Learning</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/selling">Selling</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/hiring">Hiring
-</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/collaborating">Colllaborating
-</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/creating-value">Creating value
-</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/paying-a-worker">Paying a worker</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/getting-started">Getting started</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18654/">What is Dreamfish</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/3265/">How it works</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/6114/">Humanifesto</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18684/">Peer Learning</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18683/">Cooperative Economy</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18682/">Open Source</a></li>
 </ul>
 </li>
 <li class="footercols">
 <span class="footerh3">Get Involved</span>
 <ul>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/dreamfish-fellows">Dreamfish Fellows</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/groups/177/dreamfish-investing-circle">Dreamfish Investing Circle</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/groups/27/dreamfish-network-v10/">Dreamfish Service Team</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18750/">Impact</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/groups/27/dreamfish-service-team/">Dreamfish Service</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18664/">Dreamfish Fellows</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18662/">Dreamfish Jobs</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18666/">Impact Investing</a></li>
 </ul>
+</li>
 <li class="footercols">
-<span class="footerh3">About Dreamfish</span>
+<span class="footerh3">On the Web</span>
 <ul>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/humanifesto">Humanifesto</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/labs">Dreamfish Labs
-</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/dreamfish-story">Dreamfish Story</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/diversity-statement">Diversity Statement</a></li>
-<li>
-<a href="<?php echo $vars['url']; ?>pg/pages/url/leadership-and-governance">Leadership and Governance</a></li>
+<li><a href="http://twitter.com/love2dreamfish">Twitter</a></li>
+<li><a href="http://www.facebook.com/109012819163948#!/home.php?sk=group_109012819163948&ap=1">Facebook</a></li>
+<li><a href="http://www.linkedin.com/groups?mostPopular=&gid=154283">LinkedIn</a></li>
+<li><a href="http://www.flickr.com/groups/1004059@N22/pool/">Flickr</a></li>
+<li><a href="http://vimeo.com/dreamfish">Vimeo</a></li>
+<li><a href="http://www.youtube.com/user/love2dreamfish">Youtube</a></li>
+<li><a href="http://plancast.com/dreamfish">Plancast</a></li>
 </ul>
+</li>
+
 <p>
 This work is licensed under a Creative Commons Attribution-Share Alike 3.0 unported <a href="<?php echo $vars['url']; ?>pg/pages/url/copyright-policy">license</a></p>
 </li>
