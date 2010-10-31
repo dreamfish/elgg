@@ -195,7 +195,7 @@ echo elgg_view("navigation/topbar_tools");
 <li><a href="<?php echo $vars['url']; ?>pg/pages/view/18665/">Membership Benefits</a></li>
 <li><a href="<?php echo $vars['url']; ?>pg/pages/view/18787/">Hiring Managers</a></li>
 <li><a href="<?php echo $vars['url']; ?>pg/pages/view/18694/">Job Seekers</a></li>
-<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18669/">Independent Freelancers</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18669/">Freelancers</a></li>
 <li><a href="<?php echo $vars['url']; ?>pg/pages/view/18668/">Entrepreneurs</a></li>
 <li><a href="<?php echo $vars['url']; ?>pg/pages/view/18667/">Professionals</a></li>
 </ul>
