@@ -207,7 +207,7 @@ echo elgg_view("navigation/topbar_tools");
 <li><a href="<?php echo $vars['url']; ?>pg/pages/view/3265/">How it works</a></li>
 <li><a href="<?php echo $vars['url']; ?>pg/pages/view/6114/">Humanifesto</a></li>
 <li><a href="<?php echo $vars['url']; ?>pg/pages/view/18684/">Peer Learning</a></li>
-<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18683/">Cooperative Economy</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18683/">Co-op Economy</a></li>
 <li><a href="<?php echo $vars['url']; ?>pg/pages/view/18682/">Open Source</a></li>
 </ul>
 </li>
