@@ -53,8 +53,9 @@ if (empty($vars['title'])) {
 	
 	<ul>
 	<li><a href="<?php echo $vars['url']; ?>mod/tasks/worker-request.php">Work requests</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/tasks/user/add">Request work</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/groups/new/">Create a project</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/tasks/user/add">Request a worker</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/groups/world">Projects</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/groups/new/">&nbsp;&nbsp;&nbsp;Create a project</a></li>
 	<li><a href="<?php echo $vars['url']; ?>mod/members/">People</a></li>
 	<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18749/">Tips</a></li>
 	</ul>
