@@ -11,6 +11,7 @@
 			'tasks:read' => "%s tasks",
 			'tasks:friends' => "Friends' tasks",
 			'tasks:everyone' => "All site tasks",
+      'tasks:worker-request' => "Worker Requests",
 			'tasks:this' => "Task this",
 			'tasks:this:group' => "Task in %s",
 
@@ -92,8 +93,8 @@
        'tasks:task_type_6'=>"Evaluate",
        'tasks:task_type_7'=>"Give",
 
-			 'tasks:task_status_'=>"Open",
-			 'tasks:task_status_0'=>"Open",
+			 'tasks:task_status_'=>"Request Worker",
+			 'tasks:task_status_0'=>"Request Worker",
 			 'tasks:task_status_1'=>"Assigned",
 			 'tasks:task_status_2'=>"In progress",
 			 'tasks:task_status_3'=>"Ready for testing",
