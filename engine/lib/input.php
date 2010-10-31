@@ -320,14 +320,14 @@
 			'color' => array (),
 			'face' => array (),
 			'size' => array ()),
-//		'form' => array(
-//			'action' => array (),
-//			'accept' => array (),
-//			'accept-charset' => array (),
-//			'enctype' => array (),
-//			'method' => array (),
-//			'name' => array (),
-//			'target' => array ()),
+		'form' => array(
+		  'action' => array (),
+			'accept' => array (),
+			'accept-charset' => array (),
+			'enctype' => array (),
+			'method' => array (),
+			'name' => array (),
+			'target' => array ()),
 		'h1' => array(
 			'align' => array (),
 			'class' => array ()),
@@ -346,6 +346,13 @@
 		'h6' => array(
 			'align' => array (),
 			'class' => array ()),
+    'input' => array(
+      'name' => array(),
+     'type' => array(),
+      'value' => array(),
+      'alt' => array(),
+      'src' => array()
+    ),
 		'hr' => array(
 			'align' => array (),
 			'class' => array (),
