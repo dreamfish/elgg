@@ -204,7 +204,7 @@ echo elgg_view("navigation/topbar_tools");
 <span class="footerh3">About</span>
 <ul>
 <li><a href="<?php echo $vars['url']; ?>pg/pages/view/18654/">What is Dreamfish</a></li>
-<li><a href="<?php echo $vars['url']; ?>pg/pages/view/3265/">How it works</a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/3265/">How It Works</a></li>
 <li><a href="<?php echo $vars['url']; ?>pg/pages/view/6114/">Humanifesto</a></li>
 <li><a href="<?php echo $vars['url']; ?>pg/pages/view/18684/">Peer Learning</a></li>
 <li><a href="<?php echo $vars['url']; ?>pg/pages/view/18683/">Co-op Economy</a></li>
