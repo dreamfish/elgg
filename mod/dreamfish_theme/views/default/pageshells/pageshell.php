@@ -47,107 +47,71 @@ if (empty($vars['title'])) {
 <link REL="SHORTCUT ICON" HREF="<?php echo $vars['url'];?>favicon.ico">
 <div id="navigation" class="clearpush">
 <ul class="tabnav" id="topleftnav">
-<?php if (isloggedin()) { ?>
+
 <li <?php echo (current_page_url() == $vars['url']) ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/pages/url/meeting/"><span><h4>meeting</h4></span></a>
+	<a href="<?php echo $vars['url']; ?>mod/riverdashboard/"><span><h4>Work</h4></span></a>
 	
 	<ul>
-	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/events/">events</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/chat/">chat cafe</a></li>
-	<li><a href="http://pads.dreamfish.com/ep/pad/newpad">meeting pad</a></li>
+	<li><a href="<?php echo $vars['url']; ?>mod/tasks/worker-request.php">Work requests</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/tasks/user/add">Request work</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/groups/new/">Create a project</a></li>
+	<li><a href="<?php echo $vars['url']; ?>mod/members/">People</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18749/">Tips</a></li>
 	</ul>
 </li>
 
 <li <?php echo strpos(current_page_url(),"mod/members") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>mod/members"><span><h4>marketplace</h4></span></a>
+	<a href="<?php echo $vars['url']; ?>pg/pages/view/18750/"><span><h4>Impact</h4></span></a>
 </li>
-	
-<li <?php echo strpos(current_page_url(),"groups") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/groups/world"><span><h4>project hub</h4></span></a>
-	
+
+<li <?php echo strpos(current_page_url(),"mod/members") ? "class=\"selected\"" :"" ?>>
+	<a href="<?php echo $vars['url']; ?>pg/pages/view/7468/"><span><h4>About</h4></span></a>
+</li>
+
+<li <?php echo strpos(current_page_url(),"mod/members") ? "class=\"selected\"" :"" ?>>
+	<a href="<?php echo $vars['url']; ?>pg/pages/view/18685/"><span><h4>Community</h4></span></a>
+</li>
+
+<li><a href=""><span><h4 style="color:#AAACAF">+</h4></span></a>
 	<ul>
-	<li>
-	  <a href="<?php echo $vars['url'];?>pg/groups/member/<?php echo $_SESSION['user']->username; ?>">my projects</a>
-	</li>
+	<li><a href="http://pads.dreamfish.com/ep/pad/newpad">Pad</a></li>
+	<li><a href="<?php echo $vars['url']; ?>/pg/chat">The Pool</a></li>
 	</ul>
 </li>
-<li <?php echo strpos(current_page_url(),"community") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/pages/url/df-community"><span><h4>community</h4></span></a>
-	
-	<?php create_community_navigation_html($vars); ?>
-	
-</li>
+
+<?php if (isloggedin()) { ?>
 <li <?php echo strpos(current_page_url(),"dashboard") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/dashboard"><span><h4>my dreamfish</h4></span></a>
+	<a href="<?php echo $vars['url']; ?>pg/profile"><span><h4>My Dreamfish</h4></span></a>
 	
 	<ul>
-	<li><a href="<?php echo $vars['url']; ?>pg/dashboard/">dashboard</a></li>
-	<li><a href="<?php echo $_SESSION['user']->getURL(); ?>">profile</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/settings/">settings</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/profile/">Profile</a></li>
+	<li><a href="<?php echo $vars['url']; ?>mod/profile/edit.php">Edit profile</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/friends">Contacts</a></li>
+	<li><a href="<?php echo $vars['url']; ?>mod/tasks">Tasks</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/groups/member">Projects</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/dgroups/member">Groups</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/settings/">Settings</a></li>
+	<li><a href="<?php echo $vars['url']; ?>pg/bookmarks/<?php echo $_SESSION['user']->name ?>/items">Bookmarks</a></li>
+	<li><a href="<?php echo $vars['url']; ?>mod/messages/">Messages</a></li>
 	</ul>
-</li>
-<!--
-<li <?php echo strpos(current_page_url(),"riverdashboard") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>mod/riverdashboard"><span><h4>activity</h4></span></a>
-</li>
--->
-<li <?php echo strpos(current_page_url(),"chat") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/chat"><span><h4><span class="chat"></span></h4></span></a>
-</li>
-<li <?php echo strpos(current_page_url(),"messages") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>mod/messages"><span><h4><span class="mail"></span></h4></span></a>
 </li>
 <? } else { ?>
-<li <?php echo (current_page_url() == $vars['url']) ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/pages/url/meeting/"><span><h4>meeting</h4></span></a>
-	
-	<ul>
-	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/events/">events</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/chat">chat cafe</a></li>
-	<li><a href="http://pads.dreamfish.com/ep/pad/newpad">meeting pad</a></li>
-	</ul>
+<li <?php echo strpos(current_page_url(),"dashboard") ? "class=\"selected\"" :"" ?>>
+	<a href="<?php echo $vars['url']; ?>pg/page/login"><span><h4>My Dreamfish</h4></span></a>
 </li>
-
-<li <?php echo strpos(current_page_url(),"mod/members") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>mod/members"><span><h4>marketplace</h4></span></a>
-</li>
-<li <?php echo strpos(current_page_url(),"groups") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/groups/world"><span><h4>project hub</h4></span></a>
-</li>
-<li <?php echo strpos(current_page_url(),"community") ? "class=\"selected\"" :"" ?>>
-	<a href="<?php echo $vars['url']; ?>pg/pages/url/df-community"><span><h4>community</h4></span></a>
-	
-	<?php create_community_navigation_html($vars) ?>
-	<!--
-	<ul>
-	<li><a href="<?php echo $vars['url']; ?>mod/blogextended/group.php">labs</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/dgroups/world">groups</a></li>
-	</ul>
-	-->
-	
-</li>
-<? }  // end if(isloggedin) ?>
-
-</ul>
-<ul class="tabnav"  id="toprightnav">
-<li><a href="<?php echo $vars['url']; ?>pg/pages/url/what-is-dreamfish"><span><h4>about</h4></span></a>
-
-<ul>
-	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/what-is-dreamfish">What is Dreamfish</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/how-dreamfish-works">How Dreamfish Works</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/getting-involved">Our Cooperative</a></li>
-	<li><a href="<?php echo $vars['url']; ?>pg/pages/url/become_a_member">Become a member</a></li>
-</ul>
-
-</li>
-
-<?php if (isloggedin()) { ?>
-<li><a href="<?php echo $vars['url']; ?>action/logout"><span><h4><?php echo elgg_echo('logout'); ?></h4></span></a>
- </li>
-<? } else { ?>
-<li><a href="<?php echo $vars['url']; ?>pg/page/become_a_member"><span><h4>Join Dreamfish</h4></span></a></li>
-<li><a href="<?php echo $vars['url']; ?>pg/page/login"><span><h4>Sign In</h4></span></a></li>
 <? } ?>
+</ul>
+
+<ul class="tabnav"  id="toprightnav">
+
+<?php if (!isloggedin()) { ?>
+
+<li><a href="<?php echo $vars['url']; ?>pg/pages/view/18693/"><span><h4>Become a member</h4></span></a></li>
+<li><a href="<?php echo $vars['url']; ?>pg/page/login"><span><h4>Log in</h4></span></a></li>
+
+<? } else { ?>
+<li><a href="<?php echo $vars['url']; ?>action/logout"><span><h4>Log out</h4></span></a></li>
+<?php } ?>
 </ul>
 <div class="clear"></div>
 </div>

@@ -2561,7 +2561,6 @@ ul.tabnav li a:hover span {
 
 ul.tabnav li a span h4 {
 	font-weight: normal;
-	text-transform: lowercase;
 	background: url('<?php echo $vars['url']; ?>mod/dreamfish_theme/graphics/tab_bg.png');
 	line-height: 30px;
 }
